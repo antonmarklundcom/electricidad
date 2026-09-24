@@ -743,4 +743,244 @@ return [
         ],
     ],
 
+    'electricista-ciudad-del-este' => [
+        'path'            => '/electricista/ciudad-del-este/',
+        'kind'            => 'zona',
+        'city'            => 'Ciudad del Este',
+        'navLabel'        => 'Ciudad del Este',
+        'seoTitle'        => 'Paneles solares en Ciudad del Este',
+        'metaDescription' => 'Paneles solares, generadores y UPS para comercios y depósitos de '
+                           . 'Ciudad del Este. Presupuesto por WhatsApp y visita de instalación '
+                           . 'coordinada, sin cargo.',
+        'hero' => [
+            'eyebrow' => 'Energía para comercios y depósitos en Ciudad del Este',
+            'h1'      => 'Paneles solares y generadores en Ciudad del Este',
+            'lead'    => 'Comercios y depósitos de la zona de frontera que no pueden depender solo '
+                       . 'de la red: cotizamos el proyecto por WhatsApp con los datos que nos envía '
+                       . 'y coordinamos un viaje para la instalación.',
+        ],
+        'leadSlug' => 'paneles-solares',
+        'bundle'   => [
+            'paneles-solares',
+            'generadores',
+            'ups-estabilizadores',
+            'baterias-respaldo',
+            'instalacion-electrica-comercial',
+        ],
+        'traps' => [
+            [
+                'title' => 'Depósitos que paran la operación en cada corte de luz',
+                'text'  => 'Un depósito o local de comercio que depende solo de la red pierde horas '
+                         . 'de operación cada vez que hay un corte, algo que un generador o un banco '
+                         . 'de baterías puede evitar si está bien dimensionado.',
+            ],
+            [
+                'title' => 'Equipos de punto de venta sin respaldo ante microcortes',
+                'text'  => 'Cajas registradoras, lectores y equipos de cómputo pueden colgarse o '
+                         . 'dañarse con microcortes y bajas de tensión frecuentes en zonas de mucho '
+                         . 'movimiento comercial, algo que un UPS o estabilizador resuelve.',
+            ],
+            [
+                'title' => 'Instalación eléctrica comercial que no acompañó el crecimiento del local',
+                'text'  => 'Locales que fueron sumando heladeras, aire acondicionado e iluminación '
+                         . 'con los años terminan con un tablero que no alcanza para la carga actual.',
+            ],
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Cómo cotizamos un proyecto en Ciudad del Este',
+                'body' => [
+                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
+                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del local y, '
+                    . 'si hace falta, fotos del techo o del tablero.',
+                    'La instalación se coordina en un viaje planificado a la zona. Para una reparación '
+                    . 'puntual o algo urgente, lo vemos caso por caso por WhatsApp antes de definir si '
+                    . 'corresponde una visita.',
+                ],
+            ],
+        ],
+        'weNeed' => [
+            'Rubro del comercio o depósito y equipos críticos que no pueden quedar sin energía',
+            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
+            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Pueden venir el mismo día a instalar?',
+                'a' => 'No trabajamos con visitas el mismo día en Ciudad del Este: cotizamos el '
+                     . 'proyecto por WhatsApp y coordinamos un viaje para la instalación.',
+            ],
+            [
+                'q' => '¿Atienden reparaciones puntuales, no solo proyectos de energía?',
+                'a' => 'Para reparaciones chicas lo coordinamos caso por caso por WhatsApp antes de '
+                     . 'confirmar si corresponde una visita.',
+            ],
+            [
+                'q' => '¿Trabajan con comercios y depósitos, no solo con viviendas?',
+                'a' => 'Sí, es donde más trabajamos en la zona: comercios, depósitos y también '
+                     . 'viviendas.',
+            ],
+        ],
+    ],
+
+    'electricista-encarnacion' => [
+        'path'            => '/electricista/encarnacion/',
+        'kind'            => 'zona',
+        'city'            => 'Encarnación',
+        'navLabel'        => 'Encarnación',
+        'seoTitle'        => 'Electricista y solar en Encarnación',
+        'metaDescription' => 'Paneles solares, generadores y baterías de respaldo para viviendas y '
+                           . 'comercios de Encarnación y la costanera. Presupuesto por WhatsApp, '
+                           . 'visita coordinada.',
+        'hero' => [
+            'eyebrow' => 'Energía para Encarnación',
+            'h1'      => 'Paneles solares y generadores en Encarnación',
+            'lead'    => 'Viviendas frente al río, comercios de temporada y actividad agroindustrial '
+                       . 'en el departamento: cotizamos el proyecto de energía por WhatsApp y '
+                       . 'coordinamos un viaje para la instalación.',
+        ],
+        'leadSlug' => 'paneles-solares',
+        'bundle'   => [
+            'paneles-solares',
+            'generadores',
+            'ups-estabilizadores',
+            'baterias-respaldo',
+            'instalacion-electrica-comercial',
+        ],
+        'traps' => [
+            [
+                'title' => 'Alojamientos y locales de temporada sin respaldo para la alta demanda',
+                'text'  => 'En temporada de verano, hoteles, alojamientos y locales cerca de la '
+                         . 'costanera suman aire acondicionado y equipos que exigen más de la '
+                         . 'instalación, justo cuando un corte cuesta más caro.',
+            ],
+            [
+                'title' => 'Viviendas frente al río con tomas exteriores sin protección adecuada',
+                'text'  => 'La cercanía al agua suma humedad ambiente que acelera el deterioro de '
+                         . 'tomas y cajas de conexión exteriores mal selladas.',
+            ],
+            [
+                'title' => 'Actividad agroindustrial del departamento sin instalación trifásica al día',
+                'text'  => 'Depósitos y plantas vinculados a la actividad agroindustrial de Itapúa '
+                         . 'suman equipos con el tiempo sobre una instalación pensada para menos '
+                         . 'carga.',
+            ],
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Cómo cotizamos un proyecto en Encarnación',
+                'body' => [
+                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
+                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del inmueble y, '
+                    . 'si hace falta, fotos del techo o del tablero.',
+                    'La instalación se coordina en un viaje planificado a la zona. Para una '
+                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
+                    . 'corresponde una visita.',
+                ],
+            ],
+        ],
+        'weNeed' => [
+            'Si es vivienda, alojamiento o comercio, y equipos críticos que no pueden quedar sin luz',
+            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
+            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Pueden venir el mismo día a instalar?',
+                'a' => 'No trabajamos con visitas el mismo día en Encarnación: cotizamos el proyecto '
+                     . 'por WhatsApp y coordinamos un viaje para la instalación.',
+            ],
+            [
+                'q' => '¿Atienden alojamientos y locales de temporada además de viviendas?',
+                'a' => 'Sí, trabajamos con alojamientos, comercios y viviendas de la zona de la '
+                     . 'costanera y del resto de la ciudad.',
+            ],
+            [
+                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
+                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
+                     . 'una visita.',
+            ],
+        ],
+    ],
+
+    'electricista-coronel-oviedo' => [
+        'path'            => '/electricista/coronel-oviedo/',
+        'kind'            => 'zona',
+        'city'            => 'Coronel Oviedo',
+        'navLabel'        => 'Coronel Oviedo',
+        'seoTitle'        => 'Paneles solares en Coronel Oviedo',
+        'metaDescription' => 'Paneles solares, generadores y UPS para comercios y depósitos de '
+                           . 'Coronel Oviedo, cruce de las rutas 2 y 7. Presupuesto por WhatsApp, '
+                           . 'visita coordinada.',
+        'hero' => [
+            'eyebrow' => 'Energía para Coronel Oviedo',
+            'h1'      => 'Paneles solares y generadores en Coronel Oviedo',
+            'lead'    => 'Comercios y depósitos sobre el cruce de las rutas 2 y 7, y actividad '
+                       . 'agro del departamento de Caaguazú: cotizamos el proyecto de energía por '
+                       . 'WhatsApp y coordinamos un viaje para la instalación.',
+        ],
+        'leadSlug' => 'paneles-solares',
+        'bundle'   => [
+            'paneles-solares',
+            'generadores',
+            'ups-estabilizadores',
+            'baterias-respaldo',
+            'instalacion-electrica-comercial',
+        ],
+        'traps' => [
+            [
+                'title' => 'Comercios sobre la ruta que crecen más rápido que su tablero',
+                'text'  => 'El comercio sobre el cruce de rutas va sumando heladeras, aire '
+                         . 'acondicionado y cartelería más rápido de lo que el tablero original fue '
+                         . 'pensado para soportar.',
+            ],
+            [
+                'title' => 'Depósitos vinculados a la actividad agro sin generador de respaldo',
+                'text'  => 'Depósitos y locales ligados al movimiento agro del departamento pierden '
+                         . 'horas de operación en cada corte si no cuentan con un generador o baterías '
+                         . 'bien dimensionados.',
+            ],
+            [
+                'title' => 'Instalación trifásica sumada de a poco sin revisión conjunta',
+                'text'  => 'Equipos trifásicos que se suman con el tiempo en depósitos y locales '
+                         . 'terminan sobre un tablero pensado para menos carga.',
+            ],
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Cómo cotizamos un proyecto en Coronel Oviedo',
+                'body' => [
+                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
+                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del local y, '
+                    . 'si hace falta, fotos del techo o del tablero.',
+                    'La instalación se coordina en un viaje planificado a la zona. Para una '
+                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
+                    . 'corresponde una visita.',
+                ],
+            ],
+        ],
+        'weNeed' => [
+            'Rubro del comercio o depósito y equipos críticos que no pueden quedar sin energía',
+            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
+            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Pueden venir el mismo día a instalar?',
+                'a' => 'No trabajamos con visitas el mismo día en Coronel Oviedo: cotizamos el '
+                     . 'proyecto por WhatsApp y coordinamos un viaje para la instalación.',
+            ],
+            [
+                'q' => '¿Atienden comercios sobre la ruta y depósitos, no solo viviendas?',
+                'a' => 'Sí, es donde más trabajamos en la zona: comercios, depósitos y también '
+                     . 'viviendas.',
+            ],
+            [
+                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
+                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
+                     . 'una visita.',
+            ],
+        ],
+    ],
+
 ];

@@ -38,6 +38,14 @@ return [
     // content/pages.php key to match.
     'servicesHub' => '/servicios/',
 
+    // Cities named in the JSON-LD areaServed. Mirrors the zone pages in
+    // content/segmentos/zonas.php (Gran Asunción first).
+    'areaServed' => [
+        'Asunción', 'San Lorenzo', 'Luque', 'Fernando de la Mora', 'Lambaré', 'Capiatá',
+        'Ñemby', 'Mariano Roque Alonso', 'Villa Elisa', 'Limpio',
+        'Ciudad del Este', 'Encarnación', 'Coronel Oviedo',
+    ],
+
     'legalName'   => null,                       // registered legal name
     'description' => 'Electricistas en Asunción y Central, y presupuestos de energía solar, '
                    . 'generadores y UPS: cotización por WhatsApp antes de la visita.',

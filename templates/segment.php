@@ -111,6 +111,22 @@ require ROOT_DIR . '/partials/header.php';
     </section>
   <?php endif; ?>
 
+  <?php if (($record['kind'] ?? 'rubro') === 'zona'): ?>
+    <section class="section<?= $segBand++ % 2 ? ' section--surface' : '' ?>">
+      <div class="container">
+        <h2><?= e(ui('segment.other_zones')) ?></h2>
+        <ul class="zone-grid mt-4">
+          <?php foreach (nav('zonas') as $segZona): ?>
+            <?php if ($segZona['path'] !== $record['path']): ?>
+              <li><a class="zone-link" href="<?= e($segZona['path']) ?>"><?= e($segZona['label']) ?></a></li>
+            <?php endif; ?>
+          <?php endforeach; ?>
+          <?php unset($segZona); ?>
+        </ul>
+      </div>
+    </section>
+  <?php endif; ?>
+
   <?php if ($record['weNeed'] !== []): ?>
     <section class="section<?= $segBand++ % 2 ? ' section--surface' : '' ?>">
       <div class="container">

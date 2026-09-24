@@ -38,6 +38,16 @@ await page.click("#consumo-form button[type=submit]");
 const total = await page.textContent("#consumo-total");
 check(/kWh/.test(total) && /₲/.test(total), "consumo: " + total);
 
+await page.goto(base + "/herramientas/que-ups-necesito/");
+await page.fill('.equipo-row[data-id="pc"] [data-role=qty]', "1");
+await page.fill('.equipo-row[data-id="router"] [data-role=qty]', "1");
+await page.click("#ups-form button[type=submit]");
+const va = await page.textContent("#ups-va");
+check(/UPS recomendada: .*VA/.test(va), "ups: " + va);
+await page.fill('.equipo-row[data-id="heladera"] [data-role=qty]', "1");
+await page.click("#ups-form button[type=submit]");
+check(/inversor/.test(await page.textContent("#ups-va")), "ups: motor load → inversor");
+
 check(errors.length === 0, "no JS errors " + errors.join(" | "));
 await browser.close();
 process.exit(failed ? 1 : 0);

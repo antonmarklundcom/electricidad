@@ -35,6 +35,35 @@ $pages = [
         'description' => 'Electricista en Asunción y Central con presupuesto por WhatsApp antes de la visita. Paneles solares, generadores y UPS dimensionados para su consumo.',
         'h1'          => '',
         'lead'        => '',
+        'faq'         => [
+            [
+                'q' => '¿Cuánto cobra un electricista en Asunción?',
+                'a' => 'Depende del trabajo: no cuesta lo mismo cambiar un disyuntor que rehacer un '
+                     . 'tablero. Por eso cotizamos antes de ir: nos manda una foto o un audio por '
+                     . 'WhatsApp y le pasamos el presupuesto con materiales y mano de obra por separado.',
+            ],
+            [
+                'q' => '¿El presupuesto tiene costo?',
+                'a' => 'No. El presupuesto por WhatsApp es sin cargo. Si para cotizar hace falta ver el '
+                     . 'lugar, se lo decimos antes y usted decide.',
+            ],
+            [
+                'q' => '¿Pueden venir hoy?',
+                'a' => 'En Asunción y Central coordinamos la visita en el día cuando la agenda lo '
+                     . 'permite. Si hay olor a quemado, chispas o un tablero caliente, baje la llave '
+                     . 'general y escríbanos: esos casos van primero.',
+            ],
+            [
+                'q' => '¿Instalan paneles solares y generadores en el interior?',
+                'a' => 'Sí. Los proyectos de energía se dimensionan a distancia con sus facturas de la '
+                     . 'ANDE o la lista de equipos, y la instalación se coordina en un viaje.',
+            ],
+            [
+                'q' => '¿Qué garantía tiene el trabajo?',
+                'a' => 'Al terminar le dejamos por escrito qué se hizo, qué materiales se usaron y la '
+                     . 'garantía del trabajo.',
+            ],
+        ],
         'stub'        => false,
         'changefreq'  => 'weekly',
         'priority'    => '1.0',

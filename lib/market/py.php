@@ -258,6 +258,30 @@ function market_table(string $name): array
                     'trifasicaDesdeKva' => 15,
                 ],
 
+                // UPS sizing. VA = W ÷ factor de potencia de la UPS, con margen; la
+                // energía de batería se corrige por profundidad de descarga y
+                // rendimiento del inversor.
+                'ups' => [
+                    'powerFactor' => 0.7,   // UPS de línea interactiva típica: 0,6–0,9
+                    'headroom'    => 1.3,
+                    'tamaniosVa'  => [600, 800, 1000, 1500, 2000, 3000, 6000, 10000],
+                    'dod'         => 0.8,
+                    'eficiencia'  => 0.9,
+                    'maxMinutosUps' => 30,  // más autonomía → inversor con baterías
+                    'equipos' => [
+                        ['id' => 'pc',       'label' => 'Computadora de escritorio', 'w' => 150, 'motor' => false],
+                        ['id' => 'monitor',  'label' => 'Monitor',                   'w' => 30,  'motor' => false],
+                        ['id' => 'notebook', 'label' => 'Notebook',                  'w' => 60,  'motor' => false],
+                        ['id' => 'router',   'label' => 'Router, módem e internet',  'w' => 15,  'motor' => false],
+                        ['id' => 'camaras',  'label' => 'Cámaras y grabador (DVR)',  'w' => 40,  'motor' => false],
+                        ['id' => 'tv',       'label' => 'Televisor LED',             'w' => 100, 'motor' => false],
+                        ['id' => 'pos',      'label' => 'Caja registradora / POS',   'w' => 50,  'motor' => false],
+                        ['id' => 'led',      'label' => 'Foco LED (por unidad)',     'w' => 9,   'motor' => false],
+                        ['id' => 'heladera', 'label' => 'Heladera',                  'w' => 150, 'motor' => true],
+                        ['id' => 'porton',   'label' => 'Motor de portón',           'w' => 400, 'motor' => true],
+                    ],
+                ],
+
                 // Potencias típicas de placa. 'arranque' multiplica la potencia en el
                 // arranque de motores y compresores; 'uso' es la fracción del tiempo
                 // que el equipo consume (ciclo del compresor). Todas se pueden

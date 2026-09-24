@@ -19,6 +19,7 @@ $page = [
     'title'       => $meta['title'],
     'description' => $meta['description'],
     'path'        => '/',
+    'faq'         => $meta['faq'] ?? [],
 ];
 
 /* Only real, confirmed figures reach the hero. Anything without a value and a
@@ -245,6 +246,16 @@ require ROOT_DIR . '/partials/header.php';
       </ul>
     </div>
   </section>
+
+  <!-- Preguntas frecuentes ---------------------------------------------- -->
+  <?php if ($page['faq'] !== []): ?>
+    <section class="section section--surface">
+      <div class="container">
+        <?php $faqItems = $page['faq']; ?>
+        <?php require ROOT_DIR . '/partials/faq.php'; ?>
+      </div>
+    </section>
+  <?php endif; ?>
 
   <!-- Casos, or the rubros band while there are no testimonials ---------- -->
   <?php if ($homeTestimonials !== []): ?>

@@ -313,6 +313,18 @@ return [
             'crmTag'       => 'consumo-electrico',
             'nextLink'     => null,
         ],
+        'que-ups-necesito' => [
+            'menuLabel'    => 'Calculadora de UPS',
+            'need'         => 'generador',
+            'tier'         => 'C',
+            'whatsappText' => 'Hola, usé la calculadora de UPS y quisiera presupuesto para los equipos que marqué.',
+            'nextStep'     => [
+                'Guarde la lista de equipos y los minutos de respaldo que eligió.',
+                'Díganos si tiene bajas de tensión frecuentes además de cortes.',
+            ],
+            'crmTag'       => 'que-ups-necesito',
+            'nextLink'     => null,
+        ],
     ],
 
     /* One record per chip in content/ui.php 'needs'. A lead from a page with no
