@@ -1,31 +1,10 @@
-# php-site-template
+# electricidad.com.py
 
-A GitHub template for local-business sites — brochure pages, calculators, guides and a
-blog — in static HTML + PHP on shared hosting (Hostinger, PHP 8.2, no database, no build
-step for the site itself).
+Lead-generation site for electricians in Asunción and Central, plus quote requests for solar,
+generators, UPS and batteries. Static HTML + PHP on Hostinger, leads to VenderCRM.
 
-It is the foundation of [contador.com.py](https://contador.com.py) with every client fact
-removed: the same `lib/`, `partials/`, `templates/`, design system, lead handler, router,
-route contract, verify script, deploy scripts and CI — plus example content so the site
-renders and `verify.sh` is green the moment you clone it.
-
-What is here:
-
-- **Content is data.** One `content/*.php` array per page type; each file's header comment
-  documents its key shape, and that shape is the contract every page builds against. A route
-  file is three lines.
-- **Two markets, one codebase.** `lib/market/py.php` (Paraguay: RUC, guaraníes, the labour and
-  DNIT tables) and `lib/market/se.php` (Sweden: org.nr/personnummer, kronor, moms). One key in
-  `content/site.php` picks one; templates never change.
-- **Leads have values.** Every service, tool and form chip has a tier, a WhatsApp prefill and a
-  thank-you in `content/lead-values.php`; `enviar.php` resolves them server-side and posts to
-  VenderCRM, with an email fallback and a log fallback.
-- **A build gate.** `./verify.sh` lints, boots the site, asserts the status of every URL the
-  content declares, fails on any PHP notice, checks titles and descriptions, exercises the lead
-  form, and checks the content arrays for dangling slugs. CI runs it on every PR and again on
-  the unzipped deploy zip.
-- **No invented facts.** Anything the business has not confirmed is `null` in
-  `content/site.php`, and the partial that would show it hides instead.
+**Start with [`plan.md`](plan.md)**: status, launch checklist, how the site makes money.
+The template documentation (content model, deploy, verify) follows below.
 
 ---
 

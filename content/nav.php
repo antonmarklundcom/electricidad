@@ -44,8 +44,8 @@ return [
     // Header bar, left to right. 'mega' opens the services panel.
     'primary' => [
         ['label' => ui('nav.services'), 'path' => services_hub_path(), 'mega' => true],
-        ['label' => ui('nav.pricing'),  'path' => '/precios/'],
         ['label' => ui('nav.tools'),    'path' => '/herramientas/'],
+        ['label' => ui('nav.zones'),    'path' => '/electricista/'],
         ['label' => ui('nav.guides'),   'path' => '/guias/'],
         ['label' => ui('nav.blog'),     'path' => '/blog/'],
         ['label' => ui('nav.contact'),  'path' => '/contacto/'],
@@ -59,10 +59,12 @@ return [
 
     // Footer column 3. Tools are appended from the 'tools' key below.
     'firm' => [
-        ['label' => ui('nav.pricing'), 'path' => '/precios/'],
-        ['label' => ui('nav.guides'),  'path' => '/guias/'],
-        ['label' => ui('nav.blog'),    'path' => '/blog/'],
-        ['label' => ui('nav.contact'), 'path' => '/contacto/'],
+        ['label' => ui('nav.zones'),    'path' => '/electricista/'],
+        ['label' => ui('nav.pricing'),  'path' => '/precios/'],
+        ['label' => ui('nav.guides'),   'path' => '/guias/'],
+        ['label' => ui('nav.blog'),     'path' => '/blog/'],
+        ['label' => ui('nav.partners'), 'path' => '/profesionales/'],
+        ['label' => ui('nav.contact'),  'path' => '/contacto/'],
     ],
 
     // One entry per content/tools.php record, in the same order.
@@ -76,6 +78,13 @@ return [
         static fn (array $guide): array => ['label' => $guide['navLabel'], 'path' => $guide['path']],
         content('guias')
     ),
+
+    // City landing pages (content/segmentos/zonas.php), for the zones hub and
+    // the homepage zones band.
+    'zonas' => array_values(array_map(
+        static fn (array $zona): array => ['label' => $zona['city'] ?? $zona['navLabel'], 'path' => $zona['path']],
+        array_filter(content('segmentos'), static fn (array $seg): bool => ($seg['kind'] ?? 'rubro') === 'zona')
+    )),
 
     'legal' => [
         ['label' => ui('nav.privacy'), 'path' => '/privacidad/'],

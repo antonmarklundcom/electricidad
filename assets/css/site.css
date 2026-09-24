@@ -2497,3 +2497,136 @@ a.industries__item:focus-visible {
   font-family: var(--font-body);
   font-size: var(--t-note);
 }
+
+/* == electricidad: homepage tracks, trust chips, zones, calculators ====== */
+
+.trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+  margin: var(--s-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.trust-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: var(--t-note);
+  color: var(--muted);
+  background: var(--bg);
+}
+.trust-chips li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+.tracks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+}
+.track {
+  padding: var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  background: var(--bg);
+}
+.track--energia {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+.track--energia .card-title { color: var(--on-ink); }
+.track--energia .card__text { color: var(--on-ink-muted); }
+.track__head { margin-bottom: var(--s-3); }
+.track__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.track__list a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: var(--r-tile);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: var(--t-small);
+  text-decoration: none;
+}
+.track__list a:hover { box-shadow: inset 0 0 0 2px var(--accent); }
+.track--energia .track__list a {
+  background: var(--on-ink-panel);
+  color: var(--on-ink);
+  box-shadow: inset 0 0 0 1px var(--on-ink-border);
+}
+.track--energia .track__list a:hover { box-shadow: inset 0 0 0 2px var(--accent); }
+
+.card--link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.15s ease;
+}
+.card--link:hover { box-shadow: inset 0 0 0 2px var(--accent); }
+.card--link .card-title::after { content: " →"; color: var(--accent-text); }
+
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--s-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zone-link {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-tile);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--bg);
+}
+.zone-link:hover { border-color: var(--accent); }
+
+.equipos {
+  display: grid;
+  gap: var(--s-1);
+  margin: var(--s-2) 0 var(--s-3);
+}
+.equipo-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 96px 96px;
+  gap: var(--s-2);
+  align-items: end;
+  padding-bottom: var(--s-1);
+  border-bottom: 1px solid var(--border);
+}
+.equipo-row--3 { grid-template-columns: minmax(0, 1fr) 84px 84px 84px; }
+.equipo-row__label {
+  align-self: center;
+  font-weight: 600;
+  font-size: var(--t-small);
+}
+.equipo-row__field > span { font-size: var(--t-label); }
+
+@media (max-width: 720px) {
+  .tracks { grid-template-columns: 1fr; }
+  .track { padding: var(--s-3); }
+  .equipo-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .equipo-row--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .equipo-row__label { grid-column: 1 / -1; }
+}

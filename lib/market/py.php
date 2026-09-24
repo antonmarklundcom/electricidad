@@ -137,6 +137,8 @@ function market_last_reviewed(): string
  *   'laboral'       Código del Trabajo figures for the aguinaldo and
  *                   liquidación calculators
  *   'vencimientos'  the DNIT perpetual calendar and the IPS monthly window
+ *   'energia'       sun hours, generator sizing factors and appliance loads
+ *                   for the energy calculators
  */
 function market_table(string $name): array
 {
@@ -219,6 +221,69 @@ function market_table(string $name): array
                     'diaHasta' => 10,
                     'nota'     => 'Del día 1 al 10 del mes siguiente al mes liquidado, para todos los '
                                 . 'empleadores por igual (no depende de la terminación de su RUC).',
+                ],
+            ],
+
+            // Reference figures for the energy calculators (/herramientas/). Every
+            // figure carries its source; docs/facts-to-verify.md lists the ones
+            // still to confirm against a primary source. The ANDE tariff is NOT
+            // here on purpose: the calculators take the visitor's own price per
+            // kWh from their bill (monto ÷ kWh), so they never go stale.
+            'energia' => [
+                'reviewed' => '2026-09-24',
+
+                // Irradiación global horizontal media en Asunción. Estudio "Evaluación
+                // del recurso solar en Paraguay…" (ResearchGate 307909599): ~4,9
+                // kWh/m²·día; Atlas del Potencial Energético Solar y Eólico del
+                // Paraguay (2016): 4,7–5,1 según la región.
+                'solar' => [
+                    'hsp'              => 4.9,
+                    'hspSource'        => 'Atlas del Potencial Energético Solar y Eólico del Paraguay (2016) y '
+                                        . 'estudios de recurso solar para Asunción: 4,7–5,1 kWh/m²·día',
+                    // Performance ratio: pérdidas por temperatura, cableado, inversor
+                    // y suciedad. 0,75–0,80 es el rango de diseño habitual.
+                    'performanceRatio' => 0.78,
+                    'panelW'           => 550,
+                    'panelM2'          => 2.6,   // módulo de 550 W ≈ 2,28 × 1,13 m
+                ],
+
+                'generador' => [
+                    'powerFactor'  => 0.8,   // kVA = kW ÷ 0,8 en grupos electrógenos
+                    'headroom'     => 1.25,  // 25 % de margen sobre el pico
+                    // Consumo específico de combustible a 50–75 % de carga.
+                    'litrosPorKwh' => [0.25, 0.35],
+                    'litrosSource' => 'Consumo específico típico de grupos electrógenos diésel: '
+                                    . '0,25–0,35 L por kWh generado',
+                    'tamaniosKva'  => [2.5, 3.5, 5, 6.5, 8, 10, 12, 15, 20, 25, 30, 40, 50],
+                    'trifasicaDesdeKva' => 15,
+                ],
+
+                // Potencias típicas de placa. 'arranque' multiplica la potencia en el
+                // arranque de motores y compresores; 'uso' es la fracción del tiempo
+                // que el equipo consume (ciclo del compresor). Todas se pueden
+                // editar en la calculadora: la etiqueta del equipo manda.
+                'equiposSource' => 'Potencias típicas de placa (fabricantes; tabla de consumos del ENRE); '
+                                 . 'arranque de motores ≈ 3 veces la potencia nominal',
+                'equipos' => [
+                    ['id' => 'aire9',     'label' => 'Aire acondicionado 9.000 BTU',  'w' => 900,  'arranque' => 3,   'horas' => 8,   'uso' => 0.6],
+                    ['id' => 'aire12',    'label' => 'Aire acondicionado 12.000 BTU', 'w' => 1200, 'arranque' => 3,   'horas' => 8,   'uso' => 0.6],
+                    ['id' => 'aire18',    'label' => 'Aire acondicionado 18.000 BTU', 'w' => 1600, 'arranque' => 3,   'horas' => 8,   'uso' => 0.6],
+                    ['id' => 'aire24',    'label' => 'Aire acondicionado 24.000 BTU', 'w' => 2100, 'arranque' => 3,   'horas' => 8,   'uso' => 0.6],
+                    ['id' => 'heladera',  'label' => 'Heladera',                      'w' => 150,  'arranque' => 3,   'horas' => 24,  'uso' => 0.4],
+                    ['id' => 'freezer',   'label' => 'Freezer',                       'w' => 200,  'arranque' => 3,   'horas' => 24,  'uso' => 0.45],
+                    ['id' => 'bomba05',   'label' => 'Bomba de agua ½ HP',            'w' => 373,  'arranque' => 3,   'horas' => 1,   'uso' => 1],
+                    ['id' => 'bomba1',    'label' => 'Bomba de agua 1 HP',            'w' => 746,  'arranque' => 3,   'horas' => 1,   'uso' => 1],
+                    ['id' => 'porton',    'label' => 'Motor de portón',               'w' => 400,  'arranque' => 2.5, 'horas' => 0.2, 'uso' => 1],
+                    ['id' => 'ducha',     'label' => 'Ducha eléctrica',               'w' => 4000, 'arranque' => 1,   'horas' => 0.5, 'uso' => 1],
+                    ['id' => 'termo',     'label' => 'Termocalefón eléctrico',        'w' => 1500, 'arranque' => 1,   'horas' => 3,   'uso' => 0.5],
+                    ['id' => 'microondas','label' => 'Microondas',                    'w' => 1100, 'arranque' => 1,   'horas' => 0.3, 'uso' => 1],
+                    ['id' => 'lavarropas','label' => 'Lavarropas',                    'w' => 500,  'arranque' => 2,   'horas' => 1,   'uso' => 1],
+                    ['id' => 'plancha',   'label' => 'Plancha',                       'w' => 1000, 'arranque' => 1,   'horas' => 0.3, 'uso' => 1],
+                    ['id' => 'tv',        'label' => 'Televisor LED',                 'w' => 100,  'arranque' => 1,   'horas' => 5,   'uso' => 1],
+                    ['id' => 'pc',        'label' => 'Computadora',                   'w' => 150,  'arranque' => 1,   'horas' => 4,   'uso' => 1],
+                    ['id' => 'router',    'label' => 'Router e internet',             'w' => 15,   'arranque' => 1,   'horas' => 24,  'uso' => 1],
+                    ['id' => 'ventilador','label' => 'Ventilador de techo',           'w' => 65,   'arranque' => 1,   'horas' => 8,   'uso' => 1],
+                    ['id' => 'led',       'label' => 'Foco LED (por unidad)',         'w' => 9,    'arranque' => 1,   'horas' => 5,   'uso' => 1],
                 ],
             ],
         ];

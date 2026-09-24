@@ -26,9 +26,10 @@
  *   guides           string[] guide slugs (content/guias.php)
  *   articles         string[] article slugs (content/blog.php)
  *   toolLinks        array    [['path' => ..., 'label' => ..., 'text' => ...], ...]
- *   example          bool     present ONLY on the seed record below. Deleting
- *                             every 'example' => true entry across content/ is
- *                             step 3 of "Start a new site (T0)" in README.md.
+ *
+ * The records live in two files, one per cluster, so they can be written and
+ * reviewed independently: content/services/electricista.php and
+ * content/services/energia.php. Order here = order in the menus and grids.
  *
  * Every service slug also needs a record in content/lead-values.php — verify.sh
  * fails the build when one is missing, because a service page whose form is not
@@ -37,73 +38,7 @@
 
 declare(strict_types=1);
 
-return [
-
-    'servicio-ejemplo' => [
-        'example' => true,
-        'path'            => '/servicios/servicio-ejemplo/',
-        'title'           => 'Servicio de ejemplo',
-        'navLabel'        => 'Servicio de ejemplo',
-        'cluster'         => 'principal',
-        'parent'          => null,
-        'seoTitle'        => 'Servicio de ejemplo',
-        'metaDescription' => 'Página de servicio de ejemplo: muestra todos los bloques que el '
-                           . 'template renderiza cuando el registro tiene datos completos.',
-        'hero' => [
-            'eyebrow' => 'Servicios',
-            'h1'      => 'Servicio de ejemplo',
-            'h2'      => 'El subtítulo va acá, con la promesa concreta.',
-            'lead'    => 'Un párrafo que explica el servicio en los términos del cliente: qué '
-                       . 'problema resuelve, con qué frecuencia y qué recibe.',
-        ],
-        'includes' => [
-            'Primer entregable, con su frecuencia',
-            'Segundo entregable',
-            'Una persona asignada a su cuenta',
-        ],
-        'excludes' => [
-            'Lo que se cotiza aparte',
-        ],
-        'weNeed' => [
-            'La documentación que hace falta para empezar',
-        ],
-        'sections' => [
-            [
-                'h2'   => 'Cómo trabajamos este servicio',
-                'body' => [
-                    'Dos o tres párrafos de copy real. Este bloque acepta párrafos y, opcionalmente, '
-                        . 'una grilla de tarjetas con "items".',
-                ],
-                'items' => [
-                    ['title' => 'Un detalle', 'text' => 'Una línea que lo explica.'],
-                    ['title' => 'Otro detalle', 'text' => 'Otra línea que lo explica.'],
-                ],
-            ],
-        ],
-        'benefits' => [
-            ['title' => 'Beneficio uno', 'text' => 'Por qué le conviene, en una línea.'],
-            ['title' => 'Beneficio dos', 'text' => 'Por qué le conviene, en una línea.'],
-        ],
-        'faq' => [
-            [
-                'q' => '¿Cuánto demora?',
-                'a' => 'Una respuesta concreta y verificable. Nada que no se pueda sostener.',
-            ],
-            [
-                'q' => '¿Qué necesitan de mí para empezar?',
-                'a' => 'La lista corta de lo que el cliente tiene que enviar.',
-            ],
-        ],
-        'cta'       => ['label' => 'Pedir presupuesto', 'whatsappText' => ''],
-        'related'   => [],
-        'guides'    => ['guia-ejemplo'],
-        'articles'  => ['articulo-ejemplo'],
-        'toolLinks' => [
-            [
-                'path'  => '/herramientas/herramienta-ejemplo/',
-                'label' => 'Calcule usted mismo',
-                'text'  => 'La calculadora de ejemplo, para hacer la cuenta antes de escribirnos.',
-            ],
-        ],
-    ],
-];
+return array_merge(
+    require __DIR__ . '/services/electricista.php',
+    require __DIR__ . '/services/energia.php',
+);

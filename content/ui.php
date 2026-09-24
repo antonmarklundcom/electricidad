@@ -19,21 +19,21 @@ return [
     // Cluster labels, in the order the mega-menu and the services hub use them.
     // A cluster key is referenced by every service record ('cluster' => ...).
     'clusters' => [
-        'principal'  => 'Servicios principales',
-        'adicional'  => 'Servicios adicionales',
+        'electricista' => 'Electricista',
+        'energia'      => 'Energía y respaldo',
     ],
 
     // One line under each cluster heading on the services hub. Keyed by cluster id.
     'cluster_leads' => [
-        'principal' => 'Lo que hacemos todos los meses para la mayoría de nuestros clientes.',
-        'adicional' => 'Trabajos puntuales que se contratan cuando hacen falta.',
+        'electricista' => 'Instalaciones, reparaciones y mantenimiento, con presupuesto por WhatsApp antes de la visita.',
+        'energia'      => 'Paneles solares, generadores, UPS y baterías: dimensionados para su consumo real e instalados.',
     ],
 
     'nav' => [
         'home'         => 'Inicio',
         'services'     => 'Servicios',
-        'pricing'      => 'Precios',
-        'tools'        => 'Herramientas',
+        'pricing'      => 'Cómo cotizamos',
+        'tools'        => 'Calculadoras',
         'guides'       => 'Guías',
         'about'        => 'Nosotros',
         'blog'         => 'Blog',
@@ -45,7 +45,10 @@ return [
         'open_menu'    => 'Abrir el menú',
         'close_menu'   => 'Cerrar el menú',
         'skip'         => 'Ir al contenido principal',
-        'firm'         => 'La empresa',
+        'firm'         => 'Electricidad PY',
+        'zones'        => 'Zonas',
+        'segments'     => 'Rubros',
+        'partners'     => 'Para electricistas',
         'all_services' => 'Ver todos los servicios',
     ],
 
@@ -53,10 +56,10 @@ return [
         'quote'         => 'Pedir presupuesto',
         'whatsapp'      => 'WhatsApp',
         'whatsapp_long' => 'Escribir por WhatsApp',
-        'consult'       => 'Solicitar una consulta',
+        'consult'       => 'Pedir presupuesto',
         'contact'       => 'Contactar',
         'see_included'  => 'Ver qué incluye',
-        'talk'          => 'Hablar con nosotros',
+        'talk'          => 'Contarnos el problema',
     ],
 
     // The WhatsApp menu. These are BUTTON LABELS only — the message that
@@ -72,32 +75,54 @@ return [
     ],
 
     'home' => [
-        'eyebrow'   => 'Tomamos nuevos clientes',
-        'h1_lead'   => 'El titular de la portada va acá, ',
-        'h1_accent' => 'con la promesa al final.',
-        'lead'      => 'Una o dos líneas que explican qué hace el negocio, para quién y qué '
-                     . 'gana el cliente. Sin adjetivos que no se puedan sostener.',
+        'eyebrow'   => 'Asunción y Gran Asunción',
+        'h1_lead'   => 'Electricista en Asunción y Central: ',
+        'h1_accent' => 'presupuesto por WhatsApp, visita hoy mismo.',
+        'lead'      => 'Nos manda una foto o un audio del problema, le decimos qué hay que hacer y '
+                     . 'cuánto cuesta antes de ir. Y si ya se cansó de los cortes, le dimensionamos '
+                     . 'paneles solares, generador o UPS para su consumo real.',
+        'trust'     => [
+            'Presupuesto antes de la visita',
+            'Materiales y mano de obra por separado',
+            'Trabajo con garantía por escrito',
+        ],
+
+        'tracks_eyebrow' => 'Dos formas de ayudarle',
+        'tracks_title'   => 'Lo que se arregla hoy y lo que le evita el próximo corte.',
+        'track_electricista_title' => 'Electricista',
+        'track_electricista_text'  => 'Fallas, cortocircuitos, tableros, aire acondicionado e instalaciones nuevas.',
+        'track_energia_title'      => 'Energía y respaldo',
+        'track_energia_text'       => 'Paneles solares, generadores, UPS y baterías, dimensionados e instalados.',
+        'track_all'                => 'Ver todo',
 
         'services_eyebrow' => 'Servicios',
         'services_title'   => 'Lo que hacemos',
-        'services_lead'    => 'Contrate lo que necesita hoy y sume servicios cuando haga falta.',
+        'services_lead'    => 'Desde un disyuntor que salta hasta un sistema solar completo.',
+
+        'tools_eyebrow' => 'Calculadoras gratuitas',
+        'tools_title'   => 'Haga la cuenta antes de pedir presupuesto.',
+        'tools_lead'    => 'Con su factura de la ANDE o la lista de sus equipos, en dos minutos.',
+
+        'zones_eyebrow' => 'Zonas',
+        'zones_title'   => 'Dónde trabajamos',
+        'zones_lead'    => 'Asunción y las ciudades de Central. Para el interior, consúltenos por WhatsApp.',
 
         'unsure_title' => '¿No sabe qué necesita?',
-        'unsure_text'  => 'Cuéntenos su situación y le decimos qué corresponde, sin costo.',
+        'unsure_text'  => 'Mándenos una foto del tablero o del problema y le decimos qué corresponde.',
     ],
 
     // The panel at the foot of the homepage hero. Labels only: no amounts, no
     // dates, no percentages, no client name — see partials/status-panel.php.
     'panel' => [
-        'title' => 'Su trabajo del mes, a la vista',
-        'badge' => 'Al día',
+        'title' => 'Así llega su pedido',
+        'badge' => 'WhatsApp',
         'tiles' => [
-            ['label' => 'Primer entregable',  'value' => 'Listo'],
-            ['label' => 'Segundo entregable', 'value' => 'Listo'],
-            ['label' => 'Tercer entregable',  'value' => 'En curso'],
+            ['label' => 'Foto o audio del problema', 'value' => 'Recibido'],
+            ['label' => 'Diagnóstico y presupuesto', 'value' => 'Enviado'],
+            ['label' => 'Visita del electricista',   'value' => 'Coordinada'],
         ],
-        'foot'  => 'Próximo paso acordado',
-        'note'  => 'Ejemplo del informe mensual',
+        'foot'  => 'Usted aprueba antes de que vayamos',
+        'note'  => 'Ejemplo de un pedido',
     ],
 
     // The "quiénes somos" band on the homepage. Every line here is a commitment
@@ -105,15 +130,15 @@ return [
     // need the owner's confirmation and belong in content/site.php.
     'about' => [
         'eyebrow' => 'Quiénes somos',
-        'title'   => 'Una frase sobre cómo trabajamos y en qué se nota.',
-        'text'    => 'Dos o tres oraciones sobre el equipo, el proceso y el tipo de cliente que '
-                   . 'atiende. Concreto y verificable: qué hace, con qué frecuencia y qué recibe '
-                   . 'el cliente.',
+        'title'   => 'Sin sorpresas en el precio ni en la instalación.',
+        'text'    => 'La mayoría de los problemas eléctricos se pueden diagnosticar con una foto del '
+                   . 'tablero y dos preguntas. Por eso cotizamos antes de ir, separamos materiales '
+                   . 'de mano de obra y le dejamos por escrito qué se hizo y con qué garantía.',
         // Shown while content/site.php has no credentials[] of its own.
         'credentials' => [
-            'Una persona asignada a su cuenta, no una mesa de entrada',
-            'Alcance y precio acordados por escrito antes de empezar',
-            'Respuesta dentro del siguiente día hábil',
+            'Presupuesto por WhatsApp antes de la visita',
+            'Materiales y mano de obra detallados por separado',
+            'Informe escrito de lo que se hizo, con garantía',
         ],
         'badge_note'     => 'de experiencia',
         'badge_fallback' => 'Equipo propio',
@@ -122,23 +147,23 @@ return [
     // The four-step "cómo trabajamos" block, reused on service pages.
     'process' => [
         'eyebrow' => 'Cómo trabajamos',
-        'title'   => 'De la primera conversación al primer entregable, con fechas acordadas.',
+        'title'   => 'Del mensaje de WhatsApp al trabajo terminado, sin sorpresas.',
         'steps'   => [
             [
-                'title' => 'Conversación inicial',
-                'text'  => 'Media hora para entender qué necesita y en qué situación está hoy.',
+                'title' => 'Nos cuenta el problema',
+                'text'  => 'Por WhatsApp o el formulario, con una foto o un audio si puede.',
             ],
             [
-                'title' => 'Propuesta por escrito',
-                'text'  => 'Alcance detallado y precio, con lo que está incluido y lo que no.',
+                'title' => 'Presupuesto antes de ir',
+                'text'  => 'Le decimos qué hay que hacer y un rango de precio, o qué hace falta ver en el lugar.',
             ],
             [
-                'title' => 'Puesta en marcha',
-                'text'  => 'Recibimos la información, ordenamos lo pendiente y arrancamos.',
+                'title' => 'Visita coordinada',
+                'text'  => 'Un electricista va en el horario acordado, con los materiales del presupuesto.',
             ],
             [
-                'title' => 'Seguimiento',
-                'text'  => 'Una persona asignada y un informe en lenguaje claro.',
+                'title' => 'Trabajo con garantía',
+                'text'  => 'Le dejamos por escrito qué se hizo, qué se cambió y la garantía.',
             ],
         ],
     ],
@@ -147,86 +172,94 @@ return [
     // none. Sectors, not clients: nothing to verify.
     'industries' => [
         'eyebrow' => 'Rubros',
-        'title'   => 'Rubros que atendemos',
-        'lead'    => 'Cada rubro tiene sus propias trampas. Estos son los que trabajamos.',
+        'title'   => 'Para su casa, su local o su campo',
+        'lead'    => 'Una casa, un comercio y una estancia tienen problemas eléctricos distintos.',
         // Each item is either a plain string or ['label' => ..., 'path' => ...]
         // pointing at a segment page in content/segmentos.php.
         'items'   => [
-            ['label' => 'Rubro de ejemplo', 'path' => '/segmentos/rubro-ejemplo/'],
+            ['label' => 'Hogar', 'path' => '/segmentos/hogar/'],
+            ['label' => 'Comercios y locales', 'path' => '/segmentos/comercio-y-locales/'],
+            ['label' => 'Edificios y consorcios', 'path' => '/segmentos/edificios-y-consorcios/'],
+            ['label' => 'Industria y depósitos', 'path' => '/segmentos/industria-y-depositos/'],
+            ['label' => 'Campo y estancias', 'path' => '/segmentos/campo-y-estancias/'],
         ],
     ],
 
     // The band renders only when content/site.php has testimonials.
     'testimonials' => [
-        'eyebrow' => 'Casos',
+        'eyebrow' => 'Clientes',
         'title'   => 'Lo que dicen nuestros clientes',
     ],
 
     'services_hub' => [
         'eyebrow'      => 'Servicios',
-        'title'        => 'Todo lo que hacemos, en un solo lugar.',
-        'lead'         => 'Contrate lo que necesita hoy y sume servicios cuando haga falta.',
+        'title'        => 'Electricista y energía, en un solo lugar.',
+        'lead'         => 'Lo que se arregla hoy y lo que le evita el próximo corte.',
         'unsure_title' => '¿No sabe qué necesita?',
-        'unsure_text'  => 'Cuéntenos su caso y le decimos qué servicios le corresponden.',
+        'unsure_text'  => 'Mándenos una foto del problema y le decimos qué corresponde.',
         'unsure_cta'   => 'Escribirnos',
     ],
 
     'cta_band' => [
-        'eyebrow' => 'Solicitar consulta',
-        'title'   => 'Empecemos con una conversación de 30 minutos.',
-        'lead'    => 'Sin costo y sin compromiso. Le respondemos con una propuesta concreta.',
+        'eyebrow' => 'Presupuesto sin cargo',
+        'title'   => 'Cuéntenos el problema y le cotizamos antes de ir.',
+        'lead'    => 'Por WhatsApp, con una foto si puede. Sin costo y sin compromiso.',
     ],
 
     'form' => [
-        'legend'          => 'Solicitar una consulta',
+        'legend'          => 'Pedir presupuesto',
         'name'            => 'Nombre',
-        'company'         => 'Empresa o rubro',
+        'company'         => 'Barrio y ciudad',
         'phone'           => 'WhatsApp o teléfono',
         'phone_hint'      => 'Ej.: 0981 123 456',
         'email'           => 'Correo (opcional)',
         'need'            => '¿Qué necesita?',
         'message'         => 'Cuéntenos brevemente',
-        'message_hint'    => 'Su situación actual, en dos líneas…',
-        'submit'          => 'Solicitar una consulta',
+        'message_hint'    => 'Qué pasa, desde cuándo y dónde (casa, local, campo)…',
+        'submit'          => 'Pedir presupuesto',
         'sending'         => 'Enviando…',
         'privacy_note'    => 'Usamos sus datos solo para responderle. Ver la política de privacidad.',
-        'success_title'   => 'Recibimos su consulta.',
-        'success_text'    => 'Le respondemos dentro del siguiente día hábil. Si prefiere, escríbanos ahora.',
+        'success_title'   => 'Recibimos su pedido.',
+        'success_text'    => 'Le escribimos por WhatsApp a la brevedad. Si es urgente, escríbanos ahora.',
         'error_title'     => 'No pudimos enviar el formulario.',
         'error_text'      => 'Vuelva a intentarlo en un momento o escríbanos directamente.',
         'error_phone'     => 'Necesitamos un teléfono o WhatsApp válido para responderle.',
         'required'        => 'obligatorio',
         'thanks_next'     => 'Qué sigue',
         'thanks_whatsapp' => 'Si prefiere no esperar, escríbanos ahora por WhatsApp.',
-        'remind_title'    => 'Que le avisemos antes de cada vencimiento',
-        'remind_text'     => 'Le anotamos su caso y le escribimos por WhatsApp unos días antes.',
+        'remind_title'    => 'Recordatorio de mantenimiento',
+        'remind_text'     => 'Le escribimos por WhatsApp cuando toque revisar el tablero, el generador o los paneles.',
         'remind_phone'    => 'Su WhatsApp',
-        'remind_submit'   => 'Quiero que me recuerden',
-        'remind_ok'       => 'Anotado. Le escribimos antes del próximo vencimiento.',
+        'remind_submit'   => 'Quiero el recordatorio',
+        'remind_ok'       => 'Anotado. Le escribimos cuando toque el mantenimiento.',
     ],
 
     // The chip selector in the lead form. Every key here needs a matching entry
     // in content/lead-values.php's 'needs' — verify.sh checks that.
     'needs' => [
-        'servicio' => 'Un servicio puntual',
-        'mensual'  => 'Trabajo mensual',
-        'otro'     => 'Otro',
+        'emergencia'  => 'Falla o corte ahora',
+        'instalacion' => 'Instalación o reforma',
+        'tablero'     => 'Tablero o disyuntores',
+        'aire'        => 'Aire acondicionado',
+        'solar'       => 'Paneles solares',
+        'generador'   => 'Generador o UPS',
+        'otro'        => 'Otro',
     ],
 
     'contact' => [
         'eyebrow' => 'Contacto',
-        'title'   => 'Hablemos de su caso.',
-        'lead'    => 'Escríbanos por WhatsApp o déjenos sus datos y le respondemos dentro '
-                   . 'del siguiente día hábil.',
+        'title'   => 'Cuéntenos qué pasa.',
+        'lead'    => 'Escríbanos por WhatsApp con una foto o un audio, o déjenos sus datos y le '
+                   . 'respondemos con un presupuesto.',
         'address' => 'Dirección',
         'hours'   => 'Horario',
         'phone'   => 'Teléfono',
         'email'   => 'Correo',
         'expect'  => 'Qué pasa después',
         'steps'   => [
-            'Le respondemos dentro del siguiente día hábil.',
-            'Coordinamos una llamada de 30 minutos, sin costo ni compromiso.',
-            'Recibe una propuesta con el alcance y el precio por escrito.',
+            'Le respondemos por WhatsApp con las preguntas justas o un presupuesto.',
+            'Si hace falta ver el lugar, coordinamos la visita en el horario que le quede bien.',
+            'Usted aprueba el presupuesto antes de que empecemos.',
         ],
     ],
 
@@ -240,24 +273,24 @@ return [
         'guides'       => 'Guía relacionada',
         'articles'     => 'Artículo relacionado',
         'form_eyebrow' => 'Presupuesto',
-        'form_lead'    => 'Déjenos sus datos y le respondemos con una propuesta concreta, '
+        'form_lead'    => 'Déjenos sus datos y le respondemos por WhatsApp con un presupuesto, '
                         . 'sin costo y sin compromiso.',
         'breadcrumb'   => 'Ruta de navegación',
     ],
 
     // Segment landing pages (content/segmentos.php).
     'segment' => [
-        'traps_title'  => 'Los errores que más le cuestan en su rubro',
-        'bundle_title' => 'Lo que armamos para su rubro',
-        'form_eyebrow' => 'Presupuesto para su rubro',
-        'form_lead'    => 'Cuéntenos su rubro y su volumen; le respondemos con una propuesta concreta.',
+        'traps_title'  => 'Los problemas que más vemos',
+        'bundle_title' => 'Lo que hacemos para usted',
+        'form_eyebrow' => 'Presupuesto sin cargo',
+        'form_lead'    => 'Cuéntenos qué necesita y dónde; le respondemos por WhatsApp con un presupuesto.',
     ],
 
     // Shared microcopy across the tool pages. Calculator-specific labels live in
     // each tool's own PHP/JS; only the repeated strings are here.
     'tools' => [
         'reviewed_prefix' => 'Datos revisados el',
-        'orientativo'     => 'Los resultados son orientativos y no reemplazan un cálculo oficial.',
+        'orientativo'     => 'Los resultados son orientativos y no reemplazan el dimensionamiento de un profesional en el lugar.',
         'calculate'       => 'Calcular',
         'result_title'    => 'Resultado',
         'use_result'      => 'Usar este resultado en el formulario',
@@ -268,12 +301,11 @@ return [
     // Shared microcopy across the guide pages.
     'guide' => [
         'reviewed_prefix'       => 'Revisado el',
-        'orientativo'           => 'Es una guía general: para su caso puntual, confírmelo con nosotros.',
-        'delegate_eyebrow'      => 'Delegarlo',
-        'delegate_title'        => '¿Prefiere que lo hagamos nosotros?',
-        'delegate_lead'         => 'Le respondemos dentro del siguiente día hábil con los pasos exactos '
-                                 . 'para su caso.',
-        'delegate_form_heading' => 'Pedir que nos encarguemos',
+        'orientativo'           => 'Es una guía general. La electricidad es peligrosa: ante la duda, no toque y consúltenos.',
+        'delegate_eyebrow'      => 'Que lo haga un electricista',
+        'delegate_title'        => '¿Prefiere que nos encarguemos?',
+        'delegate_lead'         => 'Mándenos una foto por WhatsApp y le cotizamos antes de ir.',
+        'delegate_form_heading' => 'Pedir presupuesto',
         'related'               => 'Otras guías',
     ],
 
@@ -294,7 +326,7 @@ return [
         'quote'    => 'A cotizar',
         'per_month' => 'por mes',
         'cta'      => 'Pedir presupuesto',
-        'note'     => 'Los planes se ajustan al volumen real; el precio final se acuerda por escrito.',
+        'note'     => 'Cada trabajo se cotiza por escrito antes de empezar; usted aprueba antes de que vayamos.',
     ],
 
     'placeholder' => [
@@ -309,7 +341,7 @@ return [
     ],
 
     'footer' => [
-        'blurb'   => 'Una línea sobre el negocio y a quién atiende.',
+        'blurb'   => 'Electricistas en Asunción y Central, y soluciones de energía solar, generadores y UPS para todo Paraguay.',
         'rights'  => 'Todos los derechos reservados.',
         'contact' => 'Contacto',
     ],
