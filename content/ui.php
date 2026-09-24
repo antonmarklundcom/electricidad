@@ -282,6 +282,7 @@ return [
     'segment' => [
         'traps_title'  => 'Los problemas que más vemos',
         'bundle_title' => 'Lo que hacemos para usted',
+        'other_zones'  => 'Otras zonas donde trabajamos',
         'form_eyebrow' => 'Presupuesto sin cargo',
         'form_lead'    => 'Cuéntenos qué necesita y dónde; le respondemos por WhatsApp con un presupuesto.',
     ],

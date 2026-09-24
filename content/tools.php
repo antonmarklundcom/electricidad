@@ -203,4 +203,57 @@ return [
         'formNeed'      => 'solar',
         'analyticsTool' => 'consumo_electrico',
     ],
+
+    'que-ups-necesito' => [
+        'path'            => '/herramientas/que-ups-necesito/',
+        'title'           => 'Calculadora de UPS',
+        'navLabel'        => '¿Qué UPS necesito?',
+        'seoTitle'        => '¿Qué UPS necesito? Calculadora de VA',
+        'metaDescription' => 'Calcule los VA de la UPS y la batería que necesita para mantener su computadora, '
+                           . 'internet, cámaras o caja encendidos durante un corte de luz.',
+        'hero' => [
+            'eyebrow' => 'Calculadora de UPS',
+            'h1'      => '¿Qué UPS necesito para mi computadora, internet o negocio?',
+            'lead'    => 'Marque los equipos y los minutos de respaldo: le decimos los VA de la UPS y la '
+                       . 'batería que hacen falta.',
+        ],
+        'intro' => [
+            'Una UPS hace dos trabajos: mantiene los equipos encendidos unos minutos cuando se corta la '
+                . 'luz, y los protege de las bajas de tensión y los picos que tanto daño hacen a fuentes de '
+                . 'computadoras, routers y grabadores de cámaras. Elegirla bien depende de dos números: la '
+                . 'potencia de lo que va a conectar y el tiempo de respaldo que necesita.',
+            'Las UPS se venden en VA, no en watts. Como una UPS típica entrega alrededor de 0,7 W por '
+                . 'cada VA, la calculadora convierte la carga a VA, le suma un margen del 30 % para que el '
+                . 'equipo no trabaje al límite y la redondea al tamaño comercial siguiente. Después calcula '
+                . 'cuánta energía de batería hace falta para los minutos que usted eligió, considerando que '
+                . 'la batería no se descarga por completo y que el inversor tiene pérdidas.',
+            'Hay dos casos en los que una UPS de escritorio no es la respuesta: cuando necesita más de '
+                . 'media hora de respaldo, y cuando quiere mantener equipos con motor, como una heladera o '
+                . 'un portón. Ahí conviene un inversor de onda senoidal pura con baterías, que la '
+                . 'calculadora le indica en lugar de una UPS.',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Qué diferencia hay entre una UPS y un estabilizador?',
+                'a' => 'El estabilizador corrige la tensión pero no tiene batería: si se corta la luz, se '
+                     . 'apaga todo. La UPS corrige la tensión y además sigue alimentando los equipos durante '
+                     . 'el corte.',
+            ],
+            [
+                'q' => '¿Puedo conectar la heladera a una UPS?',
+                'a' => 'No a una UPS de computadora. El compresor arranca con varias veces su potencia y '
+                     . 'necesita un inversor de onda senoidal pura dimensionado para ese arranque.',
+            ],
+            [
+                'q' => '¿Cada cuánto se cambian las baterías de una UPS?',
+                'a' => 'Las baterías de plomo selladas de las UPS suelen durar entre dos y cinco años, según '
+                     . 'la temperatura y la cantidad de cortes. Si la autonomía bajó mucho, es momento de '
+                     . 'revisarlas.',
+            ],
+        ],
+        'related'       => ['ups-estabilizadores', 'baterias-respaldo', 'generadores'],
+        'ctaWhatsapp'   => '',
+        'formNeed'      => 'generador',
+        'analyticsTool' => 'que_ups_necesito',
+    ],
 ];

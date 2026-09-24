@@ -13,9 +13,9 @@ retired. `docs/report.md` keeps the original market reasoning.
 | Area | What exists |
 |---|---|
 | Services | 16 full pages: 10 `electricista`, 6 `energia` (content/services/*.php) |
-| Calculators | 3, tested (`tests/tools.spec.mjs`): solar kWp/paneles/techo/retorno, generador kVA/arranque/combustible, consumo por equipo. Results prefill the lead form and route solar/generator results as tier-A leads |
-| Local SEO | 10 city pages `/electricista/<ciudad>/` + hub, 5 rubro pages `/segmentos/<rubro>/` |
-| Content | 8 guides (HowTo JSON-LD), 8 blog articles, cómo cotizamos, privacidad, términos |
+| Calculators | 4, tested (`tests/tools.spec.mjs`): solar kWp/paneles/techo/retorno, generador kVA/arranque/combustible, consumo por equipo, UPS VA/batería. Results prefill the lead form and route solar/generator results as tier-A leads |
+| Local SEO | 13 city pages `/electricista/<ciudad>/` (10 Gran Asunción + Ciudad del Este, Encarnación, Coronel Oviedo for energy projects) cross-linked + hub, 5 rubro pages, cities in the LocalBusiness `areaServed` JSON-LD |
+| Content | 8 guides (HowTo JSON-LD), 8 blog articles, homepage FAQ (FAQPage JSON-LD), cómo cotizamos, privacidad, términos |
 | Supply side | `/profesionales/` recruits electricians and energy suppliers (CRM source `profesionales`) |
 | Lead model | every page resolves a tier (A 3 M / B 800 k / C 200 k ₲ Ads proxies), WhatsApp prefill naming the service, next steps, CRM tag |
 | Gates | `./verify.sh` PASS on repo and on `dist/` zip; ~65 URLs in sitemap |
@@ -47,7 +47,7 @@ retired. `docs/report.md` keeps the original market reasoning.
 | 1 | Register `electricidad.com.py` at nic.py (fallbacks in `docs/report.md` §4) | canonical URLs, JSON-LD |
 | 2 | A WhatsApp Business number → `content/site.php` `whatsapp` + `phone` | **every CTA** falls back to /contacto/ without it; this is the single biggest conversion lever |
 | 3 | VenderCRM tenant key (+ Resend key) → `config.php` on the server | leads otherwise only land in `logs/leads.log` |
-| 4 | `./deploy/make-zip.sh` → upload to Hostinger `public_html/` (README "Deploy") → `./deploy/verify-live.sh https://electricidad.com.py` | — |
+| 4 | `./deploy/make-zip.sh` → upload to Hostinger `public_html/` (README "Deploy"), set `SITE_URL` = `https://electricidad.com.py` in `config.php`, turn on hPanel → SSL → **Force HTTPS** → `./deploy/verify-live.sh https://electricidad.com.py` | — |
 | 5 | GA4 + Google Ads IDs → `config.php` | tier values only optimise bidding once these exist |
 | 6 | Google Business Profile "Electricista" for Asunción (`gbp-optimizer` skill) | the map pack out-converts the site for "electricista cerca" |
 | 7 | Search Console: submit `/sitemap.xml` | indexing |
@@ -69,14 +69,28 @@ retired. `docs/report.md` keeps the original market reasoning.
    winter = solar payback content. Pre-season WhatsApp broadcast to past leads.
 5. Later: sponsored supplier listings, a matriculated-electrician directory (stage 3).
 
-## 5. Next build work (backlog, by expected value)
+## 5. Top 20 improvements, most recommended first
 
-1. Fill `docs/facts-to-verify.md` #1 (ANDE tariff) → calculators prefill the price per kWh.
-2. Real reviews/testimonials in `content/site.php` once jobs are done (switches the band on).
-3. Interior city pages: Ciudad del Este, Encarnación, Coronel Oviedo (solar + generators only).
-4. Supplier comparison pages (generator brands, solar kits) once a supplier list exists.
-5. A 4th calculator: cable section / breaker size (DIY traffic, tier C).
-6. Monthly: one article per season trigger; refresh the price figures every 6 months.
+1. **WhatsApp Business number + auto-reply** with the 3 questions (qué pasa, foto, ciudad) — every CTA depends on it.
+2. **Google Business Profile** for Asunción, with photos of real jobs and a review request after every job.
+3. **Recruit the first 3–5 partner electricians** and write the lead-fee agreement (per lead or % of job).
+4. **Google Ads** on "electricista + ciudad" and "generador / paneles solares precio", bidding on tier values, from November (outage season).
+5. **Real testimonials and job photos** in `content/site.php` (the band switches on by itself).
+6. **Pitch importers** (solar, generators) with 30 days of tier-A lead counts; charge per qualified quote.
+7. **Fill the ANDE tariff** (`docs/facts-to-verify.md` #1) so the calculators prefill ₲/kWh and show the bill without typing.
+8. **Surplus-injection rules of Decreto 6034/2026** into the solar calculator's payback (#3) — the strongest solar sales argument.
+9. **Lead-response SLA inside VenderCRM** (alert if a lead waits > 15 min) — speed decides who wins an emergency job.
+10. **Pre-season WhatsApp broadcast** to past leads (generator/UPS check before summer).
+11. **Imagery pass** + a real `og-default.png` (brand card for WhatsApp/Facebook shares).
+12. **Search Console + monthly query review**: write a page for every query with impressions but no page.
+13. **Facebook/Instagram Reels** from real jobs (`higgsfield-social-prompts`) pointing at the calculators.
+14. **More interior cities** for energy projects: Pedro Juan Caballero, Villarrica, Concepción, the Chaco (off-grid solar).
+15. **Brand comparison pages** (generators, inverters, solar kits) once a supplier list exists — high-intent traffic, sponsorable.
+16. **Financing page** ("paneles solares en cuotas") with a partner bank/financiera — raises solar close rates.
+17. **Maintenance plans** (tablero + generador + paneles, yearly) as recurring revenue from existing clients.
+18. **Electrician directory** (stage 3): paid profiles for matriculated electricians by city.
+19. **Blog cadence**: one seasonal article per month; refresh the price figures every 6 months.
+20. **Guaraní/jopara microcopy** on WhatsApp prefills and hero lines, A/B-tested against Spanish.
 
 ## 6. Working on this repo
 

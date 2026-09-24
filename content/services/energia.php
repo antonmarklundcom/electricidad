@@ -342,9 +342,9 @@ return [
         'articles'  => ['temporada-de-cortes-como-preparar-su-casa'],
         'toolLinks' => [
             [
-                'path'  => '/herramientas/que-generador-necesito/',
-                'label' => 'Calcule la potencia que necesita',
-                'text'  => 'Use la calculadora de potencia para estimar los VA/W de sus equipos.',
+                'path'  => '/herramientas/que-ups-necesito/',
+                'label' => 'Calcule qué UPS necesita',
+                'text'  => 'Marque sus equipos y los minutos de respaldo: le decimos los VA y la batería.',
             ],
         ],
     ],

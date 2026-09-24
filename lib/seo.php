@@ -97,6 +97,16 @@ function jsonld_organization(): array
         'areaServed' => ['@type' => 'Country', 'name' => site('country') ?? market_country()],
     ];
 
+    /* Named cities, when the site lists them: a local business ranks for the
+       places it declares, not just the country. */
+    $cities = array_values(array_filter((array) site('areaServed')));
+    if ($cities !== []) {
+        $data['areaServed'] = array_map(
+            static fn (string $city): array => ['@type' => 'City', 'name' => $city],
+            $cities
+        );
+    }
+
     if (site('description')) {
         $data['description'] = site('description');
     }
