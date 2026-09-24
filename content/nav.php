@@ -63,6 +63,7 @@ return [
         ['label' => ui('nav.pricing'),  'path' => '/precios/'],
         ['label' => ui('nav.guides'),   'path' => '/guias/'],
         ['label' => ui('nav.blog'),     'path' => '/blog/'],
+        ['label' => ui('nav.checklist'), 'path' => '/checklist-electrico/'],
         ['label' => ui('nav.partners'), 'path' => '/profesionales/'],
         ['label' => ui('nav.contact'),  'path' => '/contacto/'],
     ],

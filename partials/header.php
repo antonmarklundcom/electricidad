@@ -21,6 +21,7 @@ $navCurrentPath = $page['path'] ?? '/';
 $navWhatsapp    = whatsapp_link(whatsapp_text_for_page());
 $navLeadSlug    = current_lead_slug() ?? '';
 ?>
+<?php require ROOT_DIR . '/partials/season-banner.php'; ?>
 <header class="site-header" data-header>
   <div class="container site-header__bar">
 

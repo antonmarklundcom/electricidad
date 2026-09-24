@@ -108,4 +108,40 @@ return [
         'tags'        => ['Presupuesto', 'Electricista'],
         'service'     => 'instalacion-electrica-residencial',
     ],
+    [
+        'slug'        => 'on-grid-hibrido-u-off-grid',
+        'title'       => 'Paneles solares on-grid, híbrido u off-grid: cuál conviene en Paraguay',
+        'seoTitle'    => 'Solar on-grid, híbrido u off-grid',
+        'description' => 'Las diferencias entre un sistema solar on-grid, híbrido y off-grid: cuál '
+                       . 'sigue dando luz en un corte, cuál necesita baterías y cuál conviene según '
+                       . 'el caso.',
+        'date'        => '2026-09-24',
+        'updated'     => null,
+        'tags'        => ['Paneles solares', 'Autogeneración'],
+        'service'     => 'paneles-solares',
+    ],
+    [
+        'slug'        => 'generador-nafta-o-diesel',
+        'title'       => 'Generador a nafta o diésel: cuál elegir para su casa o negocio',
+        'seoTitle'    => 'Generador a nafta o a diésel',
+        'description' => 'En qué se diferencian un generador a nafta y uno a diésel: consumo, '
+                       . 'ruido, vida útil y mantenimiento, para elegir según el uso que le va a '
+                       . 'dar.',
+        'date'        => '2026-09-24',
+        'updated'     => null,
+        'tags'        => ['Generadores', 'Comparativa'],
+        'service'     => 'generadores',
+    ],
+    [
+        'slug'        => 'ups-estabilizador-o-inversor',
+        'title'       => 'UPS, estabilizador o inversor con baterías: diferencias y cuál necesita',
+        'seoTitle'    => 'UPS, estabilizador o inversor',
+        'description' => 'Qué protege un estabilizador, qué sostiene un UPS en un corte y cuándo '
+                       . 'conviene un inversor con baterías, para no comprar lo que no resuelve el '
+                       . 'problema.',
+        'date'        => '2026-09-24',
+        'updated'     => null,
+        'tags'        => ['UPS', 'Estabilizadores', 'Comparativa'],
+        'service'     => 'ups-estabilizadores',
+    ],
 ];

@@ -39,6 +39,7 @@ $page = [
     /* Names this page in the lead value model: the WhatsApp menu,
        the CTA band, the lead form and the thank-you all resolve from it. */
     'leadSlug'    => $slug,
+    'jsonld'      => [jsonld_service($service)],
 ];
 
 $hero        = $service['hero'];

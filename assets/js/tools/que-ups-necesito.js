@@ -69,6 +69,7 @@
       $("ups-va").textContent + ", batería ≈ " + fmtNum(wh) + " Wh.";
 
     if (window.ToolsShared) {
+      window.ToolsShared.setShare(document.getElementById("ups-result"), lastResult);
       window.ToolsShared.trackToolUsed("que_ups_necesito", { va: va || 0, minutos: minutos });
     }
   });

@@ -44,6 +44,21 @@
     $("solar-m2").textContent = "≈ " + fmtNum(Math.ceil(m2)) + " m²";
     $("solar-gen").textContent = "≈ " + fmtNum(generacion) + " kWh por mes";
 
+    var respaldo = parseFloat((form.querySelector('input[name="respaldo"]:checked') || {}).value) || 0;
+    var esencial = parseFloat($("solar-esencial").value) || 0;
+    var bateriaKwh = 0;
+    if (respaldo > 0 && esencial > 0) {
+      /* Energía útil ÷ profundidad de descarga del litio (≈ 0,9) ÷ rendimiento
+         del inversor (≈ 0,9) = capacidad nominal a instalar. */
+      bateriaKwh = (esencial * respaldo) / 1000 / 0.9 / 0.9;
+      $("solar-tipo").textContent = "Híbrido: inversor híbrido con baterías";
+      $("solar-baterias").textContent = "≈ " + fmtNum(Math.ceil(bateriaKwh * 2) / 2, 1) + " kWh para " +
+        respaldo + " h con " + fmtNum(esencial) + " W";
+    } else {
+      $("solar-tipo").textContent = "Conectado a la red (on-grid): se apaga durante un corte";
+      $("solar-baterias").textContent = "Sin baterías";
+    }
+
     var ahorroMes = 0;
     if (monto > 0) {
       ahorroMes = monto * Math.min(1, generacion / kwh);
@@ -63,9 +78,11 @@
 
     lastResult = "Calculadora solar: consumo " + fmtNum(kwh) + " kWh/mes, cubrir " +
       Math.round(cobertura * 100) + " % → " + fmtNum(kwpReal, 2) + " kWp, " + paneles +
-      " paneles de " + cfg.panelW + " W, ≈ " + fmtNum(Math.ceil(m2)) + " m² de techo.";
+      " paneles de " + cfg.panelW + " W, ≈ " + fmtNum(Math.ceil(m2)) + " m² de techo" +
+      (bateriaKwh > 0 ? ", híbrido con ≈ " + fmtNum(Math.ceil(bateriaKwh * 2) / 2, 1) + " kWh de baterías." : ".");
 
     if (window.ToolsShared) {
+      window.ToolsShared.setShare(document.getElementById("solar-result"), lastResult);
       window.ToolsShared.trackToolUsed("cuanto_solar_necesito", { kwp: Math.round(kwpReal * 10) / 10 });
     }
   });

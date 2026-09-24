@@ -49,6 +49,7 @@ return [
         'zones'        => 'Zonas',
         'segments'     => 'Rubros',
         'partners'     => 'Para electricistas',
+        'checklist'    => 'Checklist antes del verano',
         'all_services' => 'Ver todos los servicios',
     ],
 
@@ -209,7 +210,7 @@ return [
     'form' => [
         'legend'          => 'Pedir presupuesto',
         'name'            => 'Nombre',
-        'company'         => 'Barrio y ciudad',
+        'company'         => 'Barrio (opcional)',
         'phone'           => 'WhatsApp o teléfono',
         'phone_hint'      => 'Ej.: 0981 123 456',
         'email'           => 'Correo (opcional)',
@@ -232,6 +233,46 @@ return [
         'remind_phone'    => 'Su WhatsApp',
         'remind_submit'   => 'Quiero el recordatorio',
         'remind_ok'       => 'Anotado. Le escribimos cuando toque el mantenimiento.',
+    ],
+
+    // The outage-season strip (partials/season-banner.php). Months are
+    // date('n') numbers: September to March — the run-up to and the whole of
+    // Paraguay's summer.
+    'season' => [
+        'months' => [9, 10, 11, 12, 1, 2, 3],
+        'path'   => '/temporada-de-cortes/',
+        'text'   => 'Temporada de cortes y bajas de tensión: prepare su casa o negocio.',
+        'cta'    => 'Generador, UPS y tablero',
+    ],
+
+    // Qualifying questions of the lead form (step 1). Keys are what enviar.php
+    // accepts and scores; labels are what the CRM and the email read. Adding
+    // an option: add it here and, if it should move the score, in
+    // lead_score() in enviar.php.
+    'qualify' => [
+        'urgency_legend'  => '¿Para cuándo lo necesita?',
+        'urgency'         => [
+            'hoy'       => 'Hoy, es urgente',
+            'semana'    => 'Esta semana',
+            'mes'       => 'Este mes',
+            'cotizando' => 'Solo estoy cotizando',
+        ],
+        'property_label'  => '¿Dónde es el trabajo?',
+        'property'        => [
+            'casa'         => 'Casa',
+            'departamento' => 'Departamento',
+            'comercio'     => 'Comercio u oficina',
+            'industria'    => 'Industria o depósito',
+            'campo'        => 'Campo o estancia',
+            'obra'         => 'Obra en construcción',
+        ],
+        'city_label'      => 'Ciudad',
+        'city_other'      => 'Otra ciudad',
+        'choose'          => 'Elegir…',
+        'next'            => 'Siguiente: sus datos',
+        'back'            => 'Volver',
+        'step1'           => 'Paso 1 de 2 · Su trabajo',
+        'step2'           => 'Paso 2 de 2 · Sus datos',
     ],
 
     // The chip selector in the lead form. Every key here needs a matching entry

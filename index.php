@@ -225,6 +225,7 @@ require ROOT_DIR . '/partials/header.php';
         <?php endforeach; ?>
         <?php unset($homeTool); ?>
       </div>
+      <p class="mt-4"><a href="/checklist-electrico/">Checklist gratuito: revise su instalación antes del verano &rarr;</a></p>
     </div>
   </section>
 

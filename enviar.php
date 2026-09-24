@@ -9,6 +9,7 @@
  *   POST fields: name, company?, phone (required), email?, need, message?,
  *                source_page, form_id, idempotency_key, website (honeypot),
  *                service?, value_tier?, tool_result?,
+ *                urgencia?, inmueble?, ciudad?, rendered_at?,
  *                utm_source|utm_medium|utm_campaign|utm_term|utm_content,
  *                gclid?, fbclid?
  *
@@ -44,6 +45,8 @@ const LEAD_RATE_MAX     = 5;     // submissions per IP …
 const LEAD_RATE_WINDOW  = 600;   // … per 10 minutes
 const LEAD_CRM_TIMEOUT  = 10;    // seconds
 const LEAD_SUCCESS_PATH = '/contacto/?enviado=1';
+const LEAD_MIN_SECONDS  = 3;     // a form posted faster than this was not typed
+const LEAD_MAX_LINKS    = 2;     // more links than this in the message = spam
 
 $wantsJson = str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json');
 
@@ -193,6 +196,10 @@ function notify_by_email(array $payload, string $outcome): void
        "Resultado_herramienta" in an email a person reads. */
     $fieldLabels = [
         'valor'                 => 'Tier',
+        'puntaje'               => 'Puntaje',
+        'urgencia'              => 'Urgencia',
+        'inmueble'              => 'Inmueble',
+        'ciudad'                => 'Ciudad',
         'servicio'              => 'Servicio',
         'necesita'              => 'Necesita',
         'empresa'               => 'Empresa',
@@ -213,7 +220,9 @@ function notify_by_email(array $payload, string $outcome): void
     $who      = $payload['name'] ?? $payload['phone'] ?? 'sin nombre';
     $tier     = $payload['fields']['valor'] ?? '';
     $servicio = $payload['fields']['servicio'] ?? '';
-    $subject  = ($tier !== '' ? '[Tier ' . $tier . '] ' : '')
+    $score    = $payload['fields']['puntaje'] ?? '';
+    $subject  = ($score !== '' ? '[' . $score . '] ' : '')
+              . ($tier !== '' ? '[Tier ' . $tier . '] ' : '')
               . 'Nuevo contacto: '
               . ($servicio !== '' ? $servicio . ' — ' : '')
               . $who;
@@ -247,6 +256,29 @@ function notify_by_email(array $payload, string $outcome): void
     }
 }
 
+/**
+ * Lead score, 0–100: how much this lead is worth to whoever buys it. The tier
+ * says what was asked for; urgency, property type, a calculator result and a
+ * city we serve say how likely it is to close. It travels to the CRM and the
+ * email subject so leads can be priced and routed without reading them.
+ *
+ * @return array{0:int,1:string} score and its band (caliente/tibio/frío)
+ */
+function lead_score(string $tier, string $urgency, string $property, bool $hasToolResult, string $city): array
+{
+    $score  = ['A' => 50, 'B' => 30, 'C' => 15][$tier] ?? 15;
+    $score += ['hoy' => 25, 'semana' => 15, 'mes' => 8, 'cotizando' => 0][$urgency] ?? 5;
+    $score += ['industria' => 15, 'comercio' => 15, 'obra' => 15, 'campo' => 12,
+               'casa' => 5, 'departamento' => 5][$property] ?? 0;
+    $score += $hasToolResult ? 10 : 0;
+    $score += ($city !== '' && $city !== 'otra') ? 5 : 0;
+    $score  = min(100, $score);
+
+    $band = $score >= 70 ? 'caliente' : ($score >= 40 ? 'tibio' : 'frío');
+
+    return [$score, $band];
+}
+
 // --- 1. POST only ------------------------------------------------------------
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
     http_response_code(405);
@@ -257,6 +289,15 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
 
 // --- 2. Honeypot: accept silently so the bot sees success and moves on -------
 if (($_POST['website'] ?? '') !== '') {
+    respond(true, true);
+}
+
+// --- 2b. Too fast, or a message full of links: same silent success --------
+$renderedAt = (int) ($_POST['rendered_at'] ?? 0);
+if ($renderedAt > 0 && time() - $renderedAt < LEAD_MIN_SECONDS) {
+    respond(true, true);
+}
+if (preg_match_all('~https?://|www\.~i', (string) ($_POST['message'] ?? '')) > LEAD_MAX_LINKS) {
     respond(true, true);
 }
 
@@ -336,6 +377,16 @@ if (strlen($idempotencyKey) < 8) {
 $service    = field('service', 80);
 $toolResult = field('tool_result', 500);
 
+/* Qualifying answers: only values the form offers are kept, so the CRM never
+   stores free text posted into a select. */
+$qualify  = content('ui')['qualify'];
+$urgency  = field('urgencia', 20);
+$urgency  = isset($qualify['urgency'][$urgency]) ? $urgency : '';
+$property = field('inmueble', 20);
+$property = isset($qualify['property'][$property]) ? $property : '';
+$city     = field('ciudad', 60);
+$city     = ($city === 'otra' || in_array($city, (array) site('areaServed'), true)) ? $city : '';
+
 $lead = $service !== '' ? lead_value($service) : lead_value_for_need($need ?: 'otro');
 if ($lead['slug'] === null) {
     $service = '';   // unknown slug: keep the lead, drop the claim
@@ -347,7 +398,13 @@ $serviceLabel = $service !== ''
     ? lead_label($service)
     : ($need !== '' ? lead_need_label($need) : '');
 
+[$score, $scoreBand] = lead_score((string) $lead['tier'], $urgency, $property, $toolResult !== '', $city);
+
 $fields = array_filter([
+    'puntaje'               => $score . ' (' . $scoreBand . ')',
+    'urgencia'              => $urgency !== '' ? $qualify['urgency'][$urgency] : '',
+    'inmueble'              => $property !== '' ? $qualify['property'][$property] : '',
+    'ciudad'                => $city === 'otra' ? $qualify['city_other'] : $city,
     'necesita'              => $need !== '' ? lead_need_label($need) : '',
     'empresa'               => $company,
     'formulario'            => $formId,
@@ -371,6 +428,7 @@ $leadResult = [
     'service'    => (string) ($lead['slug'] ?? ''),
     'value_tier' => (string) $lead['tier'],
     'value'      => lead_tier_value((string) $lead['tier']),
+    'score'      => $score,
     'currency'   => market_currency(),
     'thanks'     => [
         'steps'    => array_values((array) ($lead['nextStep'] ?? [])),

@@ -40,6 +40,23 @@ ob_start();
       </div>
     </fieldset>
 
+    <fieldset class="field">
+      <legend>¿Quiere que la casa siga funcionando durante un corte?</legend>
+      <div class="chip-row">
+        <input class="chip-radio" type="radio" name="respaldo" id="solar-r0" value="0" checked>
+        <label class="chip" for="solar-r0">No, solo ahorrar</label>
+        <input class="chip-radio" type="radio" name="respaldo" id="solar-r4" value="4">
+        <label class="chip" for="solar-r4">Sí, unas 4 horas</label>
+        <input class="chip-radio" type="radio" name="respaldo" id="solar-r8" value="8">
+        <label class="chip" for="solar-r8">Sí, unas 8 horas</label>
+      </div>
+    </fieldset>
+
+    <label class="field">
+      <span>Consumo esencial durante el corte (W): heladera, luces, internet, ventiladores</span>
+      <input type="number" inputmode="numeric" min="100" step="50" value="600" name="esencial" id="solar-esencial">
+    </label>
+
     <label class="field">
       <span>¿Ya tiene un presupuesto? Precio total (₲, opcional)</span>
       <input type="number" inputmode="numeric" min="0" step="100000" name="presupuesto" id="solar-presupuesto" placeholder="Para calcular en cuántos años se paga">
@@ -61,6 +78,10 @@ ob_start();
       <dd id="solar-m2"></dd>
       <dt>Generación estimada</dt>
       <dd id="solar-gen"></dd>
+      <dt>Tipo de sistema</dt>
+      <dd id="solar-tipo"></dd>
+      <dt>Baterías</dt>
+      <dd id="solar-baterias"></dd>
       <dt>Ahorro mensual estimado</dt>
       <dd id="solar-ahorro"></dd>
       <dt>Retorno de la inversión</dt>
@@ -71,6 +92,7 @@ ob_start();
       <?= e(ui('tools.orientativo')) ?></p>
     <div class="btn-row mt-3">
       <button class="btn btn--primary" type="button" id="solar-use-result">Pedir presupuesto con este resultado</button>
+      <a class="btn btn--secondary" data-share hidden target="_blank" rel="noopener">Compartir por WhatsApp</a>
     </div>
   </div>
 

@@ -149,6 +149,16 @@ $pages = [
         'priority'    => '0.8',
     ],
 
+    '/checklist-electrico/' => [
+        'title'       => 'Checklist eléctrico antes del verano',
+        'description' => 'Checklist gratuito para revisar su instalación antes del verano: tablero, aire acondicionado, enchufes y respaldo para los cortes. Imprimible.',
+        'h1'          => 'Checklist eléctrico antes del verano',
+        'lead'        => '20 puntos para revisar su casa o negocio antes de los cortes y el calor, sin abrir el tablero.',
+        'stub'        => false,
+        'changefreq'  => 'yearly',
+        'priority'    => '0.6',
+    ],
+
     '/privacidad/' => [
         'title'       => 'Política de privacidad',
         'description' => 'Qué datos personales recogemos en el formulario y por WhatsApp, para qué los usamos y cómo pedir su acceso, corrección o eliminación.',

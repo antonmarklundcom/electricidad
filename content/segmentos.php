@@ -28,7 +28,8 @@
  *                             city landing pages under /electricista/<ciudad>/;
  *                             the homepage zones band and /electricista/ list them.
  *
- * Records live in content/segmentos/rubros.php and content/segmentos/zonas.php.
+ * Records live in content/segmentos/rubros.php, zonas.php and campanas.php
+ * ('kind' => 'campana': seasonal landing pages such as /temporada-de-cortes/).
  *
  * Adding a segment: add a record here and a 3-line route file. deploy/routes.php
  * and sitemap.php already read this file, so the new page joins the route
@@ -40,4 +41,5 @@ declare(strict_types=1);
 return array_merge(
     require __DIR__ . '/segmentos/rubros.php',
     require __DIR__ . '/segmentos/zonas.php',
+    require __DIR__ . '/segmentos/campanas.php',
 );

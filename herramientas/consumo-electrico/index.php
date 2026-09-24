@@ -58,6 +58,7 @@ ob_start();
       compresor. <?= e(ui('tools.orientativo')) ?></p>
     <div class="btn-row mt-3">
       <button class="btn btn--primary" type="button" id="consumo-use-result">Quiero bajar mi factura</button>
+      <a class="btn btn--secondary" data-share hidden target="_blank" rel="noopener">Compartir por WhatsApp</a>
     </div>
   </div>
 

@@ -143,6 +143,49 @@ function jsonld_organization(): array
 }
 
 /**
+ * Service block for a service page: what is offered, by whom (the
+ * organization block's @id) and where. Lets Google read each service page as
+ * an offer of the local business rather than as an anonymous article.
+ */
+function jsonld_service(array $service): array
+{
+    $cities = array_values(array_filter((array) site('areaServed')));
+
+    return [
+        '@context'    => 'https://schema.org',
+        '@type'       => 'Service',
+        'name'        => (string) ($service['title'] ?? ''),
+        'serviceType' => (string) ($service['navLabel'] ?? $service['title'] ?? ''),
+        'description' => (string) ($service['metaDescription'] ?? ''),
+        'url'         => url((string) ($service['path'] ?? '/')),
+        'provider'    => ['@id' => url('/') . '#organization'],
+        'areaServed'  => $cities !== []
+            ? array_map(static fn (string $c): array => ['@type' => 'City', 'name' => $c], $cities)
+            : ['@type' => 'Country', 'name' => market_country()],
+    ];
+}
+
+/**
+ * A free calculator as a WebApplication: name, what it does, that it is free.
+ */
+function jsonld_tool(array $tool): array
+{
+    return [
+        '@context'            => 'https://schema.org',
+        '@type'               => 'WebApplication',
+        'name'                => (string) ($tool['title'] ?? ''),
+        'description'         => (string) ($tool['metaDescription'] ?? ''),
+        'url'                 => url((string) ($tool['path'] ?? '/')),
+        'applicationCategory' => 'UtilitiesApplication',
+        'operatingSystem'     => 'Any',
+        'inLanguage'          => market_locale(),
+        'isAccessibleForFree' => true,
+        'offers'              => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => market_currency()],
+        'publisher'           => ['@id' => url('/') . '#organization'],
+    ];
+}
+
+/**
  * BreadcrumbList, always rooted at the home page. Returns null when there are no crumbs.
  */
 function jsonld_breadcrumbs(array $crumbs): ?array

@@ -63,6 +63,10 @@
     if (service) {
       setHidden(form, "service", service);
     }
+    trackToolUsed((options && options.tool) || "calculadora", { action: "use_result", service: service || "" });
+    if (typeof window.CustomEvent === "function") {
+      form.dispatchEvent(new window.CustomEvent("lead:prefilled"));
+    }
   }
 
   /** Scrolls the lead form into view and focuses its first visible field. */
@@ -79,7 +83,29 @@
     }
   }
 
+  /**
+   * Points the result box's "Compartir por WhatsApp" link at a share of the
+   * result plus this page's URL. wa.me without a number opens the contact
+   * picker, so the visitor chooses who gets it (spouse, partner, architect):
+   * every share is a free visit from someone with the same problem.
+   */
+  function setShare(box, text) {
+    var link = box && box.querySelector("[data-share]");
+    if (!link) {
+      return;
+    }
+    link.href = "https://wa.me/?text=" + encodeURIComponent(text + "\n" + window.location.origin + window.location.pathname);
+    link.hidden = false;
+    if (!link.dataset.bound) {
+      link.dataset.bound = "1";
+      link.addEventListener("click", function () {
+        trackToolUsed(document.querySelector("[data-tool]") ? document.querySelector("[data-tool]").getAttribute("data-tool") : "", { action: "share" });
+      });
+    }
+  }
+
   window.ToolsShared = {
+    setShare: setShare,
     setHidden: setHidden,
     trackToolUsed: trackToolUsed,
     prefillLeadForm: prefillLeadForm,

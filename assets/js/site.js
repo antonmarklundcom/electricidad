@@ -98,3 +98,24 @@
     }
   });
 })(document);
+
+/**
+ * The mobile "Pedir presupuesto" half of the sticky bar: on a page that has
+ * its own lead form, scroll to it instead of leaving for /contacto/.
+ */
+(function (document) {
+  "use strict";
+
+  var jump = document.querySelector("[data-quote-jump]");
+  var form = document.querySelector("main [data-lead-form]");
+  if (!jump || !form) {
+    return;
+  }
+  jump.addEventListener("click", function (e) {
+    e.preventDefault();
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (window.siteAnalytics) {
+      window.siteAnalytics.track("quote_bar_click", { page_path: window.location.pathname });
+    }
+  });
+})(document);
