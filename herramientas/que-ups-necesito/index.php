@@ -64,6 +64,7 @@ ob_start();
     <p class="note"><?= e(ui('tools.orientativo')) ?></p>
     <div class="btn-row mt-3">
       <button class="btn btn--primary" type="button" id="ups-use-result">Pedir presupuesto con este resultado</button>
+      <a class="btn btn--secondary" data-share hidden target="_blank" rel="noopener">Compartir por WhatsApp</a>
     </div>
   </div>
 

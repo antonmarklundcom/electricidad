@@ -49,6 +49,7 @@ return [
         'zones'        => 'Zonas',
         'segments'     => 'Rubros',
         'partners'     => 'Para electricistas',
+        'checklist'    => 'Checklist antes del verano',
         'all_services' => 'Ver todos los servicios',
     ],
 
@@ -232,6 +233,15 @@ return [
         'remind_phone'    => 'Su WhatsApp',
         'remind_submit'   => 'Quiero el recordatorio',
         'remind_ok'       => 'Anotado. Le escribimos cuando toque el mantenimiento.',
+    ],
+
+    // The outage-season strip (partials/season-banner.php). Months are
+    // date('n') numbers: November to March, Paraguay's summer.
+    'season' => [
+        'months' => [11, 12, 1, 2, 3],
+        'path'   => '/temporada-de-cortes/',
+        'text'   => 'Temporada de cortes y bajas de tensión: prepare su casa o negocio.',
+        'cta'    => 'Generador, UPS y tablero',
     ],
 
     // Qualifying questions of the lead form (step 1). Keys are what enviar.php

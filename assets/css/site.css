@@ -2681,3 +2681,36 @@ a.industries__item:focus-visible {
     text-decoration: none;
   }
 }
+
+.season-banner {
+  background: var(--accent);
+  color: var(--ink);
+  font-size: var(--t-note);
+  font-weight: 600;
+}
+.season-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px var(--s-2);
+  justify-content: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+.season-banner a { color: var(--ink); text-decoration: underline; }
+
+/* == electricidad: printable checklist ================================= */
+
+.checklist-page { display: grid; gap: var(--s-4); }
+.checklist-group h2 { font-size: var(--t-d4); margin-bottom: var(--s-2); }
+.check-items { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-1); }
+.check-items li { display: flex; gap: var(--s-2); align-items: flex-start; }
+.check-items input { width: 20px; height: 20px; margin-top: 2px; flex: none; accent-color: var(--ink); }
+
+@media print {
+  .site-header, .site-footer, .wa-fab, .quote-fab, .season-banner, .no-print,
+  .breadcrumbs, .cta-band, .wa-menu { display: none !important; }
+  body { padding: 0; }
+  .section, .page-hero { padding: 12px 0; background: none; }
+  .checklist-group { break-inside: avoid; }
+}

@@ -69,6 +69,7 @@
       " W, pico " + fmtNum(pico) + " W → " + kvaTexto + ".";
 
     if (window.ToolsShared) {
+      window.ToolsShared.setShare(document.getElementById("gen-result"), lastResult);
       window.ToolsShared.trackToolUsed("que_generador_necesito", { kva: kva || 0 });
     }
   });

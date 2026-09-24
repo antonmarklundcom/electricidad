@@ -68,6 +68,7 @@ ob_start();
       considera que arranca un motor por vez. <?= e(ui('tools.orientativo')) ?></p>
     <div class="btn-row mt-3">
       <button class="btn btn--primary" type="button" id="gen-use-result">Pedir presupuesto con este resultado</button>
+      <a class="btn btn--secondary" data-share hidden target="_blank" rel="noopener">Compartir por WhatsApp</a>
     </div>
   </div>
 

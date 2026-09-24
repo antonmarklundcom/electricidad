@@ -39,6 +39,7 @@ $page = [
     ],
     'faq'      => $tool['faq'],
     'leadSlug' => $slug,
+    'jsonld'   => [jsonld_tool($tool)],
 ];
 
 require ROOT_DIR . '/partials/head.php';

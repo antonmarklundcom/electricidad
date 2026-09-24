@@ -94,6 +94,7 @@
       filas.slice(0, 3).map(function (f) { return f.label + " " + fmtNum(f.kwh) + " kWh"; }).join(", ") + ".";
 
     if (window.ToolsShared) {
+      window.ToolsShared.setShare(document.getElementById("consumo-result"), lastResult);
       window.ToolsShared.trackToolUsed("consumo_electrico", { kwh: Math.round(total) });
     }
   });
