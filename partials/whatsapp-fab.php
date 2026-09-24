@@ -30,5 +30,9 @@ $leadSlug = current_lead_slug() ?? '';
   </svg>
   <span><?= e($label) ?></span>
 </a>
+<?php /* Mobile only (CSS): the second half of the sticky bar. It goes to the
+         page's own lead form when there is one (assets/js/site.js), else to
+         /contacto/. */ ?>
+<a class="quote-fab" href="/contacto/" data-quote-jump><?= e(ui('cta.quote')) ?></a>
 <?php require ROOT_DIR . '/partials/whatsapp-menu.php'; ?>
 <?php unset($link, $label, $leadSlug); ?>

@@ -61,46 +61,90 @@ $utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content
     <h2 class="card-title"><?= e($formHeading) ?></h2>
   <?php endif; ?>
 
-  <div class="lead-form__row">
-    <label class="field">
-      <span><?= e(ui('form.name')) ?></span>
-      <input type="text" name="name" autocomplete="name" required>
-    </label>
-    <label class="field">
-      <span><?= e(ui('form.company')) ?></span>
-      <input type="text" name="company" autocomplete="organization">
-    </label>
-  </div>
+  <?php $formQ = content('ui')['qualify']; ?>
+  <div class="lead-step" data-step="1">
+    <p class="lead-step__label" data-step-label hidden><?= e($formQ['step1']) ?></p>
 
-  <div class="lead-form__row">
-    <label class="field">
-      <span><?= e(ui('form.phone')) ?></span>
-      <input type="tel" name="phone" inputmode="tel" autocomplete="tel"
-             placeholder="<?= e(ui('form.phone_hint')) ?>" required>
-    </label>
-    <label class="field">
-      <span><?= e(ui('form.email')) ?></span>
-      <input type="email" name="email" autocomplete="email">
-    </label>
-  </div>
+    <fieldset class="field">
+      <legend><?= e(ui('form.need')) ?></legend>
+      <div class="chip-row">
+        <?php foreach (content('ui')['needs'] as $key => $label): ?>
+          <input class="chip-radio" type="radio" name="need"
+                 id="need-<?= e($formId . '-' . $key) ?>" value="<?= e($key) ?>"
+                 data-tier="<?= e(lead_value_for_need($key)['tier']) ?>"
+                 <?= $formNeed === $key ? 'checked' : '' ?>>
+          <label class="chip" for="need-<?= e($formId . '-' . $key) ?>"><?= e($label) ?></label>
+        <?php endforeach; ?>
+      </div>
+    </fieldset>
 
-  <fieldset class="field">
-    <legend><?= e(ui('form.need')) ?></legend>
-    <div class="chip-row">
-      <?php foreach (content('ui')['needs'] as $key => $label): ?>
-        <input class="chip-radio" type="radio" name="need"
-               id="need-<?= e($formId . '-' . $key) ?>" value="<?= e($key) ?>"
-               data-tier="<?= e(lead_value_for_need($key)['tier']) ?>"
-               <?= $formNeed === $key ? 'checked' : '' ?>>
-        <label class="chip" for="need-<?= e($formId . '-' . $key) ?>"><?= e($label) ?></label>
-      <?php endforeach; ?>
+    <fieldset class="field">
+      <legend><?= e($formQ['urgency_legend']) ?></legend>
+      <div class="chip-row">
+        <?php foreach ($formQ['urgency'] as $key => $label): ?>
+          <input class="chip-radio" type="radio" name="urgencia"
+                 id="urg-<?= e($formId . '-' . $key) ?>" value="<?= e($key) ?>">
+          <label class="chip" for="urg-<?= e($formId . '-' . $key) ?>"><?= e($label) ?></label>
+        <?php endforeach; ?>
+      </div>
+    </fieldset>
+
+    <div class="lead-form__row">
+      <label class="field">
+        <span><?= e($formQ['property_label']) ?></span>
+        <select name="inmueble">
+          <option value=""><?= e($formQ['choose']) ?></option>
+          <?php foreach ($formQ['property'] as $key => $label): ?>
+            <option value="<?= e($key) ?>"><?= e($label) ?></option>
+          <?php endforeach; ?>
+        </select>
+      </label>
+      <label class="field">
+        <span><?= e($formQ['city_label']) ?></span>
+        <select name="ciudad">
+          <option value=""><?= e($formQ['choose']) ?></option>
+          <?php foreach ((array) site('areaServed') as $label): ?>
+            <option value="<?= e($label) ?>"><?= e($label) ?></option>
+          <?php endforeach; ?>
+          <option value="otra"><?= e($formQ['city_other']) ?></option>
+        </select>
+      </label>
     </div>
-  </fieldset>
+
+    <button class="btn btn--primary lead-step__next" type="button" data-step-next hidden><?= e($formQ['next']) ?> &rarr;</button>
+  </div>
+
+  <div class="lead-step" data-step="2">
+    <p class="lead-step__label" data-step-label hidden><?= e($formQ['step2']) ?></p>
+
+    <div class="lead-form__row">
+      <label class="field">
+        <span><?= e(ui('form.name')) ?></span>
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label class="field">
+        <span><?= e(ui('form.phone')) ?></span>
+        <input type="tel" name="phone" inputmode="tel" autocomplete="tel"
+               placeholder="<?= e(ui('form.phone_hint')) ?>" required>
+      </label>
+    </div>
+
+    <div class="lead-form__row">
+      <label class="field">
+        <span><?= e(ui('form.company')) ?></span>
+        <input type="text" name="company" autocomplete="address-level3">
+      </label>
+      <label class="field">
+        <span><?= e(ui('form.email')) ?></span>
+        <input type="email" name="email" autocomplete="email">
+      </label>
+    </div>
 
   <label class="field">
     <span><?= e(ui('form.message')) ?></span>
     <textarea name="message" rows="3" placeholder="<?= e(ui('form.message_hint')) ?>"></textarea>
   </label>
+  </div>
 
   <!-- Honeypot: bots fill it, humans never see it. -->
   <div class="honeypot" aria-hidden="true">
@@ -108,6 +152,9 @@ $utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content
   </div>
 
   <input type="hidden" name="form_id" value="<?= e($formId) ?>">
+  <!-- Render time: enviar.php drops (silently) a form posted within seconds
+       of being rendered — no human reads and fills it that fast. -->
+  <input type="hidden" name="rendered_at" value="<?= e((string) time()) ?>">
   <input type="hidden" name="source_page" value="<?= e($sourcePage) ?>">
   <input type="hidden" name="idempotency_key" value="<?= e($idempotencyKey) ?>">
   <!-- The lead value routing fields. enviar.php re-derives the
@@ -124,8 +171,11 @@ $utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content
     <?php endif; ?>
   <?php endforeach; ?>
 
-  <button class="btn btn--primary" type="submit" data-submit
-          data-sending="<?= e(ui('form.sending')) ?>"><?= e(ui('form.submit')) ?></button>
+  <div class="btn-row lead-form__actions">
+    <button class="btn btn--secondary" type="button" data-step-back hidden><?= e($formQ['back']) ?></button>
+    <button class="btn btn--primary" type="submit" data-submit
+            data-sending="<?= e(ui('form.sending')) ?>"><?= e(ui('form.submit')) ?></button>
+  </div>
 
   <p class="note">
     <?= e(ui('form.privacy_note')) ?>
@@ -153,5 +203,5 @@ $utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content
 unset(
     $formId, $formNeed, $formHeading, $formService, $formLead, $formTier,
     $formToolResult, $formSourcePage, $sourcePage, $whatsapp, $idempotencyKey,
-    $utmKeys, $key, $label
+    $utmKeys, $key, $label, $formQ
 );

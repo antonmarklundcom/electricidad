@@ -62,5 +62,34 @@
     true
   );
 
+  /* First-touch attribution. The campaign that brought a visitor is on the
+     landing URL only; by the time they submit a form two pages later it is
+     gone. Store it once, for 90 days, in the cookie enviar.php already reads
+     (vc_attr) — so an Ads or Facebook lead is credited to its campaign even
+     when the form is on another page or another day. First touch wins: an
+     existing cookie is never overwritten. */
+  (function rememberFirstTouch() {
+    if (/(?:^|;\s*)vc_attr=/.test(document.cookie)) {
+      return;
+    }
+    var params = new URLSearchParams(window.location.search);
+    var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
+    var attr = {};
+    keys.forEach(function (k) {
+      var v = params.get(k);
+      if (v) attr[k] = v.slice(0, 200);
+    });
+    var ref = document.referrer || "";
+    var external = ref !== "" && ref.indexOf(window.location.host) === -1;
+    if (!Object.keys(attr).length && !external) {
+      return;
+    }
+    if (external) attr.referrer = ref.slice(0, 300);
+    attr.landing = window.location.pathname;
+    document.cookie = "vc_attr=" + encodeURIComponent(JSON.stringify(attr)) +
+      "; max-age=" + 60 * 60 * 24 * 90 + "; path=/; SameSite=Lax" +
+      (window.location.protocol === "https:" ? "; Secure" : "");
+  })();
+
   window.siteAnalytics = { track: track, enabled: enabled };
 })(window, document);

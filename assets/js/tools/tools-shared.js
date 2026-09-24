@@ -63,6 +63,10 @@
     if (service) {
       setHidden(form, "service", service);
     }
+    trackToolUsed((options && options.tool) || "calculadora", { action: "use_result", service: service || "" });
+    if (typeof window.CustomEvent === "function") {
+      form.dispatchEvent(new window.CustomEvent("lead:prefilled"));
+    }
   }
 
   /** Scrolls the lead form into view and focuses its first visible field. */

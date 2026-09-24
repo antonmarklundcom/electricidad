@@ -51,7 +51,68 @@
     }
   }
 
+  function track(event, params) {
+    if (window.siteAnalytics) {
+      window.siteAnalytics.track(event, params);
+    }
+  }
+
+  /**
+   * Two steps: the job first (clicks only), then the contact details. Low
+   * effort first is what gets a visitor to the phone field. Without JS both
+   * steps simply render one after the other and the form posts as one page.
+   */
+  function enableSteps(form, formId) {
+    var step1 = form.querySelector('[data-step="1"]');
+    var step2 = form.querySelector('[data-step="2"]');
+    var next = form.querySelector("[data-step-next]");
+    var back = form.querySelector("[data-step-back]");
+    var submit = form.querySelector("[data-submit]");
+    if (!step1 || !step2 || !next) {
+      return null;
+    }
+
+    form.classList.add("lead-form--steps");
+    form.querySelectorAll("[data-step-label]").forEach(function (el) { el.hidden = false; });
+
+    function show(n) {
+      step1.hidden = n !== 1;
+      step2.hidden = n !== 2;
+      next.hidden = n !== 1;
+      if (back) back.hidden = n !== 2;
+      if (submit) submit.hidden = n !== 2;
+    }
+
+    next.addEventListener("click", function () {
+      show(2);
+      var first = step2.querySelector("input:not([type=hidden])");
+      if (first) first.focus();
+      track("form_step", { form_id: formId, step: 2 });
+    });
+    if (back) {
+      back.addEventListener("click", function () { show(1); });
+    }
+    show(1);
+    return show;
+  }
+
   document.querySelectorAll("[data-lead-form]").forEach(function (form) {
+    var formId = (form.querySelector("[name=form_id]") || {}).value || "";
+    var showStep = enableSteps(form, formId);
+    var started = false;
+    form.addEventListener("change", function () {
+      if (!started) {
+        started = true;
+        track("form_start", { form_id: formId, page_path: window.location.pathname });
+      }
+    });
+
+    /* A calculator that prefills the form jumps straight to the contact step:
+       the job is already described by the result. */
+    form.addEventListener("lead:prefilled", function () {
+      if (showStep) showStep(2);
+    });
+
     var button = form.querySelector("[data-submit]");
     var ok = form.querySelector("[data-form-ok]");
     var error = form.querySelector("[data-form-error]");
@@ -88,13 +149,18 @@
           if (!data || !data.ok) {
             throw new Error(data && data.error ? data.error : "failed");
           }
-          form.querySelectorAll("input:not([type=hidden]), textarea").forEach(function (field) {
+          form.querySelectorAll("input:not([type=hidden]), textarea, select").forEach(function (field) {
             if (field.type === "radio") {
               field.checked = false;
             } else {
               field.value = "";
             }
           });
+          if (showStep) {
+            form.querySelectorAll('[data-step], [data-step-next], [data-step-back], [data-submit]').forEach(function (el) {
+              el.hidden = true;
+            });
+          }
           if (ok) {
             renderThanks(ok, data.thanks);
             ok.hidden = false;
@@ -107,6 +173,7 @@
               form_id: (form.querySelector("[name=form_id]") || {}).value || "",
               service: data.service || "",
               value_tier: data.value_tier || "",
+              lead_score: data.score || 0,
               value: data.value || 0,
               currency: data.currency || "PYG",
               degraded: !!data.degraded

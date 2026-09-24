@@ -2630,3 +2630,54 @@ a.industries__item:focus-visible {
   .equipo-row--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .equipo-row__label { grid-column: 1 / -1; }
 }
+
+/* == electricidad: two-step lead form, mobile quote bar ================== */
+
+.lead-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.lead-step[hidden] { display: none; }
+.lead-step__label {
+  margin: 0;
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.lead-step__next { align-self: flex-start; }
+.lead-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-input);
+  background: var(--bg);
+  font: inherit;
+  color: var(--ink);
+}
+.lead-form__actions { margin: 0; }
+.lead-form__actions [hidden] { display: none; }
+
+.quote-fab { display: none; }
+
+@media (max-width: 768px) {
+  .wa-fab { right: 44%; }
+  .quote-fab {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44%;
+    padding: 16px 8px;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: var(--t-body);
+    text-decoration: none;
+  }
+}
