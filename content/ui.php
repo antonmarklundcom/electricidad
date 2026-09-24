@@ -236,9 +236,10 @@ return [
     ],
 
     // The outage-season strip (partials/season-banner.php). Months are
-    // date('n') numbers: November to March, Paraguay's summer.
+    // date('n') numbers: September to March — the run-up to and the whole of
+    // Paraguay's summer.
     'season' => [
-        'months' => [11, 12, 1, 2, 3],
+        'months' => [9, 10, 11, 12, 1, 2, 3],
         'path'   => '/temporada-de-cortes/',
         'text'   => 'Temporada de cortes y bajas de tensión: prepare su casa o negocio.',
         'cta'    => 'Generador, UPS y tablero',

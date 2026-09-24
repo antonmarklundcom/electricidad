@@ -17,6 +17,9 @@ retired. `docs/report.md` keeps the original market reasoning.
 | Local SEO | 13 city pages `/electricista/<ciudad>/` (10 Gran Asunción + Ciudad del Este, Encarnación, Coronel Oviedo for energy projects) cross-linked + hub, 5 rubro pages, cities in the LocalBusiness `areaServed` JSON-LD |
 | Content | 8 guides (HowTo JSON-LD), 8 blog articles, homepage FAQ (FAQPage JSON-LD), cómo cotizamos, privacidad, términos |
 | Supply side | `/profesionales/` recruits electricians and energy suppliers (CRM source `profesionales`) |
+| Lead quality | Two-step form (need, urgency, property, city → contact); every lead gets a 0–100 score (caliente/tibio/frío) in VenderCRM and the email subject; first-touch UTM/gclid cookie; bot floor (3 s, links) |
+| Conversion | WhatsApp +595 995 628862 on every CTA; mobile sticky bar = WhatsApp + "Pedir presupuesto"; outage-season banner Sep–Mar → `/temporada-de-cortes/`; printable `/checklist-electrico/`; calculator results shareable by WhatsApp; solar calculator sizes batteries |
+| More content | 3 comparison articles (on-grid/híbrido/off-grid, nafta/diésel, UPS/estabilizador/inversor); Service + WebApplication JSON-LD |
 | Lead model | every page resolves a tier (A 3 M / B 800 k / C 200 k ₲ Ads proxies), WhatsApp prefill naming the service, next steps, CRM tag |
 | Gates | `./verify.sh` PASS on repo and on `dist/` zip; ~65 URLs in sitemap |
 
@@ -45,7 +48,7 @@ retired. `docs/report.md` keeps the original market reasoning.
 | # | Step | Why it blocks |
 |---|---|---|
 | 1 | Register `electricidad.com.py` at nic.py (fallbacks in `docs/report.md` §4) | canonical URLs, JSON-LD |
-| 2 | A WhatsApp Business number → `content/site.php` `whatsapp` + `phone` | **every CTA** falls back to /contacto/ without it; this is the single biggest conversion lever |
+| 2 | ✅ WhatsApp +595 995 628862 is set (also used as the phone). Install **WhatsApp Business** on it with a greeting message | — |
 | 3 | VenderCRM tenant key (+ Resend key) → `config.php` on the server | leads otherwise only land in `logs/leads.log` |
 | 4 | `./deploy/make-zip.sh` → upload to Hostinger `public_html/` (README "Deploy"), set `SITE_URL` = `https://electricidad.com.py` in `config.php`, turn on hPanel → SSL → **Force HTTPS** → `./deploy/verify-live.sh https://electricidad.com.py` | — |
 | 5 | GA4 + Google Ads IDs → `config.php` | tier values only optimise bidding once these exist |

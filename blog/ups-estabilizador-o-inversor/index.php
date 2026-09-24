@@ -19,6 +19,9 @@ $sections = [
             'La diferencia central es esta: un estabilizador corrige la tensión que llega, pero no '
                 . 'da energía si se corta la luz; un UPS y un inversor con baterías sí mantienen '
                 . 'equipos encendidos durante un corte, pero por tiempos muy distintos.',
+            'Elegir mal no solo significa gastar de más: significa seguir expuesto al problema que '
+                . 'se quería resolver, con un equipo que en teoría "debería" protegerlo pero no está '
+                . 'hecho para ese caso puntual.',
         ],
     ],
     [
@@ -85,6 +88,24 @@ $sections = [
                 . 'heladera o el motor de un portón automático, es importante que el inversor entregue '
                 . 'onda senoidal pura: un motor alimentado con onda modificada puede funcionar mal o '
                 . 'dañarse con el tiempo.',
+        ],
+    ],
+    [
+        'h2'   => 'Cómo elegir sin comprar de más ni de menos',
+        'body' => [
+            'La forma más simple de no equivocarse es empezar por el problema real, no por el '
+                . 'equipo: si lo que se rompe son artefactos por variaciones de tensión mientras hay '
+                . 'luz, el estabilizador resuelve eso solo; si lo que preocupa es perder trabajo o '
+                . 'que se reinicien equipos con microcortes, el UPS es la pieza que falta; si lo que '
+                . 'se necesita es no quedarse sin heladera ni internet durante horas de corte, hace '
+                . 'falta un inversor con baterías, y recién ahí conviene dimensionarlo según los '
+                . 'circuitos que se quieran sostener.',
+            'También se pueden combinar: un estabilizador a la entrada de la instalación y un '
+                . 'inversor con baterías para los circuitos críticos cubren dos problemas distintos '
+                . 'con dos equipos, cada uno haciendo lo que le corresponde. Antes de definir el '
+                . 'equipo, conviene relevar qué artefactos hay que sostener y por cuánto tiempo, '
+                . 'porque esa lista es la que determina si alcanza con un UPS chico o hace falta un '
+                . 'banco de baterías más grande.',
         ],
     ],
 ];

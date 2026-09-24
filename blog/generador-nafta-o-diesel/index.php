@@ -19,6 +19,10 @@ $sections = [
             'Nafta y diésel no son solo dos combustibles distintos: son dos tipos de motor con '
                 . 'exigencias, consumo y vida útil diferentes, y esa diferencia se nota más cuanto '
                 . 'más se usa el generador.',
+            'Comparar solo el precio de compra sin mirar el uso que se le va a dar suele llevar a '
+                . 'elegir el equipo equivocado: uno que sale barato al principio pero que se '
+                . 'desgasta rápido con uso intensivo, o uno pensado para trabajar muchas horas que '
+                . 'termina usándose apenas unas veces al año.',
         ],
     ],
     [
@@ -29,8 +33,8 @@ $sections = [
                 . 'algunas horas de vez en cuando.',
             'Los motores a diésel están construidos para trabajar más horas seguidas sin '
                 . 'deteriorarse tan rápido, y son más eficientes: consumen menos combustible por '
-                . 'cada kWh generado, algo así como 0,25–0,35 litros de diésel por kWh generado según '
-                . 'publicaciones de prensa de 2026, orientativo. Esa eficiencia es la razón por la '
+                . 'cada kWh generado, algo así como 0,25–0,35 litros de diésel por kWh generado como '
+                . 'valor técnico típico a media carga, orientativo. Esa eficiencia es la razón por la '
                 . 'que casi todos los equipos de mayor potencia, trifásicos y cabinados, son a '
                 . 'diésel.',
         ],
@@ -45,8 +49,8 @@ $sections = [
                 . 'menor potencia. Diésel: predomina en equipos de mayor potencia, incluidos los '
                 . 'trifásicos cabinados para comercios e industrias.'],
             ['title' => 'Consumo por kWh', 'text' => 'Diésel es más eficiente que nafta para la '
-                . 'misma energía generada, del orden de 0,25–0,35 litros de diésel por kWh según '
-                . 'publicaciones de prensa de 2026, orientativo; la diferencia se nota más cuanto más '
+                . 'misma energía generada, del orden de 0,25–0,35 litros de diésel por kWh como '
+                . 'valor técnico típico, orientativo; la diferencia se nota más cuanto más '
                 . 'horas funciona el equipo.'],
             ['title' => 'Ruido', 'text' => 'Nafta: motores más livianos, en general más ruidosos '
                 . 'para equipos de potencia comparable. Diésel: los equipos cabinados reducen el '
@@ -93,6 +97,19 @@ $sections = [
                 . 'que hay que sostener durante un corte, no solo el equipo que más consume.',
         ],
     ],
+    [
+        'h2'   => 'El combustible almacenado, el punto en común',
+        'body' => [
+            'Tanto la nafta como el diésel pierden estabilidad si quedan guardados mucho tiempo sin '
+                . 'renovarse, y ese combustible viejo es una de las causas más comunes de que un '
+                . 'generador cueste arrancar después de meses sin usarse. En diésel, además, el '
+                . 'combustible envejecido puede formar sedimentos que terminan obstruyendo el filtro '
+                . 'de combustible justo cuando más se lo necesita.',
+            'Por eso, sea cual sea el combustible elegido, conviene sumar una revisión periódica al '
+                . 'equipo —no solo cuando ya está corriendo un corte— para confirmar que arranca y '
+                . 'sostiene carga, y no descubrirlo recién en medio de una tormenta.',
+        ],
+    ],
 ];
 
 $faq = [
@@ -103,8 +120,8 @@ $faq = [
     ],
     [
         'q' => '¿Por qué el diésel consume menos por kWh generado?',
-        'a' => 'Por el diseño del motor y del ciclo de combustión; en cifras orientativas de '
-             . 'publicaciones de prensa de 2026 ronda 0,25–0,35 litros de diésel por kWh generado.',
+        'a' => 'Por el diseño del motor y del ciclo de combustión; como valor técnico '
+             . 'típico a media carga ronda 0,25–0,35 litros de diésel por kWh generado.',
     ],
     [
         'q' => '¿Los equipos diésel siempre tienen arranque automático (ATS)?',
