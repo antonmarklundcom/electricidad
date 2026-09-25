@@ -12,10 +12,10 @@ retired. `docs/report.md` keeps the original market reasoning.
 
 | Area | What exists |
 |---|---|
-| Services | 16 full pages: 10 `electricista`, 6 `energia` (content/services/*.php) |
+| Services | 18 full pages: 10 `electricista`, 8 `energia` (content/services/*.php), incl. `planes-de-mantenimiento` (yearly plan, priced per equipment) and `paneles-solares-en-cuotas` (financing, no lender named yet) |
 | Calculators | 4, tested (`tests/tools.spec.mjs`): solar kWp/paneles/techo/retorno, generador kVA/arranque/combustible, consumo por equipo, UPS VA/batería. Results prefill the lead form and route solar/generator results as tier-A leads |
-| Local SEO | 13 city pages `/electricista/<ciudad>/` (10 Gran Asunción + Ciudad del Este, Encarnación, Coronel Oviedo for energy projects) cross-linked + hub, 5 rubro pages, cities in the LocalBusiness `areaServed` JSON-LD |
-| Content | 8 guides (HowTo JSON-LD), 8 blog articles, homepage FAQ (FAQPage JSON-LD), cómo cotizamos, privacidad, términos |
+| Local SEO | 17 city pages `/electricista/<ciudad>/` (10 Gran Asunción + Ciudad del Este, Encarnación, Coronel Oviedo, Pedro Juan Caballero, Villarrica, Concepción and the Chaco (off-grid) for energy projects) cross-linked + hub, 5 rubro pages, cities in the LocalBusiness `areaServed` JSON-LD |
+| Content | 8 guides (HowTo JSON-LD), 14 blog articles (3 summer-season pieces added 2026-09-25: tormentas, cuando vuelve la luz, revisión de UPS y baterías), homepage FAQ (FAQPage JSON-LD), cómo cotizamos, privacidad, términos |
 | Supply side | `/profesionales/` recruits electricians and energy suppliers (CRM source `profesionales`) |
 | Lead quality | Two-step form (need, urgency, property, city → contact); every lead gets a 0–100 score (caliente/tibio/frío) in VenderCRM and the email subject; first-touch UTM/gclid cookie; bot floor (3 s, links) |
 | Conversion | WhatsApp +595 995 628862 on every CTA; mobile sticky bar = WhatsApp + "Pedir presupuesto"; outage-season banner Sep–Mar → `/temporada-de-cortes/`; printable `/checklist-electrico/`; calculator results shareable by WhatsApp; solar calculator sizes batteries |
@@ -87,10 +87,10 @@ retired. `docs/report.md` keeps the original market reasoning.
 11. **Imagery pass** + a real `og-default.png` (brand card for WhatsApp/Facebook shares).
 12. **Search Console + monthly query review**: write a page for every query with impressions but no page.
 13. **Facebook/Instagram Reels** from real jobs (`higgsfield-social-prompts`) pointing at the calculators.
-14. **More interior cities** for energy projects: Pedro Juan Caballero, Villarrica, Concepción, the Chaco (off-grid solar).
+14. ✅ (2026-09-25) **More interior cities** for energy projects: Pedro Juan Caballero, Villarrica, Concepción, the Chaco (off-grid solar).
 15. **Brand comparison pages** (generators, inverters, solar kits) once a supplier list exists — high-intent traffic, sponsorable.
-16. **Financing page** ("paneles solares en cuotas") with a partner bank/financiera — raises solar close rates.
-17. **Maintenance plans** (tablero + generador + paneles, yearly) as recurring revenue from existing clients.
+16. ✅ page built, lender still to sign (facts #9) — **Financing page** ("paneles solares en cuotas") with a partner bank/financiera — raises solar close rates.
+17. ✅ page built, prices still to set (facts #10) — **Maintenance plans** (tablero + generador + paneles, yearly) as recurring revenue from existing clients.
 18. **Electrician directory** (stage 3): paid profiles for matriculated electricians by city.
 19. **Blog cadence**: one seasonal article per month; refresh the price figures every 6 months.
 20. **Guaraní/jopara microcopy** on WhatsApp prefills and hero lines, A/B-tested against Spanish.
