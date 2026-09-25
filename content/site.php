@@ -44,6 +44,7 @@ return [
         'Asunción', 'San Lorenzo', 'Luque', 'Fernando de la Mora', 'Lambaré', 'Capiatá',
         'Ñemby', 'Mariano Roque Alonso', 'Villa Elisa', 'Limpio',
         'Ciudad del Este', 'Encarnación', 'Coronel Oviedo',
+        'Pedro Juan Caballero', 'Villarrica', 'Concepción', 'Chaco',
     ],
 
     'legalName'   => null,                       // registered legal name
