@@ -662,4 +662,245 @@ return [
         ],
     ],
 
+    'planes-de-mantenimiento' => [
+        'path'            => '/servicios/planes-de-mantenimiento/',
+        'title'           => 'Planes de mantenimiento',
+        'navLabel'        => 'Planes de mantenimiento',
+        'cluster'         => 'energia',
+        'parent'          => null,
+        'seoTitle'        => 'Plan de mantenimiento anual en Paraguay',
+        'metaDescription' => 'Plan de mantenimiento anual: visitas programadas para su tablero, '
+                           . 'generador, paneles solares o UPS, con informe por escrito y prioridad.',
+        'hero' => [
+            'eyebrow' => 'Mantenimiento programado',
+            'h1'      => 'Plan de mantenimiento anual para sus equipos',
+            'h2'      => 'Visitas programadas durante el año, no una revisión aislada.',
+            'lead'    => 'Si ya cuenta con tablero, generador, paneles solares o UPS, armamos un plan '
+                       . 'anual con visitas programadas para revisarlos, con prioridad de coordinación '
+                       . 'y un informe escrito después de cada visita. Usted elige qué equipos entran '
+                       . 'en el plan.',
+        ],
+        'includes' => [
+            'Cronograma de visitas durante el año, según los equipos incluidos',
+            'Una visita previa a la temporada de cortes, antes del verano',
+            'Revisión del tablero: ajuste de bornes, estado de disyuntores y puesta a tierra',
+            'Revisión del generador: arranque, transferencia y niveles, si está incluido en el plan',
+            'Revisión de paneles solares e inversor, si están incluidos en el plan',
+            'Coordinación prioritaria frente a una falla, dentro de los equipos del plan',
+            'Informe escrito después de cada visita',
+        ],
+        'excludes' => [
+            'El repuesto o el equipo que haya que reemplazar (se cotiza aparte, según lo que aparezca)',
+            'La primera instalación del tablero, generador, paneles solares o UPS',
+            'Una atención de emergencia fuera de las visitas programadas (se coordina y se cotiza aparte)',
+        ],
+        'weNeed' => [
+            'Lista de los equipos que quiere incluir en el plan (generador con su kVA y marca, '
+                . 'paneles solares, UPS o baterías)',
+            'Fotos del tablero eléctrico actual',
+            'Dirección y accesibilidad del lugar donde están los equipos',
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Qué diferencia a un plan de una revisión aislada',
+                'body' => [
+                    'Una revisión preventiva puntual atiende el tablero una sola vez. El plan de '
+                        . 'mantenimiento arma un cronograma de visitas para todo el año, ajustado a '
+                        . 'los equipos que usted tiene: no es lo mismo revisar solo un tablero que '
+                        . 'revisar tablero, generador y paneles solares juntos.',
+                    'El plan se cotiza según la lista de equipos que decide incluir. No hay un precio '
+                        . 'único: un plan para tablero y UPS no cuesta lo mismo que uno que suma '
+                        . 'generador y paneles solares.',
+                ],
+            ],
+            [
+                'h2'   => 'La visita previa a la temporada de cortes',
+                'body' => [
+                    'Antes del verano, cuando suben los cortes de la ANDE por la mayor demanda de aire '
+                        . 'acondicionado, hacemos una visita para verificar que el generador arranque, '
+                        . 'que la transferencia funcione y que el tablero esté en condiciones de '
+                        . 'soportar la carga de la temporada. El resto de las visitas del año se '
+                        . 'programan según el equipamiento incluido en su plan.',
+                ],
+            ],
+            [
+                'h2'   => 'Un informe por visita, no una revisión sin registro',
+                'body' => [
+                    'Cada visita del plan termina con un informe escrito: qué se revisó, qué se '
+                        . 'encontró y qué recomendamos, si corresponde. Así queda un historial de sus '
+                        . 'equipos, útil también si en algún momento necesita hacer un reclamo de '
+                        . 'garantía.',
+                ],
+            ],
+        ],
+        'benefits' => [
+            ['title' => 'A su medida', 'text' => 'Usted elige qué equipos entran en el plan.'],
+            ['title' => 'Visita pre-temporada', 'text' => 'Revisión antes de la época de más cortes.'],
+            ['title' => 'Informe por visita', 'text' => 'Historial escrito de cada revisión realizada.'],
+        ],
+        'faq' => [
+            [
+                'q' => '¿Cuánto cuesta el plan de mantenimiento?',
+                'a' => 'Se cotiza según los equipos que incluya: no es lo mismo un plan solo para el '
+                     . 'tablero que uno que suma generador y paneles solares. Le pedimos su lista de '
+                     . 'equipos para armar la cotización.',
+            ],
+            [
+                'q' => '¿En qué se diferencia del mantenimiento eléctrico preventivo?',
+                'a' => 'El mantenimiento eléctrico preventivo es una revisión puntual del tablero. El '
+                     . 'plan de mantenimiento es un cronograma de visitas durante todo el año, que '
+                     . 'puede incluir además el generador, los paneles solares y el UPS.',
+            ],
+            [
+                'q' => '¿Cuántas visitas incluye el plan?',
+                'a' => 'Depende de los equipos incluidos; se lo detallamos en la cotización, junto con '
+                     . 'la visita previa a la temporada de cortes.',
+            ],
+            [
+                'q' => '¿Qué pasa si un equipo falla entre visitas?',
+                'a' => 'Los clientes del plan tienen coordinación prioritaria para atender esa falla, '
+                     . 'dentro de los equipos incluidos en el plan.',
+            ],
+            [
+                'q' => '¿Puedo sumar equipos al plan más adelante?',
+                'a' => 'Sí, si instala un generador o paneles solares nuevos, se los podemos sumar al '
+                     . 'plan; eso ajusta el cronograma y la cotización.',
+            ],
+        ],
+        'cta'       => ['label' => 'Cotizar un plan de mantenimiento', 'whatsappText' => ''],
+        'related'   => ['generadores', 'paneles-solares', 'mantenimiento-electrico', 'ups-estabilizadores'],
+        'guides'    => [],
+        'articles'  => ['mantenimiento-del-generador', 'temporada-de-cortes-como-preparar-su-casa'],
+        'toolLinks' => [],
+    ],
+
+    'paneles-solares-en-cuotas' => [
+        'path'            => '/servicios/paneles-solares-en-cuotas/',
+        'title'           => 'Paneles solares en cuotas',
+        'navLabel'        => 'Paneles solares en cuotas',
+        'cluster'         => 'energia',
+        'parent'          => 'paneles-solares',
+        'seoTitle'        => 'Paneles solares a cuotas en Paraguay',
+        'metaDescription' => 'Le cotizamos el sistema solar en detalle para financiarlo en cuotas con '
+                           . 'un préstamo o crédito de su banco o financiera; consulte condiciones '
+                           . 'vigentes.',
+        'hero' => [
+            'eyebrow' => 'Energía solar',
+            'h1'      => 'Paneles solares para pagar en cuotas',
+            'h2'      => 'Le armamos el presupuesto detallado que su banco o financiera suele pedir.',
+            'lead'    => 'Dimensionamos y cotizamos su sistema solar en detalle, con el desglose de '
+                       . 'equipos e instalación que un banco o una financiera suele pedir para evaluar '
+                       . 'un préstamo de consumo o un crédito. Así puede pagarlo en cuotas y comparar '
+                       . 'la cuota mensual contra el ahorro esperado en su factura de la ANDE.',
+        ],
+        'includes' => [
+            'Visita técnica y relevamiento del techo y del tablero',
+            'Cálculo de los kWp necesarios a partir de su consumo mensual',
+            'Presupuesto detallado por ítem: paneles, inversor, estructura, protecciones e instalación',
+            'Documento de cotización en el formato que suele pedir un banco o financiera para evaluar '
+                . 'un préstamo',
+            'Información sobre si el proveedor del equipo ofrece financiación propia, cuando exista',
+            'Instalación con puesta a tierra y protecciones normadas, una vez aprobado su presupuesto',
+        ],
+        'excludes' => [
+            'El préstamo o crédito en sí: lo otorga el banco o la financiera que usted elija',
+            'La aprobación o las condiciones de financiación, que dependen de la entidad, no de nosotros',
+            'Baterías de respaldo, si busca energía durante un corte (se cotiza aparte)',
+        ],
+        'weNeed' => [
+            'Sus últimas facturas de la ANDE o su consumo mensual en kWh',
+            'Fotos del techo y del tablero eléctrico actual',
+            'Si ya tiene un banco o financiera en mente, o si quiere que le indiquemos opciones a '
+                . 'consultar',
+        ],
+        'sections' => [
+            [
+                'h2'   => 'El camino, paso a paso',
+                'body' => [
+                    'Partimos de su consumo mensual en kWh para calcular el tamaño del sistema. Con ese '
+                        . 'dato armamos un presupuesto detallado, ítem por ítem, que usted puede llevar '
+                        . 'a su banco o financiera para evaluar un préstamo de consumo o un crédito. '
+                        . 'Algunos proveedores de equipos ofrecen también su propia financiación; se lo '
+                        . 'indicamos cuando esté disponible. Una vez definida la forma de pago, se '
+                        . 'instala el sistema.',
+                ],
+                'items' => [
+                    ['title' => 'Consumo', 'text' => 'Relevamos su consumo mensual en kWh.'],
+                    ['title' => 'Dimensionamiento', 'text' => 'Calculamos los kWp que necesita.'],
+                    ['title' => 'Presupuesto detallado', 'text' => 'Ítem por ítem, para presentar a su entidad.'],
+                    ['title' => 'Financiación', 'text' => 'La gestiona usted con el banco, financiera o proveedor.'],
+                    ['title' => 'Instalación', 'text' => 'Se instala una vez definida la forma de pago.'],
+                ],
+            ],
+            [
+                'h2'   => 'Cuota mensual contra ahorro mensual',
+                'body' => [
+                    'La comparación que suele importar es la cuota mensual del préstamo frente al '
+                        . 'ahorro mensual esperado en su factura de la ANDE: si la cuota queda cerca o '
+                        . 'por debajo de lo que hoy paga de más por el consumo que el sistema va a '
+                        . 'reemplazar, el pago en cuotas puede convenirle. La referencia es lo que '
+                        . 'paga por mes, no el precio total del sistema: ponga su factura actual al '
+                        . 'lado de la cuota que le cotice la entidad.',
+                    'Nosotros le damos los kWp, el consumo que cubren y el presupuesto detallado; la '
+                        . 'tasa, el plazo y la cuota exacta los define la entidad que le otorgue el '
+                        . 'préstamo o crédito, según sus condiciones vigentes.',
+                ],
+            ],
+            [
+                'h2'   => 'Qué necesita su banco o financiera',
+                'body' => [
+                    'Las entidades suelen pedir un presupuesto detallado y formal del sistema '
+                        . 'antes de evaluar un préstamo de consumo o un crédito. Le entregamos ese '
+                        . 'documento con el desglose de equipos, cantidades e instalación, para que lo '
+                        . 'presente donde prefiera. Consulte siempre las condiciones vigentes —tasa, '
+                        . 'plazo, cuota inicial— directamente con la entidad.',
+                ],
+            ],
+        ],
+        'benefits' => [
+            ['title' => 'Presupuesto detallado', 'text' => 'El desglose que su entidad suele pedir para evaluar el préstamo.'],
+            ['title' => 'Sistema a su medida', 'text' => 'Calculado con su consumo real, no con un kit genérico.'],
+            ['title' => 'Sin atarlo a una entidad', 'text' => 'Usted elige dónde financiarlo; nosotros armamos el presupuesto.'],
+        ],
+        'faq' => [
+            [
+                'q' => '¿Ustedes otorgan el préstamo o el crédito?',
+                'a' => 'No. Nosotros dimensionamos y cotizamos el sistema; el préstamo o crédito lo '
+                     . 'otorga el banco o la financiera que usted elija, según sus condiciones vigentes.',
+            ],
+            [
+                'q' => '¿Tengo que financiarlo con un banco en particular?',
+                'a' => 'No. Le entregamos '
+                     . 'el presupuesto detallado que necesita para presentar donde prefiera, y le '
+                     . 'avisamos si el proveedor del equipo ofrece su propia financiación.',
+            ],
+            [
+                'q' => '¿Cómo sé si me conviene pagarlo en cuotas?',
+                'a' => 'Compare la cuota mensual que le cotice la entidad contra el ahorro mensual '
+                     . 'esperado en su factura de la ANDE, no contra el precio total del sistema.',
+            ],
+            [
+                'q' => '¿Cuánto cuesta el sistema?',
+                'a' => 'Depende de su consumo y del sistema que necesite; se lo indicamos en el '
+                     . 'presupuesto detallado, después de la visita técnica.',
+            ],
+            [
+                'q' => '¿Puedo usar la calculadora antes de pedir el presupuesto?',
+                'a' => 'Sí, la calculadora le da una primera estimación de los kWp según su consumo; '
+                     . 'el presupuesto formal para su entidad lo armamos con la visita técnica.',
+            ],
+        ],
+        'cta'       => ['label' => 'Cotizar paneles solares en cuotas', 'whatsappText' => ''],
+        'related'   => ['paneles-solares', 'baterias-respaldo', 'medidor-ande-tramites'],
+        'guides'    => [],
+        'articles'  => ['paneles-solares-cuando-se-pagan', 'on-grid-hibrido-u-off-grid'],
+        'toolLinks' => [
+            [
+                'path'  => '/herramientas/cuanto-solar-necesito/',
+                'label' => 'Calcule cuánto solar necesita',
+                'text'  => 'Estime los kWp y la cantidad de paneles a partir de su factura de la ANDE.',
+            ],
+        ],
+    ],
+
 ];

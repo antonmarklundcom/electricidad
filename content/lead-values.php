@@ -272,6 +272,30 @@ return [
             'crmTag'       => 'medidor-ande-tramites',
             'nextLink'     => ['path' => '/guias/como-leer-la-factura-de-ande/', 'label' => 'Cómo leer su factura de la ANDE'],
         ],
+        'planes-de-mantenimiento' => [
+            'menuLabel'    => 'Plan de mantenimiento',
+            'need'         => 'generador',
+            'tier'         => 'B',
+            'whatsappText' => 'Hola, quisiera cotizar un plan de mantenimiento anual para mis equipos.',
+            'nextStep'     => [
+                'Envíenos la lista de equipos a incluir: generador (kVA y marca), paneles solares, UPS.',
+                'Mándenos fotos del tablero eléctrico actual.',
+            ],
+            'crmTag'       => 'plan-mantenimiento',
+            'nextLink'     => null,
+        ],
+        'paneles-solares-en-cuotas' => [
+            'menuLabel'    => 'Paneles solares en cuotas',
+            'need'         => 'solar',
+            'tier'         => 'A',
+            'whatsappText' => 'Hola, quisiera cotizar paneles solares para pagar en cuotas.',
+            'nextStep'     => [
+                'Tenga a mano sus últimas facturas de la ANDE (o el consumo en kWh) y el tipo de techo.',
+                'Díganos si ya tiene un banco o financiera en mente.',
+            ],
+            'crmTag'       => 'paneles-solares-cuotas',
+            'nextLink'     => ['path' => '/herramientas/cuanto-solar-necesito/', 'label' => 'Calcule cuántos paneles necesita'],
+        ],
     ],
 
     /* One record per key in content/tools.php. A calculator lead is worth less

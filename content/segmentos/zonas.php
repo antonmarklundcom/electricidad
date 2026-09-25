@@ -983,4 +983,326 @@ return [
         ],
     ],
 
+    'electricista-pedro-juan-caballero' => [
+        'path'            => '/electricista/pedro-juan-caballero/',
+        'kind'            => 'zona',
+        'city'            => 'Pedro Juan Caballero',
+        'navLabel'        => 'Pedro Juan Caballero',
+        'seoTitle'        => 'Paneles solares en Pedro Juan Caballero',
+        'metaDescription' => 'Paneles solares, generadores y UPS para comercios de frontera y '
+                           . 'viviendas de Pedro Juan Caballero. Presupuesto por WhatsApp, visita '
+                           . 'coordinada.',
+        'hero' => [
+            'eyebrow' => 'Energía para Pedro Juan Caballero',
+            'h1'      => 'Paneles solares y generadores en Pedro Juan Caballero',
+            'lead'    => 'Comercios de la zona de frontera con Ponta Porã y viviendas que no pueden '
+                       . 'depender solo de la red: cotizamos el proyecto de energía por WhatsApp y '
+                       . 'coordinamos un viaje para la instalación.',
+        ],
+        'leadSlug' => 'paneles-solares',
+        'bundle'   => [
+            'paneles-solares',
+            'generadores',
+            'ups-estabilizadores',
+            'baterias-respaldo',
+            'instalacion-electrica-comercial',
+        ],
+        'traps' => [
+            [
+                'title' => 'Comercios de frontera que pierden ventas en cada corte',
+                'text'  => 'Un local de comercio que trabaja con público de ambos lados de la '
+                         . 'frontera pierde ventas cada vez que se corta la luz, algo que un '
+                         . 'generador o baterías bien dimensionados evitan.',
+            ],
+            [
+                'title' => 'Cajas y equipos de cómputo sin respaldo ante microcortes',
+                'text'  => 'En una zona de mucho movimiento comercial, las bajas de tensión y los '
+                         . 'microcortes pueden colgar o dañar cajas registradoras y equipos de '
+                         . 'cómputo si no hay un UPS o estabilizador de por medio.',
+            ],
+            [
+                'title' => 'Tablero de un local que no acompañó el crecimiento del negocio',
+                'text'  => 'Locales que fueron sumando heladeras, aire acondicionado e iluminación '
+                         . 'con los años terminan con un tablero pensado para menos carga que la '
+                         . 'actual.',
+            ],
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Cómo cotizamos un proyecto en Pedro Juan Caballero',
+                'body' => [
+                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
+                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del local y, '
+                    . 'si hace falta, fotos del techo o del tablero.',
+                    'La instalación se coordina en un viaje planificado a la zona. Para una '
+                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
+                    . 'corresponde una visita.',
+                ],
+            ],
+        ],
+        'weNeed' => [
+            'Rubro del comercio o si es vivienda, y equipos críticos que no pueden quedar sin energía',
+            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
+            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Pueden venir el mismo día a instalar?',
+                'a' => 'No trabajamos con visitas el mismo día en Pedro Juan Caballero: cotizamos el '
+                     . 'proyecto por WhatsApp y coordinamos un viaje para la instalación.',
+            ],
+            [
+                'q' => '¿Atienden comercios además de viviendas?',
+                'a' => 'Sí, es donde más trabajamos en la zona: comercios y también viviendas.',
+            ],
+            [
+                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
+                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
+                     . 'una visita.',
+            ],
+        ],
+    ],
+
+    'electricista-villarrica' => [
+        'path'            => '/electricista/villarrica/',
+        'kind'            => 'zona',
+        'city'            => 'Villarrica',
+        'navLabel'        => 'Villarrica',
+        'seoTitle'        => 'Electricista y solar en Villarrica',
+        'metaDescription' => 'Paneles solares y generadores para viviendas, comercios y fincas cerca '
+                           . 'de Villarrica. Presupuesto por WhatsApp y visita de instalación '
+                           . 'coordinada.',
+        'hero' => [
+            'eyebrow' => 'Energía para Villarrica',
+            'h1'      => 'Paneles solares y generadores en Villarrica',
+            'lead'    => 'Viviendas, comercios y fincas del departamento de Guairá: cotizamos el '
+                       . 'proyecto de energía por WhatsApp y coordinamos un viaje para la '
+                       . 'instalación.',
+        ],
+        'leadSlug' => 'paneles-solares',
+        'bundle'   => [
+            'paneles-solares',
+            'generadores',
+            'ups-estabilizadores',
+            'baterias-respaldo',
+            'instalacion-electrica-residencial',
+        ],
+        'traps' => [
+            [
+                'title' => 'Fincas y depósitos cerca de la ciudad sin respaldo de generador',
+                'text'  => 'Fincas y depósitos vinculados a la actividad agro de la zona pierden '
+                         . 'horas de trabajo en cada corte si no cuentan con un generador o baterías '
+                         . 'bien dimensionados.',
+            ],
+            [
+                'title' => 'Heladeras y freezers de comercio sin protección ante bajas de tensión',
+                'text'  => 'Un freezer o heladera de comercio puede perder mercadería si una baja de '
+                         . 'tensión lo daña y no hay un estabilizador o UPS que lo proteja.',
+            ],
+            [
+                'title' => 'Viviendas ampliadas de a poco sobre un tablero viejo',
+                'text'  => 'Casas que fueron ganando piezas, aire acondicionado y más iluminación con '
+                         . 'los años terminan con un tablero y disyuntores pensados para menos carga '
+                         . 'que la actual.',
+            ],
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Cómo cotizamos un proyecto en Villarrica',
+                'body' => [
+                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
+                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del inmueble '
+                    . 'y, si hace falta, fotos del techo o del tablero.',
+                    'La instalación se coordina en un viaje planificado a la zona. Para una '
+                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
+                    . 'corresponde una visita.',
+                ],
+            ],
+        ],
+        'weNeed' => [
+            'Si es vivienda, finca o comercio, y equipos críticos que no pueden quedar sin luz',
+            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
+            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Pueden venir el mismo día a instalar?',
+                'a' => 'No trabajamos con visitas el mismo día en Villarrica: cotizamos el proyecto '
+                     . 'por WhatsApp y coordinamos un viaje para la instalación.',
+            ],
+            [
+                'q' => '¿Trabajan con fincas y no solo con viviendas de la ciudad?',
+                'a' => 'Sí, trabajamos con viviendas, comercios y fincas del departamento de Guairá.',
+            ],
+            [
+                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
+                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
+                     . 'una visita.',
+            ],
+        ],
+    ],
+
+    'electricista-concepcion' => [
+        'path'            => '/electricista/concepcion/',
+        'kind'            => 'zona',
+        'city'            => 'Concepción',
+        'navLabel'        => 'Concepción',
+        'seoTitle'        => 'Paneles solares en Concepción',
+        'metaDescription' => 'Paneles solares, generadores y baterías de respaldo para viviendas y '
+                           . 'comercios de Concepción. Presupuesto por WhatsApp, visita de '
+                           . 'instalación coordinada.',
+        'hero' => [
+            'eyebrow' => 'Energía para Concepción',
+            'h1'      => 'Paneles solares y generadores en Concepción',
+            'lead'    => 'Viviendas junto al río, comercios de la ciudad y establecimientos '
+                       . 'ganaderos del departamento: cotizamos el proyecto de energía por WhatsApp '
+                       . 'y coordinamos un viaje para la instalación.',
+        ],
+        'leadSlug' => 'paneles-solares',
+        'bundle'   => [
+            'paneles-solares',
+            'generadores',
+            'baterias-respaldo',
+            'ups-estabilizadores',
+            'instalacion-electrica-comercial',
+        ],
+        'traps' => [
+            [
+                'title' => 'Establecimientos ganaderos sin generador ni baterías de respaldo',
+                'text'  => 'Establecimientos vinculados a la ganadería del departamento pierden horas '
+                         . 'de trabajo en cada corte si no cuentan con un generador o un banco de '
+                         . 'baterías bien dimensionado.',
+            ],
+            [
+                'title' => 'Viviendas junto al río con tomas exteriores sin protección adecuada',
+                'text'  => 'La cercanía al agua suma humedad ambiente que acelera el deterioro de '
+                         . 'tomas y cajas de conexión exteriores mal selladas.',
+            ],
+            [
+                'title' => 'Comercios que crecieron más rápido que su instalación eléctrica',
+                'text'  => 'Locales que fueron sumando heladeras, aire acondicionado e iluminación '
+                         . 'con los años terminan con un tablero que no alcanza para la carga '
+                         . 'actual.',
+            ],
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Cómo cotizamos un proyecto en Concepción',
+                'body' => [
+                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
+                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del inmueble '
+                    . 'y, si hace falta, fotos del techo o del tablero.',
+                    'La instalación se coordina en un viaje planificado a la zona. Para una '
+                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
+                    . 'corresponde una visita.',
+                ],
+            ],
+        ],
+        'weNeed' => [
+            'Si es vivienda, comercio o establecimiento, y equipos críticos que no pueden quedar '
+            . 'sin luz',
+            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
+            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Pueden venir el mismo día a instalar?',
+                'a' => 'No trabajamos con visitas el mismo día en Concepción: cotizamos el proyecto '
+                     . 'por WhatsApp y coordinamos un viaje para la instalación.',
+            ],
+            [
+                'q' => '¿Trabajan con establecimientos del departamento, no solo con la ciudad?',
+                'a' => 'Sí, trabajamos con viviendas y comercios de la ciudad y con establecimientos '
+                     . 'del departamento.',
+            ],
+            [
+                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
+                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
+                     . 'una visita.',
+            ],
+        ],
+    ],
+
+    'electricista-chaco' => [
+        'path'            => '/electricista/chaco/',
+        'kind'            => 'zona',
+        'city'            => 'Chaco',
+        'navLabel'        => 'Chaco',
+        'seoTitle'        => 'Energía solar off-grid en el Chaco',
+        'metaDescription' => 'Solar off-grid con baterías y generadores de respaldo para estancias y '
+                           . 'establecimientos del Chaco sin línea de la ANDE cerca. Presupuesto por '
+                           . 'WhatsApp.',
+        'hero' => [
+            'eyebrow' => 'Energía para el Chaco paraguayo',
+            'h1'      => 'Solar off-grid y generadores para el Chaco',
+            'lead'    => 'Estancias y establecimientos lejos de la línea de la ANDE: armamos el '
+                       . 'sistema solar off-grid con baterías por WhatsApp, con un generador como '
+                       . 'respaldo, y coordinamos un viaje para la instalación.',
+        ],
+        'leadSlug' => 'paneles-solares',
+        'bundle'   => [
+            'paneles-solares',
+            'baterias-respaldo',
+            'generadores',
+            'puesta-a-tierra',
+            'mantenimiento-electrico',
+        ],
+        'traps' => [
+            [
+                'title' => 'Sistema off-grid dimensionado solo por el techo, no por el consumo',
+                'text'  => 'Armar los paneles y el banco de baterías según lo que entra en el techo, '
+                         . 'sin sumar antes cada equipo y sus horas de uso, deja al sistema corto '
+                         . 'justo en los días de más consumo.',
+            ],
+            [
+                'title' => 'Generador de respaldo sin mantenimiento entre viajes',
+                'text'  => 'Un generador que solo se prueba cuando ya falta energía suele fallar en '
+                         . 'el peor momento; conviene revisarlo en cada visita programada, no '
+                         . 'esperar a que se corte todo.',
+            ],
+            [
+                'title' => 'Instalación sin puesta a tierra en un establecimiento aislado',
+                'text'  => 'Sin una buena puesta a tierra, un rayo o una falla puede dañar equipos y '
+                         . 'poner en riesgo a las personas, y arreglar eso después implica otro '
+                         . 'viaje.',
+            ],
+        ],
+        'sections' => [
+            [
+                'h2'   => 'Cómo cotizamos un proyecto off-grid en el Chaco',
+                'body' => [
+                    'Muchos establecimientos del Chaco no tienen factura de la ANDE para partir: '
+                    . 'ahí cotizamos a partir de la lista de equipos que va a usar y sus horas de '
+                    . 'uso por día, y con eso dimensionamos paneles y baterías.',
+                    'Para calcular ese consumo antes de escribirnos puede usar las herramientas '
+                    . 'de la web (cuánto solar necesita y consumo por equipo). La instalación se '
+                    . 'coordina en un viaje planificado; una reparación chica la vemos caso por '
+                    . 'caso por WhatsApp antes de definir si corresponde una visita.',
+                ],
+            ],
+        ],
+        'weNeed' => [
+            'Lista de equipos a alimentar y horas de uso por día (o factura de la ANDE, si tiene)',
+            'Si el establecimiento es totalmente off-grid o tiene línea de la ANDE cerca',
+            'Si ya cuenta con generador, baterías o paneles instalados',
+        ],
+        'faq' => [
+            [
+                'q' => '¿Arman sistemas solares sin conexión a la ANDE?',
+                'a' => 'Sí, armamos sistemas off-grid con baterías dimensionados según el consumo '
+                     . 'real del establecimiento, no solo el techo disponible.',
+            ],
+            [
+                'q' => '¿Pueden venir el mismo día a instalar?',
+                'a' => 'No trabajamos con visitas el mismo día en el Chaco: cotizamos el proyecto '
+                     . 'por WhatsApp y coordinamos un viaje planificado para la instalación.',
+            ],
+            [
+                'q' => '¿Qué hacen si no tengo factura de la ANDE para cotizar?',
+                'a' => 'Cotizamos igual, a partir de la lista de equipos que va a usar y sus horas '
+                     . 'de uso por día.',
+            ],
+        ],
+    ],
+
 ];

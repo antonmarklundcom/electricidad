@@ -13,3 +13,6 @@ confirmed from a primary source. The sandbox that built the site could not reach
 | 6 | Asunción monthly irradiation min/max (calculator uses 4,9 kWh/m²·día annual mean) | `lib/market/py.php` `energia.solar` | globalsolaratlas.info, PVGIS |
 | 7 | Appliance wattages (heladera, freezer, portón, 24.000 BTU AC are proxies) | `lib/market/py.php` `energia.equipos` | manufacturer labels sold in PY |
 | 8 | Solar/generator price figures quoted from 2026 press (G. 12,5 M; USD 10–15 k; G. 4,2 M; G. 47 M) — refresh every 6 months | services `paneles-solares`, `generadores`, 2 guides, 2 articles | ABC, Prensa Mercosur, La Tribuna 2026-02-25 |
+| 9 | Solar financing partner: bank/financiera name, rate, term, down payment, required documents | service `paneles-solares-en-cuotas` (today it names no lender and says "consulte las condiciones vigentes") | the partner's own product sheet, once signed (plan.md §5 #16) |
+| 10 | Maintenance-plan prices and visit frequency per equipment set (tablero, generador, paneles, UPS) | service `planes-de-mantenimiento` (today "se cotiza según los equipos incluidos") | Anton / partner crews' price list |
+| 11 | Travel cost and minimum project size for Pedro Juan Caballero, Villarrica, Concepción and the Chaco | zone pages `/electricista/<ciudad>/` (today: quoted by WhatsApp, installation in a coordinated trip) | Anton / partner crews |

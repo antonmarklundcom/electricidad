@@ -144,4 +144,38 @@ return [
         'tags'        => ['UPS', 'Estabilizadores', 'Comparativa'],
         'service'     => 'ups-estabilizadores',
     ],
+    [
+        'slug'        => 'tormentas-de-verano-como-proteger-sus-equipos',
+        'title'       => 'Tormentas de verano: cómo proteger sus equipos',
+        'seoTitle'    => 'Proteger equipos de tormentas de verano',
+        'description' => 'Qué le hace una sobretensión de tormenta a la instalación, qué protege un '
+                       . 'DPS en el tablero y qué puede hacer usted mientras dura el temporal.',
+        'date'        => '2026-09-25',
+        'updated'     => null,
+        'tags'        => ['Tormentas', 'Verano', 'Protección'],
+        'service'     => 'puesta-a-tierra',
+    ],
+    [
+        'slug'        => 'que-hacer-cuando-vuelve-la-luz',
+        'title'       => 'Qué hacer cuando vuelve la luz después de un corte',
+        'seoTitle'    => 'Qué hacer cuando vuelve la luz',
+        'description' => 'Por qué vuelve la luz con riesgo de picos, qué conviene desconectar antes '
+                       . 'del corte y cuándo un disyuntor que vuelve a saltar exige un electricista.',
+        'date'        => '2026-09-25',
+        'updated'     => null,
+        'tags'        => ['Cortes de luz', 'Verano', 'Tablero eléctrico'],
+        'service'     => 'ups-estabilizadores',
+    ],
+    [
+        'slug'        => 'ups-y-baterias-revision-antes-del-verano',
+        'title'       => 'UPS y baterías de respaldo: la revisión antes del verano',
+        'seoTitle'    => 'UPS y baterías antes del verano',
+        'description' => 'Por qué una prueba de autonomía con carga real dice más que la luz '
+                       . 'encendida del UPS, y qué anotar en cada revisión antes de la temporada de '
+                       . 'cortes.',
+        'date'        => '2026-09-25',
+        'updated'     => null,
+        'tags'        => ['UPS', 'Baterías', 'Mantenimiento'],
+        'service'     => 'baterias-respaldo',
+    ],
 ];
