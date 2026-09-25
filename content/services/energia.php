@@ -788,12 +788,10 @@ return [
             'eyebrow' => 'Energía solar',
             'h1'      => 'Paneles solares para pagar en cuotas',
             'h2'      => 'Le armamos el presupuesto detallado que su banco o financiera suele pedir.',
-            'lead'    => 'Todavía no tenemos un convenio cerrado con un banco o financiera puntual. Lo '
-                       . 'que sí hacemos es dimensionar y cotizar su sistema solar en detalle, con el '
-                       . 'desglose de equipos e instalación que una entidad suele pedir para evaluar '
-                       . 'un préstamo de consumo o un crédito, para que usted pueda pagarlo en cuotas '
-                       . 'mientras compara su cuota mensual contra el ahorro esperado en su factura de '
-                       . 'la ANDE.',
+            'lead'    => 'Dimensionamos y cotizamos su sistema solar en detalle, con el desglose de '
+                       . 'equipos e instalación que un banco o una financiera suele pedir para evaluar '
+                       . 'un préstamo de consumo o un crédito. Así puede pagarlo en cuotas y comparar '
+                       . 'la cuota mensual contra el ahorro esperado en su factura de la ANDE.',
         ],
         'includes' => [
             'Visita técnica y relevamiento del techo y del tablero',
@@ -840,10 +838,9 @@ return [
                     'La comparación que suele importar es la cuota mensual del préstamo frente al '
                         . 'ahorro mensual esperado en su factura de la ANDE: si la cuota queda cerca o '
                         . 'por debajo de lo que hoy paga de más por el consumo que el sistema va a '
-                        . 'reemplazar, el pago en cuotas puede convenirle. A modo de ejemplo '
-                        . 'ilustrativo, no como precio real: si hoy paga X en su factura y el sistema '
-                        . 'reemplaza buena parte de ese consumo, compare esa X contra la cuota que le '
-                        . 'cotice la entidad, no contra el precio total del sistema.',
+                        . 'reemplazar, el pago en cuotas puede convenirle. La referencia es lo que '
+                        . 'paga por mes, no el precio total del sistema: ponga su factura actual al '
+                        . 'lado de la cuota que le cotice la entidad.',
                     'Nosotros le damos los kWp, el consumo que cubren y el presupuesto detallado; la '
                         . 'tasa, el plazo y la cuota exacta los define la entidad que le otorgue el '
                         . 'préstamo o crédito, según sus condiciones vigentes.',
@@ -852,7 +849,7 @@ return [
             [
                 'h2'   => 'Qué necesita su banco o financiera',
                 'body' => [
-                    'La mayoría de las entidades piden un presupuesto detallado y formal del sistema '
+                    'Las entidades suelen pedir un presupuesto detallado y formal del sistema '
                         . 'antes de evaluar un préstamo de consumo o un crédito. Le entregamos ese '
                         . 'documento con el desglose de equipos, cantidades e instalación, para que lo '
                         . 'presente donde prefiera. Consulte siempre las condiciones vigentes —tasa, '
@@ -872,8 +869,8 @@ return [
                      . 'otorga el banco o la financiera que usted elija, según sus condiciones vigentes.',
             ],
             [
-                'q' => '¿Tienen un convenio con algún banco?',
-                'a' => 'Por ahora no tenemos un convenio cerrado con una entidad puntual. Le entregamos '
+                'q' => '¿Tengo que financiarlo con un banco en particular?',
+                'a' => 'No. Le entregamos '
                      . 'el presupuesto detallado que necesita para presentar donde prefiera, y le '
                      . 'avisamos si el proveedor del equipo ofrece su propia financiación.',
             ],

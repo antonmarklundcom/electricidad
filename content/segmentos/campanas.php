@@ -31,6 +31,7 @@ return [
             'tablero-electrico-disyuntores',
             'baterias-respaldo',
             'paneles-solares',
+            'planes-de-mantenimiento',
         ],
         'traps' => [
             [

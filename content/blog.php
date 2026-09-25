@@ -169,7 +169,7 @@ return [
     [
         'slug'        => 'ups-y-baterias-revision-antes-del-verano',
         'title'       => 'UPS y baterías de respaldo: la revisión antes del verano',
-        'seoTitle'    => 'UPS y baterías: revisión antes del verano',
+        'seoTitle'    => 'UPS y baterías antes del verano',
         'description' => 'Por qué una prueba de autonomía con carga real dice más que la luz '
                        . 'encendida del UPS, y qué anotar en cada revisión antes de la temporada de '
                        . 'cortes.',

@@ -278,7 +278,7 @@ return [
             'tier'         => 'B',
             'whatsappText' => 'Hola, quisiera cotizar un plan de mantenimiento anual para mis equipos.',
             'nextStep'     => [
-                'Hágannos la lista de equipos a incluir: generador (kVA y marca), paneles solares, UPS.',
+                'Envíenos la lista de equipos a incluir: generador (kVA y marca), paneles solares, UPS.',
                 'Mándenos fotos del tablero eléctrico actual.',
             ],
             'crmTag'       => 'plan-mantenimiento',
