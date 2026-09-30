@@ -30,11 +30,17 @@ $htmlLang    = $page['lang'] ?? market_locale();
 <meta name="description" content="<?= e($page['description']) ?>">
 <?php endif; ?>
 <link rel="canonical" href="<?= e(seo_canonical($page)) ?>">
+<?php if (empty($page['hreflang']) && empty($page['noindex'])): ?>
+<link rel="alternate" hreflang="<?= e($htmlLang) ?>" href="<?= e(seo_canonical($page)) ?>">
+<link rel="alternate" hreflang="x-default" href="<?= e(seo_canonical($page)) ?>">
+<?php endif; ?>
 <?php foreach ($page['hreflang'] ?? [] as $hrefLocale => $hrefPath): ?>
 <link rel="alternate" hreflang="<?= e($hrefLocale) ?>" href="<?= e(url($hrefPath)) ?>">
 <?php endforeach; ?>
 <?php if (!empty($page['noindex'])): ?>
 <meta name="robots" content="noindex, follow">
+<?php else: ?>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <?php endif; ?>
 
 <meta property="og:type" content="<?= e($page['ogType'] ?? 'website') ?>">
@@ -46,7 +52,13 @@ $htmlLang    = $page['lang'] ?? market_locale();
 <?php endif; ?>
 <meta property="og:url" content="<?= e(seo_canonical($page)) ?>">
 <meta property="og:image" content="<?= e(seo_og_image($page)) ?>">
+<meta property="og:image:alt" content="<?= e(site('name')) ?>">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<?= e(seo_title($page)) ?>">
+<?php if (!empty($page['description'])): ?>
+<meta name="twitter:description" content="<?= e($page['description']) ?>">
+<?php endif; ?>
+<meta name="twitter:image" content="<?= e(seo_og_image($page)) ?>">
 
 <!-- Keep in step with --ink in assets/css/site.css. -->
 <meta name="theme-color" content="#0F1B2D">
