@@ -21,7 +21,11 @@ $navCurrentPath = $page['path'] ?? '/';
 $navWhatsapp    = whatsapp_link(whatsapp_text_for_page());
 $navLeadSlug    = current_lead_slug() ?? '';
 ?>
+<?php if (!publication_ready()): ?>
+<div class="publication-note">Consultas por WhatsApp disponibles · La cobertura, la disponibilidad y el formulario web están pendientes de confirmación.</div>
+<?php else: ?>
 <?php require ROOT_DIR . '/partials/season-banner.php'; ?>
+<?php endif; ?>
 <header class="site-header" data-header>
   <div class="container site-header__bar">
 

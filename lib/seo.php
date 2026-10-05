@@ -97,6 +97,8 @@ function jsonld_organization(): array
         'areaServed' => ['@type' => 'Country', 'name' => site('country') ?? market_country()],
     ];
 
+    unset($data['areaServed']); // Coverage must be explicitly confirmed.
+
     /* Named cities, when the site lists them: a local business ranks for the
        places it declares, not just the country. */
     $cities = array_values(array_filter((array) site('areaServed')));
@@ -279,6 +281,11 @@ function jsonld_article(array $article, array $page): ?array
 function seo_jsonld(array $page): array
 {
     $blocks = [jsonld_organization()];
+    // A service provider has not yet been established.
+    if (!contact_ready()) {
+        $page['jsonld'] = array_values(array_filter($page['jsonld'] ?? [],
+            static fn (array $block): bool => ($block['@type'] ?? '') !== 'Service'));
+    }
 
     foreach ([
         jsonld_breadcrumbs($page['breadcrumbs'] ?? []),

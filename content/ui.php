@@ -25,8 +25,8 @@ return [
 
     // One line under each cluster heading on the services hub. Keyed by cluster id.
     'cluster_leads' => [
-        'electricista' => 'Instalaciones, reparaciones y mantenimiento, con presupuesto por WhatsApp antes de la visita.',
-        'energia'      => 'Paneles solares, generadores, UPS y baterías: dimensionados para su consumo real e instalados.',
+        'electricista' => 'Temas de instalaciones, reparaciones y mantenimiento para preparar una consulta.',
+        'energia'      => 'Solar, generadores, UPS y baterías: alternativas para evaluar según los equipos y el consumo.',
     ],
 
     'nav' => [
@@ -54,13 +54,13 @@ return [
     ],
 
     'cta' => [
-        'quote'         => 'Pedir presupuesto',
+        'quote'         => 'Preparar consulta',
         'whatsapp'      => 'WhatsApp',
         'whatsapp_long' => 'Escribir por WhatsApp',
-        'consult'       => 'Pedir presupuesto',
+        'consult'       => 'Preparar consulta',
         'contact'       => 'Contactar',
         'see_included'  => 'Ver qué incluye',
-        'talk'          => 'Contarnos el problema',
+        'talk'          => 'Preparar mi consulta',
     ],
 
     // The WhatsApp menu. These are BUTTON LABELS only — the message that
@@ -78,18 +78,18 @@ return [
     'home' => [
         'eyebrow'   => 'Asunción y Gran Asunción',
         'h1_lead'   => 'Electricista en Asunción y Central: ',
-        'h1_accent' => 'presupuesto por WhatsApp, visita hoy mismo.',
+        'h1_accent' => 'presupuesto por WhatsApp, una consulta mejor preparada.',
         'lead'      => 'Nos manda una foto o un audio del problema, le decimos qué hay que hacer y '
                      . 'cuánto cuesta antes de ir. Y si ya se cansó de los cortes, le dimensionamos '
                      . 'paneles solares, generador o UPS para su consumo real.',
         'trust'     => [
             'Presupuesto antes de la visita',
             'Materiales y mano de obra por separado',
-            'Trabajo con garantía por escrito',
+            'Condiciones por confirmar',
         ],
 
         'tracks_eyebrow' => 'Dos formas de ayudarle',
-        'tracks_title'   => 'Lo que se arregla hoy y lo que le evita el próximo corte.',
+        'tracks_title'   => 'Encuentre el tema y los datos útiles para consultar.',
         'track_electricista_title' => 'Electricista',
         'track_electricista_text'  => 'Fallas, cortocircuitos, tableros, aire acondicionado e instalaciones nuevas.',
         'track_energia_title'      => 'Energía y respaldo',
@@ -97,16 +97,16 @@ return [
         'track_all'                => 'Ver todo',
 
         'services_eyebrow' => 'Servicios',
-        'services_title'   => 'Lo que hacemos',
-        'services_lead'    => 'Desde un disyuntor que salta hasta un sistema solar completo.',
+        'services_title'   => 'Encuentre el tema de su consulta',
+        'services_lead'    => 'Instalaciones y reparaciones, o alternativas de energía y respaldo. Elija por necesidad.',
 
         'tools_eyebrow' => 'Calculadoras gratuitas',
         'tools_title'   => 'Haga la cuenta antes de pedir presupuesto.',
         'tools_lead'    => 'Con su factura de la ANDE o la lista de sus equipos, en dos minutos.',
 
         'zones_eyebrow' => 'Zonas',
-        'zones_title'   => 'Dónde trabajamos',
-        'zones_lead'    => 'Asunción y las ciudades de Central. Para el interior, consúltenos por WhatsApp.',
+        'zones_title'   => 'Información por zona',
+        'zones_lead'    => 'Estas páginas son referencias por ubicación. No equivalen a cobertura confirmada.',
 
         'unsure_title' => '¿No sabe qué necesita?',
         'unsure_text'  => 'Mándenos una foto del tablero o del problema y le decimos qué corresponde.',
@@ -130,42 +130,22 @@ return [
     // about how the business works, never a claim about size or results — those
     // need the owner's confirmation and belong in content/site.php.
     'about' => [
-        'eyebrow' => 'Quiénes somos',
-        'title'   => 'Sin sorpresas en el precio ni en la instalación.',
-        'text'    => 'La mayoría de los problemas eléctricos se pueden diagnosticar con una foto del '
-                   . 'tablero y dos preguntas. Por eso cotizamos antes de ir, separamos materiales '
-                   . 'de mano de obra y le dejamos por escrito qué se hizo y con qué garantía.',
-        // Shown while content/site.php has no credentials[] of its own.
-        'credentials' => [
-            'Presupuesto por WhatsApp antes de la visita',
-            'Materiales y mano de obra detallados por separado',
-            'Informe escrito de lo que se hizo, con garantía',
-        ],
-        'badge_note'     => 'de experiencia',
-        'badge_fallback' => 'Equipo propio',
+        'eyebrow' => 'Antes de contratar',
+        'title' => 'Una buena consulta empieza con información clara.',
+        'text' => 'Electricidad PY reúne temas de instalaciones, reparaciones y energía. Use las guías para ordenar sus dudas y pida a quien cotice el alcance, los materiales, la mano de obra y las condiciones por escrito.',
+        'credentials' => ['Describa el problema sin abrir tableros', 'Consulte si hace falta una visita técnica', 'Confirme cobertura, costos y condiciones'],
+        'badge_note' => '', 'badge_fallback' => 'Información para decidir',
     ],
 
     // The four-step "cómo trabajamos" block, reused on service pages.
     'process' => [
-        'eyebrow' => 'Cómo trabajamos',
-        'title'   => 'Del mensaje de WhatsApp al trabajo terminado, sin sorpresas.',
-        'steps'   => [
-            [
-                'title' => 'Nos cuenta el problema',
-                'text'  => 'Por WhatsApp o el formulario, con una foto o un audio si puede.',
-            ],
-            [
-                'title' => 'Presupuesto antes de ir',
-                'text'  => 'Le decimos qué hay que hacer y un rango de precio, o qué hace falta ver en el lugar.',
-            ],
-            [
-                'title' => 'Visita coordinada',
-                'text'  => 'Un electricista va en el horario acordado, con los materiales del presupuesto.',
-            ],
-            [
-                'title' => 'Trabajo con garantía',
-                'text'  => 'Le dejamos por escrito qué se hizo, qué se cambió y la garantía.',
-            ],
+        'eyebrow' => 'Cómo preparar su consulta',
+        'title' => 'Del problema a una consulta clara.',
+        'steps' => [
+            ['title' => 'Describa la necesidad', 'text' => 'Qué sucede, desde cuándo y qué ambientes o equipos afecta.'],
+            ['title' => 'Indique la zona', 'text' => 'Ciudad y tipo de inmueble. No comparta su dirección exacta en el resumen.'],
+            ['title' => 'Pida un alcance', 'text' => 'Qué se revisaría y si hace falta una visita técnica para cotizar.'],
+            ['title' => 'Confirme antes de contratar', 'text' => 'Proveedor, precio, materiales, fecha y condiciones por escrito.'],
         ],
     ],
 
@@ -173,7 +153,7 @@ return [
     // none. Sectors, not clients: nothing to verify.
     'industries' => [
         'eyebrow' => 'Rubros',
-        'title'   => 'Para su casa, su local o su campo',
+        'title'   => 'Para su casa o su negocio',
         'lead'    => 'Una casa, un comercio y una estancia tienen problemas eléctricos distintos.',
         // Each item is either a plain string or ['label' => ..., 'path' => ...]
         // pointing at a segment page in content/segmentos.php.
@@ -195,20 +175,19 @@ return [
     'services_hub' => [
         'eyebrow'      => 'Servicios',
         'title'        => 'Electricista y energía, en un solo lugar.',
-        'lead'         => 'Lo que se arregla hoy y lo que le evita el próximo corte.',
+        'lead'         => 'Encuentre el tema y los datos útiles para consultar.',
         'unsure_title' => '¿No sabe qué necesita?',
         'unsure_text'  => 'Mándenos una foto del problema y le decimos qué corresponde.',
         'unsure_cta'   => 'Escribirnos',
     ],
 
     'cta_band' => [
-        'eyebrow' => 'Presupuesto sin cargo',
-        'title'   => 'Cuéntenos el problema y le cotizamos antes de ir.',
-        'lead'    => 'Por WhatsApp, con una foto si puede. Sin costo y sin compromiso.',
+        'eyebrow' => 'El siguiente paso', 'title' => 'Prepare una consulta clara.',
+        'lead' => 'Necesidad, zona y descripción. Una consulta no confirma una visita ni un precio.',
     ],
 
     'form' => [
-        'legend'          => 'Pedir presupuesto',
+        'legend'          => 'Preparar consulta',
         'name'            => 'Nombre',
         'company'         => 'Barrio (opcional)',
         'phone'           => 'WhatsApp o teléfono',
@@ -217,13 +196,13 @@ return [
         'need'            => '¿Qué necesita?',
         'message'         => 'Cuéntenos brevemente',
         'message_hint'    => 'Qué pasa, desde cuándo y dónde (casa, local, campo)…',
-        'submit'          => 'Pedir presupuesto',
+        'submit'          => 'Preparar consulta',
         'sending'         => 'Enviando…',
         'privacy_note'    => 'Usamos sus datos solo para responderle. Ver la política de privacidad.',
         'success_title'   => 'Recibimos su pedido.',
-        'success_text'    => 'Le escribimos por WhatsApp a la brevedad. Si es urgente, escríbanos ahora.',
+        'success_text'    => 'La solicitud fue recibida. Todavía debe confirmarse el alcance y la disponibilidad.',
         'error_title'     => 'No pudimos enviar el formulario.',
-        'error_text'      => 'Vuelva a intentarlo en un momento o escríbanos directamente.',
+        'error_text' => 'La entrega no se confirmó. Conserve su resumen; no hay una visita reservada.',
         'error_phone'     => 'Necesitamos un teléfono o WhatsApp válido para responderle.',
         'required'        => 'obligatorio',
         'thanks_next'     => 'Qué sigue',
@@ -288,43 +267,32 @@ return [
     ],
 
     'contact' => [
-        'eyebrow' => 'Contacto',
-        'title'   => 'Cuéntenos qué pasa.',
-        'lead'    => 'Escríbanos por WhatsApp con una foto o un audio, o déjenos sus datos y le '
-                   . 'respondemos con un presupuesto.',
-        'address' => 'Dirección',
-        'hours'   => 'Horario',
-        'phone'   => 'Teléfono',
-        'email'   => 'Correo',
-        'expect'  => 'Qué pasa después',
-        'steps'   => [
-            'Le respondemos por WhatsApp con las preguntas justas o un presupuesto.',
-            'Si hace falta ver el lugar, coordinamos la visita en el horario que le quede bien.',
-            'Usted aprueba el presupuesto antes de que empecemos.',
-        ],
+        'eyebrow' => 'Su consulta', 'title' => 'Cuéntenos qué necesita.',
+        'lead' => 'Consulte por WhatsApp con el tema y la zona. El formulario web todavía no recibe solicitudes: aquí puede preparar un resumen sin enviarlo.',
+        'address' => 'Dirección', 'hours' => 'Horario', 'phone' => 'Teléfono', 'email' => 'Correo', 'expect' => 'Qué debe quedar claro',
+        'steps' => ['Quién recibirá la consulta y si cubre su zona.', 'Si necesita una visita técnica y qué costo tendría.', 'El alcance y las condiciones antes de aprobar cualquier trabajo.'],
     ],
 
     'service' => [
-        'includes'     => 'Qué incluye',
+        'includes'     => 'Alcance a consultar',
         'excludes'     => 'Qué no incluye',
-        'we_need'      => 'Qué necesitamos de usted',
+        'we_need'      => 'Datos útiles para consultar',
         'benefits'     => 'Beneficios',
         'faq'          => 'Preguntas frecuentes',
         'related'      => 'Servicios relacionados',
         'guides'       => 'Guía relacionada',
         'articles'     => 'Artículo relacionado',
         'form_eyebrow' => 'Presupuesto',
-        'form_lead'    => 'Déjenos sus datos y le respondemos por WhatsApp con un presupuesto, '
-                        . 'sin costo y sin compromiso.',
+        'form_lead' => 'Indique necesidad, zona y descripción. La disponibilidad y las condiciones deben confirmarse.',
         'breadcrumb'   => 'Ruta de navegación',
     ],
 
     // Segment landing pages (content/segmentos.php).
     'segment' => [
         'traps_title'  => 'Los problemas que más vemos',
-        'bundle_title' => 'Lo que hacemos para usted',
-        'other_zones'  => 'Otras zonas donde trabajamos',
-        'form_eyebrow' => 'Presupuesto sin cargo',
+        'bundle_title' => 'Encuentre el tema de su consulta para usted',
+        'other_zones'  => 'Otras zonas de referencia',
+        'form_eyebrow' => 'Prepare su consulta',
         'form_lead'    => 'Cuéntenos qué necesita y dónde; le respondemos por WhatsApp con un presupuesto.',
     ],
 
@@ -345,9 +313,9 @@ return [
         'reviewed_prefix'       => 'Revisado el',
         'orientativo'           => 'Es una guía general. La electricidad es peligrosa: ante la duda, no toque y consúltenos.',
         'delegate_eyebrow'      => 'Que lo haga un electricista',
-        'delegate_title'        => '¿Prefiere que nos encarguemos?',
-        'delegate_lead'         => 'Mándenos una foto por WhatsApp y le cotizamos antes de ir.',
-        'delegate_form_heading' => 'Pedir presupuesto',
+        'delegate_title'        => 'Prepare una consulta sobre este tema',
+        'delegate_lead' => 'Prepare el tema y su zona para consultar con un profesional.',
+        'delegate_form_heading' => 'Preparar consulta',
         'related'               => 'Otras guías',
     ],
 
@@ -367,7 +335,7 @@ return [
     'pricing' => [
         'quote'    => 'A cotizar',
         'per_month' => 'por mes',
-        'cta'      => 'Pedir presupuesto',
+        'cta'      => 'Preparar consulta',
         'note'     => 'Cada trabajo se cotiza por escrito antes de empezar; usted aprueba antes de que vayamos.',
     ],
 
@@ -383,7 +351,7 @@ return [
     ],
 
     'footer' => [
-        'blurb'   => 'Electricistas en Asunción y Central, y soluciones de energía solar, generadores y UPS para todo Paraguay.',
+        'blurb'   => 'Orientación sobre electricidad y energía en Paraguay. Guías y calculadoras para preparar su consulta.',
         'rights'  => 'Todos los derechos reservados.',
         'contact' => 'Contacto',
     ],

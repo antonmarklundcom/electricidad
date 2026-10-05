@@ -53,7 +53,7 @@ $needLabels = [
     'socio'        => 'Electricista o proveedor que quiere sumarse a la red',
 ];
 
-return [
+$model = [
 
     'tierValues' => $tierValues,
     'needLabels' => $needLabels,
@@ -364,3 +364,17 @@ return [
         'otro'        => ['tier' => 'C', 'crmTag' => 'consulta-general', 'service' => null],
     ],
 ];
+
+// Consultation language must not promise a response time, visit or financing.
+$model['default']['whatsappText'] = 'Hola, quisiera consultar sobre electricidad o energía.';
+$model['default']['nextStep'] = [
+    'La solicitud no confirma una visita ni un contrato.',
+    'Antes de contratar, confirme prestador, alcance, disponibilidad y condiciones.',
+];
+foreach (['services', 'tools'] as $group) {
+    foreach ($model[$group] as &$record) {
+        $record['nextStep'] = $model['default']['nextStep'];
+    }
+    unset($record);
+}
+return $model;

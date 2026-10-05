@@ -16,6 +16,10 @@
 declare(strict_types=1);
 
 $thanksLead   = $thanksLead ?? lead_value(null);
+if (!contact_ready()) {
+    unset($thanksLead, $thanksHidden, $thanksAttrs);
+    return;
+}
 $thanksHidden = $thanksHidden ?? false;
 $thanksAttrs  = $thanksAttrs ?? '';
 $thanksWa     = whatsapp_link($thanksLead['whatsappText']);
@@ -24,6 +28,7 @@ $thanksLink   = $thanksLead['nextLink'] ?? null;
 ?>
 <div class="thanks" role="status" <?= $thanksAttrs ?><?= $thanksHidden ? ' hidden' : '' ?>>
   <p class="thanks__title"><?= e(ui('form.success_title')) ?></p>
+  <p>Es una solicitud, no una reserva. La cobertura, el alcance, el precio y la fecha deben confirmarse antes de cualquier trabajo.</p>
 
   <?php if ($thanksSteps !== []): ?>
     <p class="thanks__next"><?= e(ui('form.thanks_next')) ?></p>

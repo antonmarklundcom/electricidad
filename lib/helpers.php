@@ -60,6 +60,9 @@ function site(?string $key = null)
 {
     $site = content('site');
 
+    if (in_array($key, ['phone', 'whatsapp'], true) && empty($site['contactVerified'])) {
+        return null;
+    }
     return $key === null ? $site : ($site[$key] ?? null);
 }
 
@@ -151,10 +154,14 @@ function whatsapp_link(?string $text = null): ?string
         return null;
     }
 
-    $link = 'https://wa.me/' . $number;
-    if ($text !== null && $text !== '') {
-        $link .= '?text=' . rawurlencode($text);
-    }
+    $sourcePage = $GLOBALS['page'] ?? [];
+    $path = (string) ($sourcePage['path'] ?? '/');
+    $topic = (string) ($sourcePage['title'] ?? site('name'));
+    $message = trim($text ?: whatsapp_text_for_page())
+        . "\nOrigen: " . site('domain')
+        . "\nPágina: " . $topic
+        . "\nEnlace: https://" . site('domain') . $path;
+    $link = 'https://wa.me/' . $number . '?text=' . rawurlencode($message);
 
     return $link;
 }

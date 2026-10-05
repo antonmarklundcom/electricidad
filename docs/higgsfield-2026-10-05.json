@@ -1,0 +1,17 @@
+{
+  "site": "electricidad.com.py", "date": "2026-10-05", "budget_cap_credits": 50,
+  "jobs": [{
+    "job_id": "4ffb1bed-bae7-4fe5-a8ff-ed4a1174ae75", "model": "gpt_image_2_5",
+    "variant": "sunburst", "quality": "medium", "resolution": "1k", "aspect_ratio": "4:3",
+    "count": 1, "status": "completed", "estimate_credits": 0.5,
+    "actual_job_debit": null, "balance_before": 5705.5, "balance_after": 5705.0,
+    "observed_balance_delta_credits": 0.5,
+    "actual_debit_note": "No per-job debit field returned; observed balance delta matches estimate. No other paid jobs in this task.",
+    "assets": ["assets/img/home-energy-640.webp", "assets/img/home-energy-1024.webp"],
+    "use": "Visibly labeled AI illustration; closed panel, no staff, customer or project claim"
+  }],
+  "failed_jobs": 0, "retries": 0, "purchases": 0, "videos": 0,
+  "estimated_total_credits": 0.5, "observed_total_balance_delta_credits": 0.5,
+  "remaining_cap_based_on_observed_delta": 49.5,
+  "other_assets": "Code-native OG and favicon; no additional credits"
+}

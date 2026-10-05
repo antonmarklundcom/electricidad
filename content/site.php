@@ -31,7 +31,9 @@ return [
     // schema.org types for the organisation block, most specific first. See
     // https://schema.org/LocalBusiness for the list ('LegalService',
     // 'Plumber', 'Dentist', 'AccountingService', …).
-    'schemaType' => ['Electrician', 'LocalBusiness'],
+    'schemaType' => ['Organization'],
+    'businessRole' => 'Orientación y preparación de consultas',
+    'contactVerified' => true, // Owner confirmed this number on 2026-10-05.
 
     // Path of the services hub. '/servicios/' by default; a store can use
     // '/productos/'. Move the servicios/ route directory and its
@@ -40,7 +42,8 @@ return [
 
     // Cities named in the JSON-LD areaServed. Mirrors the zone pages in
     // content/segmentos/zonas.php (Gran Asunción first).
-    'areaServed' => [
+    'areaServed' => [], // No service coverage confirmed.
+    'locationsOfInterest' => [
         'Asunción', 'San Lorenzo', 'Luque', 'Fernando de la Mora', 'Lambaré', 'Capiatá',
         'Ñemby', 'Mariano Roque Alonso', 'Villa Elisa', 'Limpio',
         'Ciudad del Este', 'Encarnación', 'Coronel Oviedo',
@@ -48,16 +51,15 @@ return [
     ],
 
     'legalName'   => null,                       // registered legal name
-    'description' => 'Electricistas en Asunción y Central, y presupuestos de energía solar, '
-                   . 'generadores y UPS: cotización por WhatsApp antes de la visita.',
+    'description' => 'Orientación sobre electricidad y energía en Paraguay. Guías, calculadoras y preparación de consultas para hogares y negocios.',
 
     // --- contact ------------------------------------------------------------
     // 'phone' and 'whatsapp' in international form, e.g. '+595 981 123 456'.
     // While both are null the header pill, the floating button and every
     // service CTA point at /contacto/ instead of wa.me — see
     // partials/whatsapp-fab.php.
-    'phone'    => '+595 995 628862',
-    'whatsapp' => '+595 995 628862',
+    'phone'    => '+595 992 279599',
+    'whatsapp' => '+595 992 279599',
     'email'    => null,
 
     // --- address ------------------------------------------------------------

@@ -29,10 +29,9 @@
  *   the same thank-you server-side — so the form works with JavaScript
  *   disabled.
  *
- * DEGRADED MODE: with no VENDERCRM_URL / VENDERCRM_API_KEY in config.php, or
- * when the CRM is unreachable, the lead is appended to logs/leads.log and the
- * visitor still gets success with degraded: true. A visitor who filled in a form
- * and got an error page is a lost customer; a logged lead is a five-minute fix.
+ * INTAKE: explicit enablement, a named operator and configured CRM are required.
+ * Missing setup returns 503 without storing a lead. A CRM delivery failure
+ * preserves a private record but returns an error, never a booking or receipt.
  *
  * This file is shared chrome: pages parameterise it, they do not edit it.
  */
@@ -59,6 +58,7 @@ function respond(bool $ok, bool $degraded, ?string $error = null, array $extra =
 
     if ($wantsJson) {
         header('Content-Type: application/json; charset=utf-8');
+        header('Cache-Control: no-store');
         http_response_code($ok ? 200 : 422);
         echo json_encode(
             array_filter(
@@ -94,17 +94,13 @@ function field(string $key, int $max): string
 }
 
 /**
- * The client IP, preferring the proxy header Hostinger sets.
+ * Socket client IP; no unverified forwarded header is trusted.
  */
 function client_ip(): string
 {
-    foreach (['HTTP_CF_CONNECTING_IP', 'HTTP_X_REAL_IP', 'REMOTE_ADDR'] as $key) {
-        if (!empty($_SERVER[$key]) && is_string($_SERVER[$key])) {
-            return explode(',', $_SERVER[$key])[0];
-        }
-    }
-
-    return 'unknown';
+    // Unverified forwarded headers can be supplied by a client to evade limits.
+    // Confirm the hosting proxy contract before enabling any proxy-derived IP.
+    return (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown');
 }
 
 /**
@@ -173,7 +169,7 @@ function log_lead(array $payload, string $outcome): void
 /**
  * Email the lead to the firm through Resend, when configured. Runs after the
  * CRM decision and never changes the visitor's outcome: a failure is logged
- * and the visitor still sees success — the lead is already in leads.log.
+ * and the visitor's CRM success/error outcome is preserved.
  */
 function notify_by_email(array $payload, string $outcome): void
 {
@@ -252,7 +248,7 @@ function notify_by_email(array $payload, string $outcome): void
     curl_close($ch);
 
     if ($status !== 200) {
-        error_log(sprintf('Resend notification failed [%d] %s %s', $status, (string) $response, $curlErr));
+        error_log(sprintf('Resend notification failed [%d]', $status));
     }
 }
 
@@ -287,6 +283,19 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
     exit;
 }
 
+// A closed intake never collects or logs visitor data.
+if (!contact_ready()) {
+    if ($wantsJson) {
+        header('Content-Type: application/json; charset=utf-8');
+        header('Cache-Control: no-store');
+        http_response_code(503);
+        echo json_encode(['ok' => false, 'degraded' => false, 'error' => 'unavailable']);
+        exit;
+    }
+    header('Location: /contacto/?error=1', true, 303);
+    exit;
+}
+
 // --- 2. Honeypot: accept silently so the bot sees success and moves on -------
 if (($_POST['website'] ?? '') !== '') {
     respond(true, true);
@@ -307,10 +316,16 @@ if (preg_match_all('~https?://|www\.~i', (string) ($_POST['message'] ?? '')) > L
 // through — the honeypot and the rate limit still apply.
 $origin = $_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_REFERER'] ?? '';
 if ($origin !== '') {
-    $originHost  = parse_url($origin, PHP_URL_HOST);
-    $requestHost = parse_url(site_origin(), PHP_URL_HOST) ?: ($_SERVER['HTTP_HOST'] ?? '');
-
-    if ($originHost !== null && strcasecmp($originHost, (string) $requestHost) !== 0) {
+    $requestOrigin = site_origin();
+    $originParts = parse_url($origin);
+    $requestParts = parse_url($requestOrigin);
+    $originScheme = strtolower((string) ($originParts['scheme'] ?? ''));
+    $requestScheme = strtolower((string) ($requestParts['scheme'] ?? ''));
+    $originPort = $originParts['port'] ?? ($originScheme === 'https' ? 443 : 80);
+    $requestPort = $requestParts['port'] ?? ($requestScheme === 'https' ? 443 : 80);
+    if (!is_array($originParts) || $originScheme !== $requestScheme
+        || strcasecmp((string) ($originParts['host'] ?? ''), (string) ($requestParts['host'] ?? '')) !== 0
+        || $originPort !== $requestPort) {
         respond(false, false, 'origin');
     }
 }
@@ -324,6 +339,10 @@ $digits = preg_replace('/\D+/', '', $phone) ?? '';
    cannot be a phone number. */
 if (strlen($digits) < 7 || strlen($digits) > 15) {
     respond(false, false, 'phone');
+}
+
+if (field('name', 200) === '') {
+    respond(false, false, 'name');
 }
 
 $email = field('email', 320);
@@ -385,7 +404,7 @@ $urgency  = isset($qualify['urgency'][$urgency]) ? $urgency : '';
 $property = field('inmueble', 20);
 $property = isset($qualify['property'][$property]) ? $property : '';
 $city     = field('ciudad', 60);
-$city     = ($city === 'otra' || in_array($city, (array) site('areaServed'), true)) ? $city : '';
+$city     = ($city === 'otra' || in_array($city, (array) site('locationsOfInterest'), true)) ? $city : '';
 
 $lead = $service !== '' ? lead_value($service) : lead_value_for_need($need ?: 'otro');
 if ($lead['slug'] === null) {
@@ -460,7 +479,7 @@ $apiKey = cfg('VENDERCRM_API_KEY');
 if ($crmUrl === null || $apiKey === null || !function_exists('curl_init')) {
     log_lead($payload, 'degraded:not-configured');
     notify_by_email($payload, 'degraded:not-configured');
-    respond(true, true, null, $leadResult);
+    respond(false, true, 'unavailable');
 }
 
 $ch = curl_init(rtrim($crmUrl, '/') . '/api/v1/leads');
@@ -488,10 +507,9 @@ if ($status === 201 || $status === 200) {
     respond(true, false, null, $leadResult);
 }
 
-/* Anything else is our problem, not the visitor's. The body names the failing
-   field on a 422 and the misconfiguration on a 401/403, so log all of it. */
-error_log(sprintf('VenderCRM lead failed [%d] %s %s', $status, (string) $response, $curlErr));
+/* Only the status belongs in the general error log. Lead data stays private. */
+error_log(sprintf('VenderCRM lead failed [%d]', $status));
 log_lead($payload, 'degraded:crm-' . ($status ?: 'unreachable'));
 notify_by_email($payload, 'degraded:crm-' . ($status ?: 'unreachable'));
 
-respond(true, true, null, $leadResult);
+respond(false, true, 'delivery');

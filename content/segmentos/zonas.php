@@ -1,28 +1,21 @@
 <?php
-/** Zone landing pages, one per city; shape documented in content/segmentos.php. */
-
+/** Editorial review 2026-10-05. Scope for consultation, not an unverified offer. */
 declare(strict_types=1);
-
 return [
-
     'electricista-asuncion' => [
-        'path'            => '/electricista/asuncion/',
-        'kind'            => 'zona',
-        'city'            => 'Asunción',
-        'navLabel'        => 'Asunción',
-        'seoTitle'        => 'Electricista en Asunción',
-        'metaDescription' => 'Electricista en Asunción para cortocircuitos, tableros e instalaciones '
-                           . 'en casas y edificios antiguos. Presupuesto por WhatsApp antes de la '
-                           . 'visita.',
+        'path' => '/electricista/asuncion/',
+        'kind' => 'zona',
+        'city' => 'Asunción',
+        'navLabel' => 'Asunción',
+        'seoTitle' => 'Electricista en Asunción',
+        'metaDescription' => 'Electricidad en Asunción: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Asunción',
-            'h1'      => 'Electricista en Asunción',
-            'lead'    => 'Del centro a los barrios tradicionales: casas con instalación original y '
-                       . 'edificios de departamentos que necesitan un electricista que entienda ese '
-                       . 'tipo de cableado.',
+            'h1' => 'Consulta de electricidad en Asunción',
+            'lead' => 'Información para preparar una consulta en Asunción. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'tablero-electrico-disyuntores',
             'instalacion-electrica-residencial',
@@ -31,73 +24,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Cableado original en casas y edificios antiguos',
-                'text'  => 'Muchas construcciones del centro y de barrios tradicionales conservan '
-                         . 'tramos del cableado original, con secciones de cable que no alcanzan para '
-                         . 'la carga actual de una vivienda.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Edificios de departamentos con tablero general compartido',
-                'text'  => 'En edificios de departamentos, una falla en el tablero general puede '
-                         . 'afectar a varias unidades a la vez, no solo a la que reporta el problema.',
-            ],
-            [
-                'title' => 'Locales comerciales que renuevan equipos sin revisar el tablero',
-                'text'  => 'El comercio del centro suma heladeras, aires acondicionados y equipos '
-                         . 'nuevos sobre tableros que no se actualizaron al mismo ritmo.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Instalaciones antiguas y edificios',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Relevamos el tablero y el cableado visible antes de presupuestar, algo especialmente '
-                    . 'importante en construcciones antiguas donde no siempre hay planos actualizados.',
+                    'Indique Asunción y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Antigüedad aproximada de la construcción',
-            'Si es casa, departamento o local comercial',
-            'Si hay tablero general compartido con otras unidades',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Trabajan en edificios de departamentos del centro?',
-                'a' => 'Sí, coordinamos tanto con propietarios individuales como con la '
-                     . 'administración del edificio cuando el trabajo es en áreas comunes.',
-            ],
-            [
-                'q' => '¿Pueden revisar una instalación antigua sin saber qué tiene?',
-                'a' => 'Sí, la primera visita incluye relevar el tablero y el cableado visible antes '
-                     . 'de armar el presupuesto.',
-            ],
-            [
-                'q' => '¿Atienden locales comerciales además de viviendas?',
-                'a' => 'Sí, trabajamos tanto instalaciones residenciales como comerciales en '
-                     . 'Asunción.',
+                'q' => '¿Hay un electricista de Electricidad PY en Asunción?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-san-lorenzo' => [
-        'path'            => '/electricista/san-lorenzo/',
-        'kind'            => 'zona',
-        'city'            => 'San Lorenzo',
-        'navLabel'        => 'San Lorenzo',
-        'seoTitle'        => 'Electricista en San Lorenzo',
-        'metaDescription' => 'Electricista en San Lorenzo para viviendas, comercios y locales cerca '
-                           . 'de la zona universitaria. Presupuesto por WhatsApp antes de la visita, '
-                           . 'sin cargo.',
+        'path' => '/electricista/san-lorenzo/',
+        'kind' => 'zona',
+        'city' => 'San Lorenzo',
+        'navLabel' => 'San Lorenzo',
+        'seoTitle' => 'Electricista en San Lorenzo',
+        'metaDescription' => 'Electricidad en San Lorenzo: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en San Lorenzo',
-            'h1'      => 'Electricista en San Lorenzo',
-            'lead'    => 'Zona de mucho comercio y movimiento por la actividad universitaria: '
-                       . 'locales que necesitan resolver rápido y viviendas familiares en los barrios '
-                       . 'alrededor.',
+            'h1' => 'Consulta de electricidad en San Lorenzo',
+            'lead' => 'Información para preparar una consulta en San Lorenzo. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'instalacion-electrica-comercial',
             'tablero-electrico-disyuntores',
@@ -105,70 +74,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Locales con alta rotación de equipos e iluminación encendida muchas horas',
-                'text'  => 'El comercio de la zona suele tener vidrieras y carteles encendidos buena '
-                         . 'parte del día, lo que exige un circuito de iluminación separado del resto.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Viviendas con inquilinos que rotan y suman equipos sin avisar',
-                'text'  => 'En zonas con alquileres frecuentes, cada inquilino nuevo suma artefactos '
-                         . 'sin que nadie revise si el tablero sigue estando bien dimensionado.',
-            ],
-            [
-                'title' => 'Locales gastronómicos con heladeras y freezers en un mismo circuito',
-                'text'  => 'Perder ese circuito por una sobrecarga significa perder mercadería '
-                         . 'refrigerada, un riesgo frecuente en bares y locales de comida de la zona.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Comercio con mucho movimiento',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Coordinamos visitas en el horario que menos afecta la atención al público, algo '
-                    . 'clave en una zona con locales que abren muchas horas seguidas.',
+                    'Indique San Lorenzo y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Rubro del local (comercio, gastronomía, servicios)',
-            'Equipos críticos que no pueden quedar sin energía',
-            'Horario de menor afluencia para coordinar la visita',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Atienden locales comerciales cerca de la zona universitaria?',
-                'a' => 'Sí, es una de las zonas donde más trabajamos con locales de comercio y '
-                     . 'gastronomía.',
-            ],
-            [
-                'q' => '¿Pueden separar el circuito de las heladeras del resto del local?',
-                'a' => 'Sí, es una mejora común para locales que no pueden perder mercadería '
-                     . 'refrigerada.',
-            ],
-            [
-                'q' => '¿Trabajan también en casas de familia?',
-                'a' => 'Sí, atendemos tanto locales comerciales como viviendas en San Lorenzo.',
+                'q' => '¿Hay un electricista de Electricidad PY en San Lorenzo?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-luque' => [
-        'path'            => '/electricista/luque/',
-        'kind'            => 'zona',
-        'city'            => 'Luque',
-        'navLabel'        => 'Luque',
-        'seoTitle'        => 'Electricista en Luque',
-        'metaDescription' => 'Electricista en Luque para viviendas, quintas y locales cerca del '
-                           . 'aeropuerto. Presupuesto por WhatsApp antes de la visita, sin cargo.',
+        'path' => '/electricista/luque/',
+        'kind' => 'zona',
+        'city' => 'Luque',
+        'navLabel' => 'Luque',
+        'seoTitle' => 'Electricista en Luque',
+        'metaDescription' => 'Electricidad en Luque: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Luque',
-            'h1'      => 'Electricista en Luque',
-            'lead'    => 'Entre zonas residenciales consolidadas y quintas con más terreno: '
-                       . 'instalaciones que van desde el tablero de una casa hasta la bomba de agua '
-                       . 'de una quinta.',
+            'h1' => 'Consulta de electricidad en Luque',
+            'lead' => 'Información para preparar una consulta en Luque. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'tablero-electrico-disyuntores',
             'puesta-a-tierra',
@@ -176,73 +124,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Quintas con bomba de agua en un circuito sin protección adecuada',
-                'text'  => 'La bomba que abastece a toda la vivienda queda expuesta si su circuito no '
-                         . 'tiene el disyuntor y la puesta a tierra correctos, y una falla ahí deja '
-                         . 'sin agua a toda la casa.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Ampliaciones progresivas sobre el tablero original',
-                'text'  => 'Las viviendas que se van ampliando de a partes (un cuarto, un garaje, un '
-                         . 'depósito) suelen sumar carga al mismo tablero sin que nadie lo revise en '
-                         . 'conjunto.',
-            ],
-            [
-                'title' => 'Instalaciones cerca de zonas de mucho movimiento sin mantenimiento',
-                'text'  => 'Locales y depósitos que funcionan a full por la actividad de la zona '
-                         . 'postergan el mantenimiento eléctrico hasta que ya hay una falla.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Quintas y bombas de agua',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Revisamos el circuito de la bomba de agua como parte del presupuesto cuando la '
-                    . 'vivienda depende de ella para el suministro, un caso frecuente en las quintas '
-                    . 'de la zona.',
+                    'Indique Luque y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Si la vivienda tiene bomba de agua y en qué circuito está',
-            'Si hubo ampliaciones de la casa desde la instalación original',
-            'Uso del inmueble: vivienda, quinta o local',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Revisan el circuito de la bomba de agua en quintas?',
-                'a' => 'Sí, es parte del relevamiento cuando la vivienda depende de una bomba para el '
-                     . 'suministro de agua.',
-            ],
-            [
-                'q' => '¿Atienden viviendas que se fueron ampliando con el tiempo?',
-                'a' => 'Sí, revisamos el tablero completo para ver si sigue siendo adecuado después '
-                     . 'de las ampliaciones.',
-            ],
-            [
-                'q' => '¿Trabajan también en locales y depósitos?',
-                'a' => 'Sí, atendemos viviendas, quintas y locales comerciales en Luque.',
+                'q' => '¿Hay un electricista de Electricidad PY en Luque?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-fernando-de-la-mora' => [
-        'path'            => '/electricista/fernando-de-la-mora/',
-        'kind'            => 'zona',
-        'city'            => 'Fernando de la Mora',
-        'navLabel'        => 'Fernando de la Mora',
-        'seoTitle'        => 'Electricista en Fernando de la Mora',
-        'metaDescription' => 'Electricista en Fernando de la Mora para viviendas y comercios en una '
-                           . 'zona densa junto a Asunción. Presupuesto por WhatsApp antes de la '
-                           . 'visita.',
+        'path' => '/electricista/fernando-de-la-mora/',
+        'kind' => 'zona',
+        'city' => 'Fernando de la Mora',
+        'navLabel' => 'Fernando de la Mora',
+        'seoTitle' => 'Electricista en Fernando de la Mora',
+        'metaDescription' => 'Electricidad en Fernando de la Mora: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Fernando de la Mora',
-            'h1'      => 'Electricista en Fernando de la Mora',
-            'lead'    => 'Zona densa, con viviendas y locales muy cerca unos de otros: fallas que '
-                       . 'conviene resolver rápido porque afectan a varios vecinos a la vez.',
+            'h1' => 'Consulta de electricidad en Fernando de la Mora',
+            'lead' => 'Información para preparar una consulta en Fernando de la Mora. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'tablero-electrico-disyuntores',
             'instalacion-electrica-comercial',
@@ -250,75 +174,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Viviendas y locales construidos muy próximos entre sí',
-                'text'  => 'En una trama tan densa, una instalación exterior mal protegida queda más '
-                         . 'expuesta a la humedad y al contacto accidental que en zonas con más '
-                         . 'espacio entre construcciones.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Locales que comparten acometida con la vivienda de al lado',
-                'text'  => 'Es común encontrar ampliaciones donde un local comercial terminó '
-                         . 'compartiendo parte de la instalación con la vivienda original, algo que '
-                         . 'complica cualquier ampliación de carga.',
-            ],
-            [
-                'title' => 'Tableros viejos en casas que hoy funcionan también como comercio',
-                'text'  => 'Muchas viviendas de la zona alquilan un frente para un local, y el tablero '
-                         . 'sigue pensado solo para el uso residencial original.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Vivienda y comercio en el mismo predio',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Cuando una parte de la vivienda funciona como local, revisamos si conviene '
-                    . 'separar los circuitos para que una falla comercial no afecte a la vivienda, o '
-                    . 'viceversa.',
+                    'Indique Fernando de la Mora y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Si el inmueble combina vivienda y local comercial',
-            'Si comparte acometida o tablero con una propiedad vecina',
-            'Antigüedad aproximada de la instalación',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Atienden casas que también funcionan como local comercial?',
-                'a' => 'Sí, es un caso frecuente en la zona y evaluamos si conviene separar los '
-                     . 'circuitos.',
-            ],
-            [
-                'q' => '¿Qué hacen si la instalación comparte acometida con otra propiedad?',
-                'a' => 'Lo relevamos en la visita y explicamos qué opciones hay antes de presupuestar '
-                     . 'el trabajo.',
-            ],
-            [
-                'q' => '¿Responden rápido cuando es una falla que afecta a varios vecinos?',
-                'a' => 'Coordinamos la visita en el horario que la agenda permite, priorizando cuando '
-                     . 'se describe como una falla activa.',
+                'q' => '¿Hay un electricista de Electricidad PY en Fernando de la Mora?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-lambare' => [
-        'path'            => '/electricista/lambare/',
-        'kind'            => 'zona',
-        'city'            => 'Lambaré',
-        'navLabel'        => 'Lambaré',
-        'seoTitle'        => 'Electricista en Lambaré',
-        'metaDescription' => 'Electricista en Lambaré para viviendas residenciales cerca del río. '
-                           . 'Presupuesto por WhatsApp antes de la visita, sin cargo, con informe '
-                           . 'escrito.',
+        'path' => '/electricista/lambare/',
+        'kind' => 'zona',
+        'city' => 'Lambaré',
+        'navLabel' => 'Lambaré',
+        'seoTitle' => 'Electricista en Lambaré',
+        'metaDescription' => 'Electricidad en Lambaré: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Lambaré',
-            'h1'      => 'Electricista en Lambaré',
-            'lead'    => 'Barrios residenciales cerca del río, con viviendas que conviven con más '
-                       . 'humedad ambiente de lo habitual y necesitan instalaciones pensadas para '
-                       . 'eso.',
+            'h1' => 'Consulta de electricidad en Lambaré',
+            'lead' => 'Información para preparar una consulta en Lambaré. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'puesta-a-tierra',
             'tablero-electrico-disyuntores',
@@ -326,72 +224,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Humedad cercana al río afecta tomas y cajas exteriores',
-                'text'  => 'La cercanía al río suma humedad ambiente que acelera el deterioro de '
-                         . 'tomas y cajas de conexión mal selladas, sobre todo en instalaciones al '
-                         . 'aire libre.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Diferencial (DDR) ausente en viviendas más antiguas',
-                'text'  => 'En una zona con más humedad, no tener diferencial instalado aumenta el '
-                         . 'riesgo de una descarga si algún cable pierde aislación.',
-            ],
-            [
-                'title' => 'Jabalina corroída por la humedad del suelo',
-                'text'  => 'El suelo más húmedo cerca del río puede acelerar la corrosión de la '
-                         . 'jabalina de puesta a tierra si no es del material adecuado.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Instalaciones pensadas para la humedad de la zona',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Revisamos el estado de tomas exteriores, cajas de conexión y la jabalina de '
-                    . 'puesta a tierra, puntos que se deterioran más rápido en barrios cercanos al '
-                    . 'río.',
+                    'Indique Lambaré y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Si la vivienda tiene instalaciones o tomas al aire libre',
-            'Si cuenta con diferencial (DDR) instalado',
-            'Antigüedad aproximada de la jabalina de puesta a tierra, si la conoce',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿La humedad de la zona afecta la instalación eléctrica?',
-                'a' => 'Puede acelerar el deterioro de tomas exteriores y de la jabalina si no son '
-                     . 'del material adecuado; lo revisamos en la visita.',
-            ],
-            [
-                'q' => '¿Instalan diferencial (DDR) en viviendas que no lo tienen?',
-                'a' => 'Sí, es una de las mejoras más pedidas en instalaciones residenciales sin '
-                     . 'diferencial.',
-            ],
-            [
-                'q' => '¿Revisan la puesta a tierra aunque no haya una falla visible?',
-                'a' => 'Sí, se puede pedir como revisión preventiva, no solo cuando hay un problema.',
+                'q' => '¿Hay un electricista de Electricidad PY en Lambaré?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-capiata' => [
-        'path'            => '/electricista/capiata/',
-        'kind'            => 'zona',
-        'city'            => 'Capiatá',
-        'navLabel'        => 'Capiatá',
-        'seoTitle'        => 'Electricista en Capiatá',
-        'metaDescription' => 'Electricista en Capiatá para comercios sobre la ruta y viviendas de la '
-                           . 'zona. Presupuesto por WhatsApp antes de la visita, sin cargo.',
+        'path' => '/electricista/capiata/',
+        'kind' => 'zona',
+        'city' => 'Capiatá',
+        'navLabel' => 'Capiatá',
+        'seoTitle' => 'Electricista en Capiatá',
+        'metaDescription' => 'Electricidad en Capiatá: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Capiatá',
-            'h1'      => 'Electricista en Capiatá',
-            'lead'    => 'Comercio en crecimiento sobre las rutas principales y viviendas en los '
-                       . 'barrios alrededor: instalaciones que necesitan estar a la altura de un '
-                       . 'negocio que sigue sumando equipos.',
+            'h1' => 'Consulta de electricidad en Capiatá',
+            'lead' => 'Información para preparar una consulta en Capiatá. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'instalacion-electrica-comercial',
             'tablero-electrico-disyuntores',
@@ -399,73 +274,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Locales sobre la ruta que crecen más rápido que su tablero',
-                'text'  => 'El comercio sobre las rutas principales de la zona va sumando equipos '
-                         . '(heladeras, aire acondicionado, cartelería) más rápido que lo que el '
-                         . 'tablero original fue pensado para soportar.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Viviendas nuevas con tablero mínimo de origen',
-                'text'  => 'Casas construidas recientemente a veces salen con el tablero mínimo '
-                         . 'exigido, sin margen para sumar aire acondicionado u otros equipos más '
-                         . 'adelante.',
-            ],
-            [
-                'title' => 'Carteles e iluminación exterior sin circuito propio',
-                'text'  => 'La cartelería de locales sobre la ruta suele conectarse al mismo circuito '
-                         . 'que el resto del local, lo que hace que una falla del cartel corte '
-                         . 'también la iluminación interior.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Comercio sobre la ruta',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para locales sobre las rutas principales, evaluamos si conviene separar el '
-                    . 'circuito de la cartelería del resto del local antes de que crezca la carga '
-                    . 'general.',
+                    'Indique Capiatá y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Si el local está sobre la ruta o en una calle interna',
-            'Equipos que planea sumar en los próximos meses',
-            'Si la vivienda o el local es de construcción reciente',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Atienden comercios sobre la ruta?',
-                'a' => 'Sí, es una de las zonas donde más trabajamos con locales comerciales.',
-            ],
-            [
-                'q' => '¿Revisan si el tablero alcanza para equipos que quiero sumar?',
-                'a' => 'Sí, evaluamos la carga actual y la que planea agregar antes de recomendar '
-                     . 'una ampliación.',
-            ],
-            [
-                'q' => '¿Trabajan en viviendas de construcción reciente?',
-                'a' => 'Sí, atendemos tanto construcciones nuevas como instalaciones más antiguas.',
+                'q' => '¿Hay un electricista de Electricidad PY en Capiatá?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-nemby' => [
-        'path'            => '/electricista/nemby/',
-        'kind'            => 'zona',
-        'city'            => 'Ñemby',
-        'navLabel'        => 'Ñemby',
-        'seoTitle'        => 'Electricista en Ñemby',
-        'metaDescription' => 'Electricista en Ñemby para viviendas nuevas y ampliaciones en una zona '
-                           . 'residencial en crecimiento. Presupuesto por WhatsApp antes de la '
-                           . 'visita.',
+        'path' => '/electricista/nemby/',
+        'kind' => 'zona',
+        'city' => 'Ñemby',
+        'navLabel' => 'Ñemby',
+        'seoTitle' => 'Electricista en Ñemby',
+        'metaDescription' => 'Electricidad en Ñemby: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Ñemby',
-            'h1'      => 'Electricista en Ñemby',
-            'lead'    => 'Barrios residenciales en pleno crecimiento: casas nuevas que necesitan el '
-                       . 'cableado completo y familias que van ampliando la vivienda de a etapas.',
+            'h1' => 'Consulta de electricidad en Ñemby',
+            'lead' => 'Información para preparar una consulta en Ñemby. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'instalacion-electrica-residencial',
             'cableado-obra-nueva',
@@ -473,75 +324,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Obra nueva con cableado hecho antes de definir todos los ambientes',
-                'text'  => 'En construcciones nuevas, cablear antes de terminar de definir la '
-                         . 'distribución de ambientes obliga después a parches que no siguen el mismo '
-                         . 'criterio de sección de cable.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Ampliaciones por etapas sin plan conjunto',
-                'text'  => 'Familias que construyen de a poco (un dormitorio este año, un garaje el '
-                         . 'próximo) suelen sumar cada ampliación al tablero existente sin revisar si '
-                         . 'sigue alcanzando.',
-            ],
-            [
-                'title' => 'Aire acondicionado agregado después de la obra',
-                'text'  => 'Sumar aire acondicionado en una casa ya terminada, sobre un circuito no '
-                         . 'pensado para esa carga, es de los motivos más comunes de disyuntores que '
-                         . 'saltan seguido.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Obra nueva y ampliaciones',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para obra nueva, coordinamos el cableado completo con la sección de cable '
-                    . 'adecuada para cada ambiente; para ampliaciones, revisamos si el tablero '
-                    . 'existente sigue siendo suficiente antes de sumar carga.',
+                    'Indique Ñemby y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Etapa de la obra (recién iniciada, a medio terminar, ampliación de una vivienda existente)',
-            'Cantidad de ambientes y equipos previstos',
-            'Si ya cuenta con tablero instalado o parte de la instalación',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Trabajan con obras nuevas desde el cableado inicial?',
-                'a' => 'Sí, coordinamos el cableado completo de obra nueva según los ambientes '
-                     . 'definidos.',
-            ],
-            [
-                'q' => '¿Pueden revisar si el tablero alcanza para una ampliación?',
-                'a' => 'Sí, evaluamos la carga actual y la que sumaría la ampliación antes de '
-                     . 'presupuestar.',
-            ],
-            [
-                'q' => '¿Atienden viviendas construidas por etapas?',
-                'a' => 'Sí, es un caso frecuente en la zona y lo tenemos en cuenta al armar el '
-                     . 'presupuesto.',
+                'q' => '¿Hay un electricista de Electricidad PY en Ñemby?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-mariano-roque-alonso' => [
-        'path'            => '/electricista/mariano-roque-alonso/',
-        'kind'            => 'zona',
-        'city'            => 'Mariano Roque Alonso',
-        'navLabel'        => 'Mariano Roque Alonso',
-        'seoTitle'        => 'Electricista en Mariano R. Alonso',
-        'metaDescription' => 'Electricista en Mariano Roque Alonso para depósitos y locales sobre la '
-                           . 'Ruta Transchaco. Presupuesto por WhatsApp antes de la visita, sin '
-                           . 'cargo.',
+        'path' => '/electricista/mariano-roque-alonso/',
+        'kind' => 'zona',
+        'city' => 'Mariano Roque Alonso',
+        'navLabel' => 'Mariano Roque Alonso',
+        'seoTitle' => 'Electricista en Mariano R. Alonso',
+        'metaDescription' => 'Electricidad en Mariano Roque Alonso: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Mariano Roque Alonso',
-            'h1'      => 'Electricista en Mariano Roque Alonso',
-            'lead'    => 'Zona con fuerte actividad industrial y logística sobre la Ruta Transchaco: '
-                       . 'depósitos y locales que necesitan una instalación trifásica confiable.',
+            'h1' => 'Consulta de electricidad en Mariano Roque Alonso',
+            'lead' => 'Información para preparar una consulta en Mariano Roque Alonso. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'instalacion-electrica-comercial',
-        'bundle'   => [
+        'bundle' => [
             'instalacion-electrica-comercial',
             'tablero-electrico-disyuntores',
             'cortocircuito-y-fallas',
@@ -549,72 +374,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Depósitos con equipos trifásicos sumados de a poco',
-                'text'  => 'Montacargas eléctricos, compresores u otros equipos trifásicos que se '
-                         . 'suman con el tiempo suelen terminar sobre un tablero pensado para menos '
-                         . 'carga.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Locales logísticos sin mantenimiento preventivo del tablero',
-                'text'  => 'La actividad continua de depósitos y locales de logística hace que el '
-                         . 'tablero trabaje muchas horas seguidas, y sin mantenimiento preventivo una '
-                         . 'falla se detecta recién cuando ya frenó la operación.',
-            ],
-            [
-                'title' => 'Iluminación de galpones sin circuito separado del resto',
-                'text'  => 'En galpones grandes, tener toda la iluminación en un solo circuito con '
-                         . 'otros equipos hace que una falla deje a oscuras toda la nave.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Instalación trifásica para depósitos y logística',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Relevamos la carga trifásica actual y la que se sumaría con nuevos equipos antes '
-                    . 'de presupuestar, para que el tablero no vuelva a quedar corto en poco tiempo.',
+                    'Indique Mariano Roque Alonso y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Tipo de equipos que alimenta la instalación (montacargas, compresores, cámaras de frío)',
-            'Si la instalación es monofásica o trifásica',
-            'Horarios de operación a respetar en la visita',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Trabajan con instalaciones trifásicas de depósitos?',
-                'a' => 'Sí, tenemos electricistas con experiencia en instalaciones comerciales e '
-                     . 'industriales trifásicas.',
-            ],
-            [
-                'q' => '¿Pueden coordinar la visita sin frenar la operación del depósito?',
-                'a' => 'Sí, coordinamos en el horario acordado cuando la agenda lo permite.',
-            ],
-            [
-                'q' => '¿Ofrecen mantenimiento preventivo, no solo reparación de fallas?',
-                'a' => 'Sí, podemos coordinar revisiones periódicas del tablero para depósitos con '
-                     . 'uso continuo.',
+                'q' => '¿Hay un electricista de Electricidad PY en Mariano Roque Alonso?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-villa-elisa' => [
-        'path'            => '/electricista/villa-elisa/',
-        'kind'            => 'zona',
-        'city'            => 'Villa Elisa',
-        'navLabel'        => 'Villa Elisa',
-        'seoTitle'        => 'Electricista en Villa Elisa',
-        'metaDescription' => 'Electricista en Villa Elisa para viviendas familiares en una zona '
-                           . 'residencial en crecimiento. Presupuesto por WhatsApp antes de la '
-                           . 'visita.',
+        'path' => '/electricista/villa-elisa/',
+        'kind' => 'zona',
+        'city' => 'Villa Elisa',
+        'navLabel' => 'Villa Elisa',
+        'seoTitle' => 'Electricista en Villa Elisa',
+        'metaDescription' => 'Electricidad en Villa Elisa: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Villa Elisa',
-            'h1'      => 'Electricista en Villa Elisa',
-            'lead'    => 'Barrios residenciales familiares que siguen creciendo: instalaciones de '
-                       . 'casas nuevas y revisiones para viviendas que van sumando comodidades.',
+            'h1' => 'Consulta de electricidad en Villa Elisa',
+            'lead' => 'Información para preparar una consulta en Villa Elisa. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'instalacion-electrica-residencial',
             'instalacion-aire-acondicionado',
@@ -622,71 +424,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Casas nuevas con aire acondicionado sumado después',
-                'text'  => 'En viviendas de construcción reciente, agregar aire acondicionado sobre '
-                         . 'un circuito ya ocupado por otros artefactos es una de las causas más '
-                         . 'comunes de disyuntores que saltan en verano.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Instalaciones exteriores para patios y galpones caseros',
-                'text'  => 'Sumar tomas o iluminación en el patio sin la protección adecuada expone la '
-                         . 'instalación a la humedad y al uso al aire libre.',
-            ],
-            [
-                'title' => 'Tablero mínimo de una casa que fue creciendo con la familia',
-                'text'  => 'Muchas viviendas familiares de la zona fueron sumando dormitorios y '
-                         . 'equipos con los años sobre el mismo tablero de origen.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Aire acondicionado y crecimiento de la vivienda',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Antes de instalar un nuevo split, revisamos si el circuito que va a alimentarlo '
-                    . 'tiene margen, o si conviene sumar un circuito dedicado.',
+                    'Indique Villa Elisa y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Cantidad de equipos de aire acondicionado instalados o previstos',
-            'Antigüedad aproximada del tablero',
-            'Si hay instalaciones exteriores (patio, garaje) a revisar',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Revisan el circuito antes de instalar un aire acondicionado nuevo?',
-                'a' => 'Sí, es parte del presupuesto verificar si el circuito existente alcanza o '
-                     . 'conviene uno dedicado.',
-            ],
-            [
-                'q' => '¿Atienden viviendas que fueron creciendo con los años?',
-                'a' => 'Sí, es un caso frecuente y revisamos el tablero completo antes de recomendar '
-                     . 'cambios.',
-            ],
-            [
-                'q' => '¿Instalan tomas e iluminación para el patio?',
-                'a' => 'Sí, con la protección adecuada para instalaciones al aire libre.',
+                'q' => '¿Hay un electricista de Electricidad PY en Villa Elisa?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-limpio' => [
-        'path'            => '/electricista/limpio/',
-        'kind'            => 'zona',
-        'city'            => 'Limpio',
-        'navLabel'        => 'Limpio',
-        'seoTitle'        => 'Electricista en Limpio',
-        'metaDescription' => 'Electricista en Limpio para casas nuevas y barrios residenciales en '
-                           . 'expansión. Presupuesto por WhatsApp antes de la visita, sin cargo.',
+        'path' => '/electricista/limpio/',
+        'kind' => 'zona',
+        'city' => 'Limpio',
+        'navLabel' => 'Limpio',
+        'seoTitle' => 'Electricista en Limpio',
+        'metaDescription' => 'Electricidad en Limpio: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Electricista en Limpio',
-            'h1'      => 'Electricista en Limpio',
-            'lead'    => 'Barrios residenciales en plena expansión: obra nueva que necesita el '
-                       . 'cableado completo desde cero y viviendas recientes que ya piden alguna '
-                       . 'ampliación.',
+            'h1' => 'Consulta de electricidad en Limpio',
+            'lead' => 'Información para preparar una consulta en Limpio. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'cortocircuito-y-fallas',
-        'bundle'   => [
+        'bundle' => [
             'cortocircuito-y-fallas',
             'cableado-obra-nueva',
             'instalacion-electrica-residencial',
@@ -694,73 +474,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Obra nueva cableada con apuro para adelantar la mudanza',
-                'text'  => 'Con la expansión de la zona, es común apurar el cableado para mudarse '
-                         . 'antes, dejando puntos que después hay que corregir o completar.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Tablero mínimo en casas recién entregadas',
-                'text'  => 'Viviendas nuevas que salen con el tablero justo para lo exigido, sin '
-                         . 'margen para sumar aire acondicionado u otros equipos apenas se instala la '
-                         . 'familia.',
-            ],
-            [
-                'title' => 'Puesta a tierra pendiente de terminar en obras nuevas',
-                'text'  => 'En construcciones nuevas, a veces la jabalina queda como un detalle para '
-                         . '"después", cuando en realidad protege desde el primer día que se usa la '
-                         . 'instalación.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Obra nueva en zona de expansión',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Coordinamos el cableado completo de obra nueva, incluida la puesta a tierra '
-                    . 'desde el inicio, para que la familia no tenga que resolver ampliaciones apenas '
-                    . 'se muda.',
+                    'Indique Limpio y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Etapa de la obra y fecha estimada de mudanza',
-            'Cantidad de ambientes y equipos previstos (aire acondicionado, entre otros)',
-            'Si la puesta a tierra ya está instalada',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Trabajan con obra nueva desde el inicio del cableado?',
-                'a' => 'Sí, coordinamos el cableado completo, incluida la puesta a tierra, antes de '
-                     . 'la mudanza.',
-            ],
-            [
-                'q' => '¿Revisan si el tablero de una casa nueva alcanza para sumar equipos?',
-                'a' => 'Sí, evaluamos la carga prevista antes de recomendar cambios en el tablero.',
-            ],
-            [
-                'q' => '¿Pueden coordinar la visita según el avance de la obra?',
-                'a' => 'Sí, coordinamos la visita en el horario y la etapa de obra que corresponda.',
+                'q' => '¿Hay un electricista de Electricidad PY en Limpio?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-ciudad-del-este' => [
-        'path'            => '/electricista/ciudad-del-este/',
-        'kind'            => 'zona',
-        'city'            => 'Ciudad del Este',
-        'navLabel'        => 'Ciudad del Este',
-        'seoTitle'        => 'Paneles solares en Ciudad del Este',
-        'metaDescription' => 'Paneles solares, generadores y UPS para comercios y depósitos de '
-                           . 'Ciudad del Este. Presupuesto por WhatsApp y visita de instalación '
-                           . 'coordinada, sin cargo.',
+        'path' => '/electricista/ciudad-del-este/',
+        'kind' => 'zona',
+        'city' => 'Ciudad del Este',
+        'navLabel' => 'Ciudad del Este',
+        'seoTitle' => 'Paneles solares en Ciudad del Este',
+        'metaDescription' => 'Electricidad en Ciudad del Este: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Energía para comercios y depósitos en Ciudad del Este',
-            'h1'      => 'Paneles solares y generadores en Ciudad del Este',
-            'lead'    => 'Comercios y depósitos de la zona de frontera que no pueden depender solo '
-                       . 'de la red: cotizamos el proyecto por WhatsApp con los datos que nos envía '
-                       . 'y coordinamos un viaje para la instalación.',
+            'h1' => 'Consulta de electricidad en Ciudad del Este',
+            'lead' => 'Información para preparar una consulta en Ciudad del Este. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'paneles-solares',
-        'bundle'   => [
+        'bundle' => [
             'paneles-solares',
             'generadores',
             'ups-estabilizadores',
@@ -769,78 +525,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Depósitos que paran la operación en cada corte de luz',
-                'text'  => 'Un depósito o local de comercio que depende solo de la red pierde horas '
-                         . 'de operación cada vez que hay un corte, algo que un generador o un banco '
-                         . 'de baterías puede evitar si está bien dimensionado.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Equipos de punto de venta sin respaldo ante microcortes',
-                'text'  => 'Cajas registradoras, lectores y equipos de cómputo pueden colgarse o '
-                         . 'dañarse con microcortes y bajas de tensión frecuentes en zonas de mucho '
-                         . 'movimiento comercial, algo que un UPS o estabilizador resuelve.',
-            ],
-            [
-                'title' => 'Instalación eléctrica comercial que no acompañó el crecimiento del local',
-                'text'  => 'Locales que fueron sumando heladeras, aire acondicionado e iluminación '
-                         . 'con los años terminan con un tablero que no alcanza para la carga actual.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Cómo cotizamos un proyecto en Ciudad del Este',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
-                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del local y, '
-                    . 'si hace falta, fotos del techo o del tablero.',
-                    'La instalación se coordina en un viaje planificado a la zona. Para una reparación '
-                    . 'puntual o algo urgente, lo vemos caso por caso por WhatsApp antes de definir si '
-                    . 'corresponde una visita.',
+                    'Indique Ciudad del Este y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Rubro del comercio o depósito y equipos críticos que no pueden quedar sin energía',
-            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
-            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Pueden venir el mismo día a instalar?',
-                'a' => 'No trabajamos con visitas el mismo día en Ciudad del Este: cotizamos el '
-                     . 'proyecto por WhatsApp y coordinamos un viaje para la instalación.',
-            ],
-            [
-                'q' => '¿Atienden reparaciones puntuales, no solo proyectos de energía?',
-                'a' => 'Para reparaciones chicas lo coordinamos caso por caso por WhatsApp antes de '
-                     . 'confirmar si corresponde una visita.',
-            ],
-            [
-                'q' => '¿Trabajan con comercios y depósitos, no solo con viviendas?',
-                'a' => 'Sí, es donde más trabajamos en la zona: comercios, depósitos y también '
-                     . 'viviendas.',
+                'q' => '¿Hay un electricista de Electricidad PY en Ciudad del Este?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-encarnacion' => [
-        'path'            => '/electricista/encarnacion/',
-        'kind'            => 'zona',
-        'city'            => 'Encarnación',
-        'navLabel'        => 'Encarnación',
-        'seoTitle'        => 'Electricista y solar en Encarnación',
-        'metaDescription' => 'Paneles solares, generadores y baterías de respaldo para viviendas y '
-                           . 'comercios de Encarnación y la costanera. Presupuesto por WhatsApp, '
-                           . 'visita coordinada.',
+        'path' => '/electricista/encarnacion/',
+        'kind' => 'zona',
+        'city' => 'Encarnación',
+        'navLabel' => 'Encarnación',
+        'seoTitle' => 'Electricista y solar en Encarnación',
+        'metaDescription' => 'Electricidad en Encarnación: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Energía para Encarnación',
-            'h1'      => 'Paneles solares y generadores en Encarnación',
-            'lead'    => 'Viviendas frente al río, comercios de temporada y actividad agroindustrial '
-                       . 'en el departamento: cotizamos el proyecto de energía por WhatsApp y '
-                       . 'coordinamos un viaje para la instalación.',
+            'h1' => 'Consulta de electricidad en Encarnación',
+            'lead' => 'Información para preparar una consulta en Encarnación. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'paneles-solares',
-        'bundle'   => [
+        'bundle' => [
             'paneles-solares',
             'generadores',
             'ups-estabilizadores',
@@ -849,78 +576,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Alojamientos y locales de temporada sin respaldo para la alta demanda',
-                'text'  => 'En temporada de verano, hoteles, alojamientos y locales cerca de la '
-                         . 'costanera suman aire acondicionado y equipos que exigen más de la '
-                         . 'instalación, justo cuando un corte cuesta más caro.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Viviendas frente al río con tomas exteriores sin protección adecuada',
-                'text'  => 'La cercanía al agua suma humedad ambiente que acelera el deterioro de '
-                         . 'tomas y cajas de conexión exteriores mal selladas.',
-            ],
-            [
-                'title' => 'Actividad agroindustrial del departamento sin instalación trifásica al día',
-                'text'  => 'Depósitos y plantas vinculados a la actividad agroindustrial de Itapúa '
-                         . 'suman equipos con el tiempo sobre una instalación pensada para menos '
-                         . 'carga.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Cómo cotizamos un proyecto en Encarnación',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
-                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del inmueble y, '
-                    . 'si hace falta, fotos del techo o del tablero.',
-                    'La instalación se coordina en un viaje planificado a la zona. Para una '
-                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
-                    . 'corresponde una visita.',
+                    'Indique Encarnación y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Si es vivienda, alojamiento o comercio, y equipos críticos que no pueden quedar sin luz',
-            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
-            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Pueden venir el mismo día a instalar?',
-                'a' => 'No trabajamos con visitas el mismo día en Encarnación: cotizamos el proyecto '
-                     . 'por WhatsApp y coordinamos un viaje para la instalación.',
-            ],
-            [
-                'q' => '¿Atienden alojamientos y locales de temporada además de viviendas?',
-                'a' => 'Sí, trabajamos con alojamientos, comercios y viviendas de la zona de la '
-                     . 'costanera y del resto de la ciudad.',
-            ],
-            [
-                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
-                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
-                     . 'una visita.',
+                'q' => '¿Hay un electricista de Electricidad PY en Encarnación?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-coronel-oviedo' => [
-        'path'            => '/electricista/coronel-oviedo/',
-        'kind'            => 'zona',
-        'city'            => 'Coronel Oviedo',
-        'navLabel'        => 'Coronel Oviedo',
-        'seoTitle'        => 'Paneles solares en Coronel Oviedo',
-        'metaDescription' => 'Paneles solares, generadores y UPS para comercios y depósitos de '
-                           . 'Coronel Oviedo, cruce de las rutas 2 y 7. Presupuesto por WhatsApp, '
-                           . 'visita coordinada.',
+        'path' => '/electricista/coronel-oviedo/',
+        'kind' => 'zona',
+        'city' => 'Coronel Oviedo',
+        'navLabel' => 'Coronel Oviedo',
+        'seoTitle' => 'Paneles solares en Coronel Oviedo',
+        'metaDescription' => 'Electricidad en Coronel Oviedo: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Energía para Coronel Oviedo',
-            'h1'      => 'Paneles solares y generadores en Coronel Oviedo',
-            'lead'    => 'Comercios y depósitos sobre el cruce de las rutas 2 y 7, y actividad '
-                       . 'agro del departamento de Caaguazú: cotizamos el proyecto de energía por '
-                       . 'WhatsApp y coordinamos un viaje para la instalación.',
+            'h1' => 'Consulta de electricidad en Coronel Oviedo',
+            'lead' => 'Información para preparar una consulta en Coronel Oviedo. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'paneles-solares',
-        'bundle'   => [
+        'bundle' => [
             'paneles-solares',
             'generadores',
             'ups-estabilizadores',
@@ -929,78 +627,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Comercios sobre la ruta que crecen más rápido que su tablero',
-                'text'  => 'El comercio sobre el cruce de rutas va sumando heladeras, aire '
-                         . 'acondicionado y cartelería más rápido de lo que el tablero original fue '
-                         . 'pensado para soportar.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Depósitos vinculados a la actividad agro sin generador de respaldo',
-                'text'  => 'Depósitos y locales ligados al movimiento agro del departamento pierden '
-                         . 'horas de operación en cada corte si no cuentan con un generador o baterías '
-                         . 'bien dimensionados.',
-            ],
-            [
-                'title' => 'Instalación trifásica sumada de a poco sin revisión conjunta',
-                'text'  => 'Equipos trifásicos que se suman con el tiempo en depósitos y locales '
-                         . 'terminan sobre un tablero pensado para menos carga.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Cómo cotizamos un proyecto en Coronel Oviedo',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
-                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del local y, '
-                    . 'si hace falta, fotos del techo o del tablero.',
-                    'La instalación se coordina en un viaje planificado a la zona. Para una '
-                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
-                    . 'corresponde una visita.',
+                    'Indique Coronel Oviedo y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Rubro del comercio o depósito y equipos críticos que no pueden quedar sin energía',
-            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
-            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Pueden venir el mismo día a instalar?',
-                'a' => 'No trabajamos con visitas el mismo día en Coronel Oviedo: cotizamos el '
-                     . 'proyecto por WhatsApp y coordinamos un viaje para la instalación.',
-            ],
-            [
-                'q' => '¿Atienden comercios sobre la ruta y depósitos, no solo viviendas?',
-                'a' => 'Sí, es donde más trabajamos en la zona: comercios, depósitos y también '
-                     . 'viviendas.',
-            ],
-            [
-                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
-                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
-                     . 'una visita.',
+                'q' => '¿Hay un electricista de Electricidad PY en Coronel Oviedo?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-pedro-juan-caballero' => [
-        'path'            => '/electricista/pedro-juan-caballero/',
-        'kind'            => 'zona',
-        'city'            => 'Pedro Juan Caballero',
-        'navLabel'        => 'Pedro Juan Caballero',
-        'seoTitle'        => 'Paneles solares en Pedro Juan Caballero',
-        'metaDescription' => 'Paneles solares, generadores y UPS para comercios de frontera y '
-                           . 'viviendas de Pedro Juan Caballero. Presupuesto por WhatsApp, visita '
-                           . 'coordinada.',
+        'path' => '/electricista/pedro-juan-caballero/',
+        'kind' => 'zona',
+        'city' => 'Pedro Juan Caballero',
+        'navLabel' => 'Pedro Juan Caballero',
+        'seoTitle' => 'Paneles solares en Pedro Juan Caballero',
+        'metaDescription' => 'Electricidad en Pedro Juan Caballero: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Energía para Pedro Juan Caballero',
-            'h1'      => 'Paneles solares y generadores en Pedro Juan Caballero',
-            'lead'    => 'Comercios de la zona de frontera con Ponta Porã y viviendas que no pueden '
-                       . 'depender solo de la red: cotizamos el proyecto de energía por WhatsApp y '
-                       . 'coordinamos un viaje para la instalación.',
+            'h1' => 'Consulta de electricidad en Pedro Juan Caballero',
+            'lead' => 'Información para preparar una consulta en Pedro Juan Caballero. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'paneles-solares',
-        'bundle'   => [
+        'bundle' => [
             'paneles-solares',
             'generadores',
             'ups-estabilizadores',
@@ -1009,78 +678,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Comercios de frontera que pierden ventas en cada corte',
-                'text'  => 'Un local de comercio que trabaja con público de ambos lados de la '
-                         . 'frontera pierde ventas cada vez que se corta la luz, algo que un '
-                         . 'generador o baterías bien dimensionados evitan.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Cajas y equipos de cómputo sin respaldo ante microcortes',
-                'text'  => 'En una zona de mucho movimiento comercial, las bajas de tensión y los '
-                         . 'microcortes pueden colgar o dañar cajas registradoras y equipos de '
-                         . 'cómputo si no hay un UPS o estabilizador de por medio.',
-            ],
-            [
-                'title' => 'Tablero de un local que no acompañó el crecimiento del negocio',
-                'text'  => 'Locales que fueron sumando heladeras, aire acondicionado e iluminación '
-                         . 'con los años terminan con un tablero pensado para menos carga que la '
-                         . 'actual.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Cómo cotizamos un proyecto en Pedro Juan Caballero',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
-                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del local y, '
-                    . 'si hace falta, fotos del techo o del tablero.',
-                    'La instalación se coordina en un viaje planificado a la zona. Para una '
-                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
-                    . 'corresponde una visita.',
+                    'Indique Pedro Juan Caballero y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Rubro del comercio o si es vivienda, y equipos críticos que no pueden quedar sin energía',
-            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
-            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Pueden venir el mismo día a instalar?',
-                'a' => 'No trabajamos con visitas el mismo día en Pedro Juan Caballero: cotizamos el '
-                     . 'proyecto por WhatsApp y coordinamos un viaje para la instalación.',
-            ],
-            [
-                'q' => '¿Atienden comercios además de viviendas?',
-                'a' => 'Sí, es donde más trabajamos en la zona: comercios y también viviendas.',
-            ],
-            [
-                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
-                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
-                     . 'una visita.',
+                'q' => '¿Hay un electricista de Electricidad PY en Pedro Juan Caballero?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-villarrica' => [
-        'path'            => '/electricista/villarrica/',
-        'kind'            => 'zona',
-        'city'            => 'Villarrica',
-        'navLabel'        => 'Villarrica',
-        'seoTitle'        => 'Electricista y solar en Villarrica',
-        'metaDescription' => 'Paneles solares y generadores para viviendas, comercios y fincas cerca '
-                           . 'de Villarrica. Presupuesto por WhatsApp y visita de instalación '
-                           . 'coordinada.',
+        'path' => '/electricista/villarrica/',
+        'kind' => 'zona',
+        'city' => 'Villarrica',
+        'navLabel' => 'Villarrica',
+        'seoTitle' => 'Electricista y solar en Villarrica',
+        'metaDescription' => 'Electricidad en Villarrica: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Energía para Villarrica',
-            'h1'      => 'Paneles solares y generadores en Villarrica',
-            'lead'    => 'Viviendas, comercios y fincas del departamento de Guairá: cotizamos el '
-                       . 'proyecto de energía por WhatsApp y coordinamos un viaje para la '
-                       . 'instalación.',
+            'h1' => 'Consulta de electricidad en Villarrica',
+            'lead' => 'Información para preparar una consulta en Villarrica. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'paneles-solares',
-        'bundle'   => [
+        'bundle' => [
             'paneles-solares',
             'generadores',
             'ups-estabilizadores',
@@ -1089,77 +729,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Fincas y depósitos cerca de la ciudad sin respaldo de generador',
-                'text'  => 'Fincas y depósitos vinculados a la actividad agro de la zona pierden '
-                         . 'horas de trabajo en cada corte si no cuentan con un generador o baterías '
-                         . 'bien dimensionados.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Heladeras y freezers de comercio sin protección ante bajas de tensión',
-                'text'  => 'Un freezer o heladera de comercio puede perder mercadería si una baja de '
-                         . 'tensión lo daña y no hay un estabilizador o UPS que lo proteja.',
-            ],
-            [
-                'title' => 'Viviendas ampliadas de a poco sobre un tablero viejo',
-                'text'  => 'Casas que fueron ganando piezas, aire acondicionado y más iluminación con '
-                         . 'los años terminan con un tablero y disyuntores pensados para menos carga '
-                         . 'que la actual.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Cómo cotizamos un proyecto en Villarrica',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
-                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del inmueble '
-                    . 'y, si hace falta, fotos del techo o del tablero.',
-                    'La instalación se coordina en un viaje planificado a la zona. Para una '
-                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
-                    . 'corresponde una visita.',
+                    'Indique Villarrica y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Si es vivienda, finca o comercio, y equipos críticos que no pueden quedar sin luz',
-            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
-            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Pueden venir el mismo día a instalar?',
-                'a' => 'No trabajamos con visitas el mismo día en Villarrica: cotizamos el proyecto '
-                     . 'por WhatsApp y coordinamos un viaje para la instalación.',
-            ],
-            [
-                'q' => '¿Trabajan con fincas y no solo con viviendas de la ciudad?',
-                'a' => 'Sí, trabajamos con viviendas, comercios y fincas del departamento de Guairá.',
-            ],
-            [
-                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
-                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
-                     . 'una visita.',
+                'q' => '¿Hay un electricista de Electricidad PY en Villarrica?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-concepcion' => [
-        'path'            => '/electricista/concepcion/',
-        'kind'            => 'zona',
-        'city'            => 'Concepción',
-        'navLabel'        => 'Concepción',
-        'seoTitle'        => 'Paneles solares en Concepción',
-        'metaDescription' => 'Paneles solares, generadores y baterías de respaldo para viviendas y '
-                           . 'comercios de Concepción. Presupuesto por WhatsApp, visita de '
-                           . 'instalación coordinada.',
+        'path' => '/electricista/concepcion/',
+        'kind' => 'zona',
+        'city' => 'Concepción',
+        'navLabel' => 'Concepción',
+        'seoTitle' => 'Paneles solares en Concepción',
+        'metaDescription' => 'Electricidad en Concepción: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Energía para Concepción',
-            'h1'      => 'Paneles solares y generadores en Concepción',
-            'lead'    => 'Viviendas junto al río, comercios de la ciudad y establecimientos '
-                       . 'ganaderos del departamento: cotizamos el proyecto de energía por WhatsApp '
-                       . 'y coordinamos un viaje para la instalación.',
+            'h1' => 'Consulta de electricidad en Concepción',
+            'lead' => 'Información para preparar una consulta en Concepción. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'paneles-solares',
-        'bundle'   => [
+        'bundle' => [
             'paneles-solares',
             'generadores',
             'baterias-respaldo',
@@ -1168,79 +780,49 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Establecimientos ganaderos sin generador ni baterías de respaldo',
-                'text'  => 'Establecimientos vinculados a la ganadería del departamento pierden horas '
-                         . 'de trabajo en cada corte si no cuentan con un generador o un banco de '
-                         . 'baterías bien dimensionado.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Viviendas junto al río con tomas exteriores sin protección adecuada',
-                'text'  => 'La cercanía al agua suma humedad ambiente que acelera el deterioro de '
-                         . 'tomas y cajas de conexión exteriores mal selladas.',
-            ],
-            [
-                'title' => 'Comercios que crecieron más rápido que su instalación eléctrica',
-                'text'  => 'Locales que fueron sumando heladeras, aire acondicionado e iluminación '
-                         . 'con los años terminan con un tablero que no alcanza para la carga '
-                         . 'actual.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Cómo cotizamos un proyecto en Concepción',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Para paneles solares, generadores, UPS o baterías de respaldo armamos el '
-                    . 'presupuesto por WhatsApp con la factura de la ANDE o el consumo del inmueble '
-                    . 'y, si hace falta, fotos del techo o del tablero.',
-                    'La instalación se coordina en un viaje planificado a la zona. Para una '
-                    . 'reparación chica lo vemos caso por caso por WhatsApp antes de definir si '
-                    . 'corresponde una visita.',
+                    'Indique Concepción y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Si es vivienda, comercio o establecimiento, y equipos críticos que no pueden quedar '
-            . 'sin luz',
-            'Consumo aproximado o factura de la ANDE, y si ya tiene generador, UPS o baterías',
-            'Fotos del techo (para solar) o del tablero, si las tiene a mano',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Pueden venir el mismo día a instalar?',
-                'a' => 'No trabajamos con visitas el mismo día en Concepción: cotizamos el proyecto '
-                     . 'por WhatsApp y coordinamos un viaje para la instalación.',
-            ],
-            [
-                'q' => '¿Trabajan con establecimientos del departamento, no solo con la ciudad?',
-                'a' => 'Sí, trabajamos con viviendas y comercios de la ciudad y con establecimientos '
-                     . 'del departamento.',
-            ],
-            [
-                'q' => '¿Qué hacen si necesito una reparación puntual, no un proyecto de energía?',
-                'a' => 'Lo coordinamos caso por caso por WhatsApp antes de confirmar si corresponde '
-                     . 'una visita.',
+                'q' => '¿Hay un electricista de Electricidad PY en Concepción?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
     'electricista-chaco' => [
-        'path'            => '/electricista/chaco/',
-        'kind'            => 'zona',
-        'city'            => 'Chaco',
-        'navLabel'        => 'Chaco',
-        'seoTitle'        => 'Energía solar off-grid en el Chaco',
-        'metaDescription' => 'Solar off-grid con baterías y generadores de respaldo para estancias y '
-                           . 'establecimientos del Chaco sin línea de la ANDE cerca. Presupuesto por '
-                           . 'WhatsApp.',
+        'path' => '/electricista/chaco/',
+        'kind' => 'zona',
+        'city' => 'Chaco',
+        'navLabel' => 'Chaco',
+        'seoTitle' => 'Energía solar off-grid en el Chaco',
+        'metaDescription' => 'Electricidad en Chaco: temas de consulta, servicios relacionados y datos para preparar un proyecto. La cobertura debe confirmarse con el prestador.',
         'hero' => [
             'eyebrow' => 'Energía para el Chaco paraguayo',
-            'h1'      => 'Solar off-grid y generadores para el Chaco',
-            'lead'    => 'Estancias y establecimientos lejos de la línea de la ANDE: armamos el '
-                       . 'sistema solar off-grid con baterías por WhatsApp, con un generador como '
-                       . 'respaldo, y coordinamos un viaje para la instalación.',
+            'h1' => 'Consulta de electricidad en Chaco',
+            'lead' => 'Información para preparar una consulta en Chaco. Esta página no acredita cobertura ni disponibilidad de un prestador.',
         ],
         'leadSlug' => 'paneles-solares',
-        'bundle'   => [
+        'bundle' => [
             'paneles-solares',
             'baterias-respaldo',
             'generadores',
@@ -1249,60 +831,33 @@ return [
         ],
         'traps' => [
             [
-                'title' => 'Sistema off-grid dimensionado solo por el techo, no por el consumo',
-                'text'  => 'Armar los paneles y el banco de baterías según lo que entra en el techo, '
-                         . 'sin sumar antes cada equipo y sus horas de uso, deja al sistema corto '
-                         . 'justo en los días de más consumo.',
+                'title' => 'Cobertura por confirmar',
+                'text' => 'Confirme con el prestador que atiende su zona antes de coordinar o compartir una dirección exacta.',
             ],
             [
-                'title' => 'Generador de respaldo sin mantenimiento entre viajes',
-                'text'  => 'Un generador que solo se prueba cuando ya falta energía suele fallar en '
-                         . 'el peor momento; conviene revisarlo en cada visita programada, no '
-                         . 'esperar a que se corte todo.',
-            ],
-            [
-                'title' => 'Instalación sin puesta a tierra en un establecimiento aislado',
-                'text'  => 'Sin una buena puesta a tierra, un rayo o una falla puede dañar equipos y '
-                         . 'poner en riesgo a las personas, y arreglar eso después implica otro '
-                         . 'viaje.',
+                'title' => 'Alcance según el lugar',
+                'text' => 'Describa el inmueble, los equipos y las condiciones de acceso que afectarían una evaluación.',
             ],
         ],
         'sections' => [
             [
-                'h2'   => 'Cómo cotizamos un proyecto off-grid en el Chaco',
+                'h2' => 'La zona y el acceso',
                 'body' => [
-                    'Muchos establecimientos del Chaco no tienen factura de la ANDE para partir: '
-                    . 'ahí cotizamos a partir de la lista de equipos que va a usar y sus horas de '
-                    . 'uso por día, y con eso dimensionamos paneles y baterías.',
-                    'Para calcular ese consumo antes de escribirnos puede usar las herramientas '
-                    . 'de la web (cuánto solar necesita y consumo por equipo). La instalación se '
-                    . 'coordina en un viaje planificado; una reparación chica la vemos caso por '
-                    . 'caso por WhatsApp antes de definir si corresponde una visita.',
+                    'Indique Chaco y el barrio o área aproximada. Para un proyecto alejado del centro urbano, consulte si el prestador puede atender la ubicación y qué traslado contemplaría.',
+                    'Las páginas por ciudad son referencias de búsqueda. No hay una red local, costo de traslado ni agenda confirmados por Electricidad PY.',
                 ],
             ],
         ],
         'weNeed' => [
-            'Lista de equipos a alimentar y horas de uso por día (o factura de la ANDE, si tiene)',
-            'Si el establecimiento es totalmente off-grid o tiene línea de la ANDE cerca',
-            'Si ya cuenta con generador, baterías o paneles instalados',
+            'Ciudad y barrio o zona aproximada',
+            'Tipo de inmueble y necesidad',
+            'Lista de equipos si busca energía o respaldo',
         ],
         'faq' => [
             [
-                'q' => '¿Arman sistemas solares sin conexión a la ANDE?',
-                'a' => 'Sí, armamos sistemas off-grid con baterías dimensionados según el consumo '
-                     . 'real del establecimiento, no solo el techo disponible.',
-            ],
-            [
-                'q' => '¿Pueden venir el mismo día a instalar?',
-                'a' => 'No trabajamos con visitas el mismo día en el Chaco: cotizamos el proyecto '
-                     . 'por WhatsApp y coordinamos un viaje planificado para la instalación.',
-            ],
-            [
-                'q' => '¿Qué hacen si no tengo factura de la ANDE para cotizar?',
-                'a' => 'Cotizamos igual, a partir de la lista de equipos que va a usar y sus horas '
-                     . 'de uso por día.',
+                'q' => '¿Hay un electricista de Electricidad PY en Chaco?',
+                'a' => 'No hay un prestador ni cobertura confirmados desde esta versión. La ubicación no implica disponibilidad de atención.',
             ],
         ],
     ],
-
 ];

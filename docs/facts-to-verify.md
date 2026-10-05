@@ -1,7 +1,18 @@
 # Facts to verify before (or soon after) launch
 
-Nothing below is shown as a fact on the site today; each item would make a page stronger once
-confirmed from a primary source. The sandbox that built the site could not reach ande.gov.py.
+Review 2026-10-05: some assumptions and dated statements below are already present
+in legacy guides, blog and calculators. They are not newly verified business facts.
+The review preserves useful tools and articles but keeps publication noindex pending
+current primary-source checks. The historical claim that nothing was visible was inaccurate.
+Service/city pages no longer promise staff, coverage, finance or visits. Owner confirmed
+WhatsApp +595 992 279599; legal operator, CRM receipt and coverage remain pending.
+
+Primary safety sources checked: ANDE https://www.ande.gov.py/interna.php?id=355
+(2012 professional intervention guidance), https://www.ande.gov.py/interna.php?id=13011
+(2024 infrastructure warning), https://www.ande.gov.py/interna.php?id=5362
+(matriculated electrician role), https://www.ande.gov.py/informaciones_utiles.php.
+These do not certify this site's staff. Historical financing/maintenance/travel rows
+are research questions, not currently available offers. Recheck dates and legislation.
 
 | # | Fact | Where it would go | Source to check |
 |---|---|---|---|

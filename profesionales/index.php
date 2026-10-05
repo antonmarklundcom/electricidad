@@ -16,8 +16,7 @@ $page = [
     'breadcrumbs' => [['label' => ui('nav.partners'), 'path' => '/profesionales/']],
 ];
 
-$proWhatsapp = whatsapp_link('Hola, soy electricista / proveedor de energía y quiero sumarme a la red de '
-    . site('domain') . '. Trabajo en: ');
+$proWhatsapp = whatsapp_link('Hola, soy electricista / proveedor de energía y quisiera consultar sobre una posible colaboración. Mi zona de trabajo es: ');
 
 require ROOT_DIR . '/partials/head.php';
 require ROOT_DIR . '/partials/header.php';
@@ -31,7 +30,7 @@ require ROOT_DIR . '/partials/header.php';
         <h1><?= e($meta['h1']) ?></h1>
         <p class="lead"><?= e($meta['lead']) ?></p>
         <div class="btn-row">
-          <a class="btn btn--primary" href="#sumarse">Quiero sumarme</a>
+          <a class="btn btn--primary" href="#sumarse">Ver el estado de la propuesta</a>
           <?php if ($proWhatsapp !== null): ?>
             <a class="btn btn--secondary" href="<?= e($proWhatsapp) ?>" rel="noopener"><?= e(ui('cta.whatsapp')) ?></a>
           <?php endif; ?>
@@ -59,10 +58,9 @@ require ROOT_DIR . '/partials/header.php';
   <section class="section section--surface" id="sumarse">
     <div class="container split split--top">
       <div class="stack">
-        <p class="eyebrow">Sumarse a la red</p>
-        <h2>Cuéntenos quién es y dónde trabaja.</h2>
-        <p class="lead">En "Barrio y ciudad" ponga las zonas que cubre; en el mensaje, su especialidad
-          (residencial, comercial, solar, generadores) y si tiene matrícula o empresa.</p>
+        <p class="eyebrow">Colaboración por definir</p>
+        <h2>La recepción de profesionales está pendiente.</h2>
+        <p class="lead">Todavía no se reciben documentos, matrículas ni solicitudes de incorporación. Puede preparar un resumen de su especialidad y zona sin enviarlo.</p>
       </div>
       <div>
         <?php

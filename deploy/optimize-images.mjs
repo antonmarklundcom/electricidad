@@ -27,13 +27,12 @@ const srcDir = resolve(root, "deploy/imagery-src");
 // site's own slots (a service icon per service, the two homepage figures):
 const MANIFEST = [
   // { slot: "icon-<service>", src: "icon-<service>.png", out: "services/<service>", widths: [128] },
-  { slot: "hero-portrait", src: "hero-portrait.png", out: "team/portrait", widths: [420, 840] },
-  { slot: "team-office",   src: "team-office.png",   out: "team/office",   widths: [420, 840] },
+  { slot: "home-energy", src: "home-energy.png", out: "home-energy", widths: [640, 1024] },
 ];
 
 // The OG image stays a plain flattened PNG at a fixed size (Open Graph
 // consumers don't reliably support AVIF/WebP), so it is handled separately.
-const OG = { src: "og-default.png", out: "og-default.png", width: 1200, height: 630 };
+const OG = { src: "../brand-card.svg", out: "og-default.png", width: 1200, height: 630 };
 
 async function convertOne({ slot, src, out, widths }) {
   const srcPath = resolve(srcDir, src);
@@ -46,10 +45,10 @@ async function convertOne({ slot, src, out, widths }) {
   const base = resolve(root, "assets/img", out);
 
   const image = sharp(srcPath);
-  const width = Math.max(...widths);
-  await image.clone().resize({ width }).avif({ quality: 62 }).toFile(`${base}.avif`);
-  await image.clone().resize({ width }).webp({ quality: 72 }).toFile(`${base}.webp`);
-  console.log(`wrote ${out}.avif + .webp (${width}px)`);
+  for (const width of widths) {
+    await image.clone().resize({ width }).webp({ quality: 82 }).toFile(`${base}-${width}.webp`);
+    console.log(`wrote ${out}-${width}.webp`);
+  }
 }
 
 async function convertOg() {
@@ -61,7 +60,7 @@ async function convertOg() {
   const destPath = resolve(root, "assets/img", OG.out);
   await sharp(srcPath)
     .resize({ width: OG.width, height: OG.height, fit: "cover" })
-    .flatten({ background: "#0F1B2D" })
+    .flatten({ background: "#fcfaf5" })
     .png({ compressionLevel: 9 })
     .toFile(destPath);
   console.log(`wrote ${OG.out} (${OG.width}x${OG.height})`);

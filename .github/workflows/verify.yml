@@ -20,7 +20,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          # Hostinger shared hosting runs PHP 8.2; CI matches production.
+          # PHP 8.2 compatibility baseline; live review also tested PHP 8.3.
           php-version: "8.2"
           extensions: curl, mbstring
           coverage: none
@@ -74,7 +74,23 @@ jobs:
           cd tests
           node screenshots.mjs --phase ci --base http://127.0.0.1:8080 / $pages
 
+      - name: Calculator and preparation interactions
+        run: |
+          for _ in $(seq 1 40); do curl -sf -o /dev/null http://127.0.0.1:8080/ && break; sleep 0.25; done
+          node tests/tools.spec.mjs http://127.0.0.1:8080
+          node tests/preparation.spec.mjs http://127.0.0.1:8080
+          node tests/intake.spec.mjs
+          node tests/routes-links.mjs http://127.0.0.1:8080
+          node tests/whatsapp.spec.mjs http://127.0.0.1:8080
+
+      - name: Before and after views for this review
+        run: |
+          for _ in $(seq 1 40); do curl -sf -o /dev/null http://127.0.0.1:8080/ && break; sleep 0.25; done
+          cd tests
+          node screenshots.mjs --phase ci-before --base https://electricidad.com.py / /servicios/tablero-electrico-disyuntores/ /contacto/
+          node screenshots.mjs --phase ci-after --base http://127.0.0.1:8080 / /servicios/tablero-electrico-disyuntores/ /contacto/
+
       - uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: docs/screenshots/ci/
+          path: docs/screenshots/ci*/

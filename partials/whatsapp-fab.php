@@ -21,6 +21,10 @@ declare(strict_types=1);
 $link     = whatsapp_link(whatsapp_text_for_page());
 $label    = $link ? ui('cta.whatsapp_long') : ui('cta.contact');
 $leadSlug = current_lead_slug() ?? '';
+if (!contact_ready() && $link === null) {
+    unset($link, $label, $leadSlug);
+    return;
+}
 ?>
 <a class="wa-fab" href="<?= e($link ?? '/contacto/') ?>"
    <?= $link ? 'rel="noopener" data-wa-trigger aria-controls="wa-menu" aria-expanded="false"' : '' ?>

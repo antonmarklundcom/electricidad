@@ -1,5 +1,12 @@
 # electricidad.com.py — plan v2 (2026-09-24)
 
+> Actualización 2026-10-05: la web ya está publicada. La implementación seleccionada
+> es `main` (1cfe765), no la rama predeterminada de planificación. El estado y los
+> requisitos actuales están en [docs/review-2026-10-05.md](docs/review-2026-10-05.md)
+> y [docs/owner-todo.md](docs/owner-todo.md). Las afirmaciones históricas de abajo
+> no confirman personal, cobertura, financiación, matrícula ni recepción de leads.
+> La nueva versión mantiene la recepción cerrada y noindex hasta su confirmación.
+
 Lead-gen site for electricians in Gran Asunción + quote requests for solar, generators, UPS,
 batteries and EV chargers. Static HTML + PHP (`php-site-template`, market `py`), leads to
 VenderCRM. v1 of this file was a 7-phase multi-session build plan; the whole build was done in

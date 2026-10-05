@@ -50,6 +50,8 @@
       if (radio) {
         radio.checked = true;
       }
+      var select = form.querySelector('select[name="need"]');
+      if (select) select.value = need;
     }
     if (message) {
       var textarea = form.querySelector('textarea[name="message"]');
@@ -94,7 +96,10 @@
     if (!link) {
       return;
     }
-    link.href = "https://wa.me/?text=" + encodeURIComponent(text + "\n" + window.location.origin + window.location.pathname);
+    var domain = document.querySelector('.wordmark__text').textContent.trim();
+    link.href = "https://wa.me/?text=" + encodeURIComponent(text
+      + "\nOrigen: " + domain + "\nPágina: " + document.title
+      + "\nEnlace: https://" + domain + window.location.pathname);
     link.hidden = false;
     if (!link.dataset.bound) {
       link.dataset.bound = "1";

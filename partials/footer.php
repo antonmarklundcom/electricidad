@@ -88,5 +88,6 @@ $footSocials = nav('socials');
 <script src="<?= e(asset('/assets/js/site.js')) ?>" defer></script>
 <script src="<?= e(asset('/assets/js/whatsapp-menu.js')) ?>" defer></script>
 <script src="<?= e(asset('/assets/js/lead-form.js')) ?>" defer></script>
+<script src="<?= e(asset('/assets/js/contact-preparation.js')) ?>" defer></script>
 </body>
 </html>

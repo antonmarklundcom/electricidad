@@ -31,6 +31,12 @@
 
 declare(strict_types=1);
 
+if (!contact_ready()) {
+    require ROOT_DIR . '/partials/contact-preparation.php';
+    unset($formId, $formNeed, $formHeading, $formService, $formToolResult, $formSourcePage);
+    return;
+}
+
 $formId      = $formId ?? 'contacto';
 $formNeed    = $formNeed ?? '';
 $formHeading = $formHeading ?? ui('form.legend');
@@ -61,6 +67,7 @@ $utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content
     <h2 class="card-title"><?= e($formHeading) ?></h2>
   <?php endif; ?>
 
+  <p class="note">Esta consulta la recibe <?= e(cfg('OPERATOR_NAME')) ?>. La cobertura, el costo y la fecha deben confirmarse; enviar no reserva una visita.</p>
   <?php $formQ = content('ui')['qualify']; ?>
   <div class="lead-step" data-step="1">
     <p class="lead-step__label" data-step-label hidden><?= e($formQ['step1']) ?></p>
@@ -103,7 +110,7 @@ $utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content
         <span><?= e($formQ['city_label']) ?></span>
         <select name="ciudad">
           <option value=""><?= e($formQ['choose']) ?></option>
-          <?php foreach ((array) site('areaServed') as $label): ?>
+          <?php foreach ((array) site('locationsOfInterest') as $label): ?>
             <option value="<?= e($label) ?>"><?= e($label) ?></option>
           <?php endforeach; ?>
           <option value="otra"><?= e($formQ['city_other']) ?></option>
