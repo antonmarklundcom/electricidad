@@ -15,6 +15,8 @@ try {
       assert.ok(await page.locator('a[href^="https://wa.me/595992279599"]').count()>0);
       const current=page.locator('.breadcrumbs [aria-current=page]');
       if(await current.count())assert.equal(await current.evaluate(el=>getComputedStyle(el).color),'rgb(22, 59, 50)');
+      const secondary=page.locator('.page-hero .btn--secondary').first();
+      if(await secondary.count())assert.equal(await secondary.evaluate(el=>getComputedStyle(el).color),'rgb(22, 59, 50)');
       checks+=5;
     }
     await page.goto(base+'/contacto/');
