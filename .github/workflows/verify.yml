@@ -1,13 +1,17 @@
 name: verify
 
-# Budget: PR-only (a push to main was a second, billed run of the same commit),
-# superseded runs cancelled, and every job capped well under the 360-minute default.
+# No push-to-main runs. The review branch also triggers checks because the
+# repository's default branch is planning-only and PR creation did not start CI.
+# Matching PR/push runs share cancellation; each job stays capped at ten minutes.
 on:
+  push:
+    branches: ['codex/electricidad-review-20261005']
+    paths-ignore: ['**.md', 'docs/**', 'prompts/**']
   pull_request:
     paths-ignore: ['**.md', 'docs/**', 'prompts/**']
 
 concurrency:
-  group: verify-${{ github.ref }}
+  group: verify-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
@@ -20,7 +24,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          # Hostinger shared hosting runs PHP 8.2; CI matches production.
+          # PHP 8.2 compatibility baseline; live review also tested PHP 8.3.
           php-version: "8.2"
           extensions: curl, mbstring
           coverage: none
@@ -36,8 +40,7 @@ jobs:
 
   screenshots:
     runs-on: ubuntu-latest
-    # Preview images for the PR body. Never blocks the merge on its own.
-    if: github.event_name == 'pull_request'
+    # Browser checks and downloadable preview images for this review.
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -66,7 +69,7 @@ jobs:
         run: |
           php -S 127.0.0.1:8080 router.php &
           for _ in $(seq 1 40); do curl -sf -o /dev/null http://127.0.0.1:8080/ && break; sleep 0.25; done
-          pages=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" \
+          pages=$(git diff --name-only "origin/${{ github.base_ref || 'main' }}...HEAD" \
             | grep -E '(^|/)index\.php$' \
             | sed -E 's#(^|/)index\.php$#/#; s#^/$#/#; s#^([^/])#/\1#' \
             | grep -v '^/$' | sort -u | head -10)
@@ -74,7 +77,23 @@ jobs:
           cd tests
           node screenshots.mjs --phase ci --base http://127.0.0.1:8080 / $pages
 
+      - name: Calculator and preparation interactions
+        run: |
+          for _ in $(seq 1 40); do curl -sf -o /dev/null http://127.0.0.1:8080/ && break; sleep 0.25; done
+          node tests/tools.spec.mjs http://127.0.0.1:8080
+          node tests/preparation.spec.mjs http://127.0.0.1:8080
+          node tests/intake.spec.mjs
+          node tests/routes-links.mjs http://127.0.0.1:8080
+          node tests/whatsapp.spec.mjs http://127.0.0.1:8080
+
+      - name: Before and after views for this review
+        run: |
+          for _ in $(seq 1 40); do curl -sf -o /dev/null http://127.0.0.1:8080/ && break; sleep 0.25; done
+          cd tests
+          node screenshots.mjs --phase ci-before --base https://electricidad.com.py / /servicios/tablero-electrico-disyuntores/ /contacto/
+          node screenshots.mjs --phase ci-after --base http://127.0.0.1:8080 / /servicios/tablero-electrico-disyuntores/ /contacto/
+
       - uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: docs/screenshots/ci/
+          path: docs/screenshots/ci*/

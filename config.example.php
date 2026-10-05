@@ -5,8 +5,7 @@
  *   cp config.example.php config.php
  *
  * config.php is gitignored and never committed. Every value here is optional:
- * the site renders and the lead form still accepts submissions when they are
- * empty — see "degraded mode" in enviar.php.
+ * the site renders while intake remains closed when required values are empty.
  */
 
 declare(strict_types=1);
@@ -16,9 +15,13 @@ return [
     // the sitemap. Falls back to the request host when empty.
     'SITE_URL' => '',
 
-    // VenderCRM (Sitios → this site). Without both values the lead form runs in
-    // degraded mode: submissions are appended to logs/leads.log and the visitor
-    // still gets a success state pointing at WhatsApp.
+    // Keep disabled until the operator, coverage and CRM receipt are verified.
+    'PUBLICATION_READY' => '0',
+    'LEADS_ENABLED' => '0',
+    'OPERATOR_NAME' => '',
+
+    // VenderCRM (Sitios → this site). Missing values close intake. A runtime
+    // delivery failure preserves a private record but returns an honest error.
     'VENDERCRM_URL'     => '',
     'VENDERCRM_API_KEY' => '',
 

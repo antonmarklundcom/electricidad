@@ -1,11 +1,27 @@
-# Pendientes del dueño (lo único que el repo no puede hacer)
+# Confirmaciones antes de publicar — 2026-10-05
 
-1. [ ] Registrar `electricidad.com.py` en nic.py (alternativas en `docs/report.md` §4).
-2. [ ] Instalar WhatsApp Business en +595 995 628862 con mensaje de saludo.
-3. [ ] `./deploy/make-zip.sh` y subir el zip a Hostinger `public_html/` (README "Deploy").
-4. [ ] En `config.php` del servidor: `SITE_URL` = `https://electricidad.com.py`, clave de VenderCRM (+ Resend), `GA4_ID` / `ADS_ID`.
-5. [ ] hPanel, SSL, activar **Force HTTPS**; luego `./deploy/verify-live.sh https://electricidad.com.py`.
-6. [ ] Datos reales de contacto en `content/site.php` (dirección, email, horarios, redes, testimonios): hoy están vacíos a propósito y no se publican.
-7. [ ] Confirmar los hechos de `docs/facts-to-verify.md` (tarifa ANDE, financiera, precios de planes).
-8. [ ] Search Console: enviar `/sitemap.xml`. Google Business Profile para Asunción.
-9. [ ] Opcional: imágenes reales y un `og-default.png` de marca.
+La web ya está publicada. Anton confirmó el **+595 992 279599** para contacto y
+WhatsApp. Los enlaces identifican sitio, página y tema. Abrir WhatsApp no envía
+el mensaje ni confirma una visita. No se cambió producción en esta revisión.
+
+Prioridad:
+
+1. Identificar operador legal y confirmar ejecución propia o mediación,
+   prestadores, matrícula cuando corresponda, ciudades efectivamente atendidas,
+   disponibilidad y canal de privacidad.
+2. Probar recepción del WhatsApp confirmado. Definir quién responde y qué puede
+   atender. No se promete urgencia ni 24 horas.
+3. Para activar formulario: confirmar cuenta y destinatario real de VenderCRM,
+   privacidad, conservación y permisos de registros. Configurar `OPERATOR_NAME`,
+   `LEADS_ENABLED=1` y credenciales solo en el servidor; probar recepción autorizada.
+4. Revisar tarifas, autogeneración, precios y supuestos en `facts-to-verify.md`.
+   No hay financiación ni suscripción confirmada.
+5. Backup y staging Hostinger: Apache/.htaccess, privados, SSL, redirecciones,
+   extensiones PHP, logs, proxy y CRM. El límite usa `REMOTE_ADDR`; confirmar
+   proxy antes de confiar en cabeceras reenviadas.
+6. `PUBLICATION_READY=1` solo después de las comprobaciones. El paquete entregado
+   tiene noindex, robots Disallow y sitemap vacío. Ciudades siguen noindex y
+   fuera del sitemap hasta añadir cobertura confirmada en `content/site.php`.
+
+PR normal por instrucción expresa de Anton, no draft. Merge no publica la web.
+No subir directamente este paquete cerrado a producción sin completar la lista.

@@ -30,6 +30,8 @@ $page = [
     'title'       => $record['seoTitle'],
     'description' => $record['metaDescription'],
     'path'        => $record['path'],
+    'noindex'     => ($record['kind'] ?? '') === 'zona'
+        && !in_array($record['navLabel'], (array) site('areaServed'), true),
     'breadcrumbs' => [
         ['label' => ui('nav.services'), 'path' => services_hub_path()],
         ['label' => $record['seoTitle'], 'path' => $record['path']],

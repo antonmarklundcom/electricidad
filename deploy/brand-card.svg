@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fcfaf5"/>
+  <rect x="820" width="380" height="630" fill="#163b32"/>
+  <circle cx="72" cy="76" r="18" fill="#efb84e"/>
+  <text x="108" y="87" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#163b32">electricidad.com.py</text>
+  <text x="54" y="242" font-family="Segoe UI,Arial,sans-serif" font-size="64" font-weight="700" fill="#163b32">Su casa. Su negocio.</text>
+  <text x="54" y="325" font-family="Segoe UI,Arial,sans-serif" font-size="52" font-weight="700" fill="#855315">Una decisión más clara.</text>
+  <text x="54" y="439" font-family="Segoe UI,Arial,sans-serif" font-size="25" fill="#53665b">Electricidad y energía en Paraguay</text>
+  <text x="54" y="485" font-family="Segoe UI,Arial,sans-serif" font-size="22" fill="#53665b">Guías · Calculadoras · Preparación de consultas</text>
+  <path d="M1020 164 910 331h90l-35 135 133-204h-95z" fill="#efb84e"/>
+  <text x="54" y="583" font-family="Segoe UI,Arial,sans-serif" font-size="17" fill="#53665b">Información orientativa. Atención y cobertura por confirmar.</text>
+</svg>

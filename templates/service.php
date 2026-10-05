@@ -65,7 +65,7 @@ require ROOT_DIR . '/partials/header.php';
           <p class="lead"><?= e($service['metaDescription']) ?></p>
         <?php endif; ?>
         <div class="btn-row">
-          <a class="btn btn--primary" href="/contacto/">
+          <a class="btn btn--primary" href="#solicitar">
             <?= e($service['cta']['label'] !== '' ? $service['cta']['label'] : ui('cta.consult')) ?>
           </a>
           <?php if (($wa = whatsapp_link($ctaWhatsapp)) !== null): ?>
@@ -75,6 +75,8 @@ require ROOT_DIR . '/partials/header.php';
       </div>
     </div>
   </section>
+
+  <section class="service-brief container"><p><strong>Antes de contratar:</strong> esta página describe el tipo de trabajo y el alcance que conviene consultar. La disponibilidad, la zona y las condiciones de un prestador deben confirmarse. No constituye una oferta ni una reserva.</p><p>La ANDE recomienda recurrir a profesionales para intervenir instalaciones eléctricas. <a href="https://www.ande.gov.py/interna.php?id=355" rel="noopener">Ver recomendación de la ANDE</a>.</p></section>
 
   <?php
     $svcExcludes = $service['excludes'] ?? [];

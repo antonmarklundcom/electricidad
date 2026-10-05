@@ -31,38 +31,16 @@ $pageSections = is_file(__DIR__ . '/pages-legal.php') ? require __DIR__ . '/page
 
 $pages = [
     '/' => [
-        'title'       => 'Electricista en Asunción y Central | Electricidad PY',
-        'description' => 'Electricista en Asunción y Central con presupuesto por WhatsApp antes de la visita. Paneles solares, generadores y UPS dimensionados para su consumo.',
+        'title'       => 'Electricidad en Paraguay | Electricidad PY',
+        'description' => 'Electricidad en Paraguay: encuentre información sobre instalaciones, reparaciones, paneles solares y respaldo. Prepare su consulta para hogar o negocio.',
         'h1'          => '',
         'lead'        => '',
-        'faq'         => [
-            [
-                'q' => '¿Cuánto cobra un electricista en Asunción?',
-                'a' => 'Depende del trabajo: no cuesta lo mismo cambiar un disyuntor que rehacer un '
-                     . 'tablero. Por eso cotizamos antes de ir: nos manda una foto o un audio por '
-                     . 'WhatsApp y le pasamos el presupuesto con materiales y mano de obra por separado.',
-            ],
-            [
-                'q' => '¿El presupuesto tiene costo?',
-                'a' => 'No. El presupuesto por WhatsApp es sin cargo. Si para cotizar hace falta ver el '
-                     . 'lugar, se lo decimos antes y usted decide.',
-            ],
-            [
-                'q' => '¿Pueden venir hoy?',
-                'a' => 'En Asunción y Central coordinamos la visita en el día cuando la agenda lo '
-                     . 'permite. Si hay olor a quemado, chispas o un tablero caliente, baje la llave '
-                     . 'general y escríbanos: esos casos van primero.',
-            ],
-            [
-                'q' => '¿Instalan paneles solares y generadores en el interior?',
-                'a' => 'Sí. Los proyectos de energía se dimensionan a distancia con sus facturas de la '
-                     . 'ANDE o la lista de equipos, y la instalación se coordina en un viaje.',
-            ],
-            [
-                'q' => '¿Qué garantía tiene el trabajo?',
-                'a' => 'Al terminar le dejamos por escrito qué se hizo, qué materiales se usaron y la '
-                     . 'garantía del trabajo.',
-            ],
+        'faq' => [
+            ['q' => '¿Electricidad PY realiza los trabajos?', 'a' => 'Esta versión ofrece orientación, guías y calculadoras. El operador y los prestadores para recibir consultas todavía están pendientes de confirmación.'],
+            ['q' => '¿Preparar el resumen envía mis datos?', 'a' => 'No. En el modo de preparación el texto queda en su navegador, sin envío, cuenta ni reserva. Usted decide con quién compartirlo.'],
+            ['q' => '¿Hay atención urgente o 24 horas?', 'a' => 'No hay disponibilidad urgente ni atención 24 horas confirmada. No espere una respuesta de este sitio ante un riesgo inmediato.'],
+            ['q' => '¿Las calculadoras dan un presupuesto?', 'a' => 'No. Producen estimaciones orientativas; un prestador debe evaluar el caso y confirmar equipos, instalación y precio.'],
+            ['q' => '¿Hay cuotas o planes de mantenimiento?', 'a' => 'Hay información para preparar estas consultas. No se ofrecen créditos, cuotas ni contratos de mantenimiento con condiciones confirmadas.'],
         ],
         'stub'        => false,
         'changefreq'  => 'weekly',
@@ -81,9 +59,9 @@ $pages = [
 
     '/precios/' => [
         'title'       => 'Cómo cotizamos',
-        'description' => 'Cómo armamos cada presupuesto: diagnóstico por WhatsApp sin cargo, materiales y mano de obra por separado, y usted aprueba antes de empezar.',
+        'description' => 'Qué revisar en una cotización de electricidad: alcance, materiales, mano de obra, evaluación, traslado y condiciones. No hay precios confirmados.',
         'h1'          => 'Cómo cotizamos',
-        'lead'        => 'Presupuesto por escrito antes de empezar, sin sorpresas.',
+        'lead'        => 'Qué debe quedar claro antes de aprobar una cotización.',
         'stub'        => false,
         'changefreq'  => 'monthly',
         'priority'    => '0.6',
@@ -101,7 +79,7 @@ $pages = [
 
     '/guias/' => [
         'title'       => 'Guías de electricidad para el hogar',
-        'description' => 'Guías claras sobre cortes de luz, disyuntores, la factura de la ANDE, generadores y paneles solares en Paraguay, escritas por electricistas.',
+        'description' => 'Guías claras sobre cortes de luz, disyuntores, la factura de la ANDE, generadores y paneles solares en Paraguay, para preparar una consulta.',
         'h1'          => 'Guías',
         'lead'        => 'Lo que conviene saber antes de llamar a un electricista.',
         'stub'        => false,
@@ -121,7 +99,7 @@ $pages = [
 
     '/contacto/' => [
         'title'       => 'Contacto y presupuesto',
-        'description' => 'Pida presupuesto por WhatsApp o con el formulario: cuéntenos el problema, mándenos una foto y le respondemos con una cotización.',
+        'description' => 'Prepare su consulta de electricidad: necesidad, ciudad y descripción. Conozca el estado de la atención y qué confirmar antes de contratar.',
         'h1'          => '',
         'lead'        => '',
         'stub'        => false,
@@ -131,9 +109,9 @@ $pages = [
 
     '/profesionales/' => [
         'title'       => 'Para electricistas y proveedores',
-        'description' => '¿Es electricista o vende equipos de energía? Súmese a la red de electricidad.com.py y reciba pedidos de trabajo calificados en su zona.',
+        'description' => 'Propuesta para electricistas y proveedores: conozca el estado de una futura colaboración. No hay una red ni recepción de solicitudes confirmadas.',
         'h1'          => 'Para electricistas y proveedores',
-        'lead'        => 'Reciba pedidos de trabajo calificados en su zona, con foto y ubicación.',
+        'lead'        => 'La propuesta de colaboración y la recepción de profesionales están pendientes de confirmación.',
         'stub'        => false,
         'changefreq'  => 'monthly',
         'priority'    => '0.5',
@@ -141,9 +119,9 @@ $pages = [
 
     '/electricista/' => [
         'title'       => 'Electricista en Asunción y Gran Asunción',
-        'description' => 'Electricistas en Asunción, San Lorenzo, Luque, Lambaré, Fernando de la Mora, Capiatá, Ñemby y más ciudades de Central, con presupuesto previo.',
+        'description' => 'Información por ciudad para consultas de electricidad: Asunción y otras zonas de Paraguay. La presencia de una página no confirma cobertura de atención.',
         'h1'          => 'Electricista en Asunción y Gran Asunción',
-        'lead'        => 'Elija su ciudad: le cotizamos por WhatsApp antes de ir.',
+        'lead'        => 'Elija su ciudad como referencia. La cobertura debe confirmarse con un prestador.',
         'stub'        => false,
         'changefreq'  => 'monthly',
         'priority'    => '0.8',

@@ -96,7 +96,7 @@
     return show;
   }
 
-  document.querySelectorAll("[data-lead-form]").forEach(function (form) {
+  document.querySelectorAll("[data-lead-form]:not([data-prepare-form])").forEach(function (form) {
     var formId = (form.querySelector("[name=form_id]") || {}).value || "";
     var showStep = enableSteps(form, formId);
     var started = false;
@@ -180,8 +180,12 @@
             });
           }
         })
-        .catch(function () {
-          if (error) error.hidden = false;
+        .catch(function (failure) {
+          if (error) {
+            error.hidden = false;
+            error.setAttribute('tabindex', '-1');
+            error.focus();
+          }
         })
         .finally(function () {
           sending = false;

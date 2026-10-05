@@ -1,7 +1,24 @@
 # electricidad.com.py
 
-Lead-generation site for electricians in Asunción and Central, plus quote requests for solar,
-generators, UPS and batteries. Static HTML + PHP on Hostinger, leads to VenderCRM.
+PHP site with electrical-service information, four calculators and consultation preparation.
+The planned business model is quote mediation; no operating provider network has been confirmed.
+The 2026-10-05 review keeps intake closed until an operator and CRM receipt are verified.
+The owner confirmed `+595 992 279599` for WhatsApp on 2026-10-05. Every contact
+link includes the site, source page and topic; clicking opens an editable draft in WhatsApp.
+
+**Current handoff: [`docs/review-2026-10-05.md`](docs/review-2026-10-05.md).**
+With defaults, summaries stay in the browser and `/enviar.php` returns 503 without recording
+personal data. To activate intake, confirm the operator and privacy details, then configure
+`OPERATOR_NAME`, `LEADS_ENABLED=1`, and VenderCRM credentials. `contactVerified` in
+`content/site.php` separately controls phone/WhatsApp visibility. `PUBLICATION_READY=0`
+keeps the preview noindex, robots disallowed and sitemap empty. Never enable it before the
+publication checklist is complete; zone pages additionally require confirmed coverage.
+
+Windows release: `node deploy/minify-css.mjs`, then
+`python deploy/make-zip.py --date 2026-10-05`. Existing Linux build commands remain supported.
+Tests: `node tests/preparation.spec.mjs [base]`, `node tests/tools.spec.mjs [base]`,
+`node tests/routes-links.mjs [base]`, `node tests/intake.spec.mjs` (synthetic loopback CRM).
+Set `PHP_BINARY` if PHP is outside PATH.
 
 **Start with [`plan.md`](plan.md)**: status, launch checklist, how the site makes money.
 The template documentation (content model, deploy, verify) follows below.
@@ -174,8 +191,8 @@ rule in `.htaccess` (redirects and 410s, `sitemap.xml`, `robots.txt`, trailing-s
 the denied directories, the 404 document), so what you see locally is what production does.
 Change one, change the other, and give the URL its expected status in `deploy/routes.php`.
 
-Nothing needs configuring: with no `config.php` the site renders and the lead form still accepts
-submissions in degraded mode.
+Nothing needs configuring for preview. With no `config.php`, consultation summaries stay local
+and the server refuses intake; it does not confirm receipt by silently logging an undelivered lead.
 
 ## Verify
 
@@ -230,7 +247,7 @@ place, so the repository keeps the readable source.
 | Key | Effect when empty |
 |---|---|
 | `SITE_URL` | canonical/OG URLs fall back to the request host |
-| `VENDERCRM_URL`, `VENDERCRM_API_KEY` | the lead form runs in degraded mode: submissions are appended to `logs/leads.log` and the visitor still gets a success state |
+| `VENDERCRM_URL`, `VENDERCRM_API_KEY` | intake stays closed; no personal data is collected or logged |
 | `RESEND_API_KEY`, `LEAD_NOTIFY_TO`, `LEAD_FROM` | no lead notification email |
 | `GA4_ID`, `ADS_ID` | `assets/js/analytics.js` is a silent no-op |
 

@@ -38,6 +38,11 @@ while [ $# -gt 0 ]; do
   esac
 done
 
+# Embedded PHP source is not subject to MSYS argument path conversion.
+if command -v cygpath >/dev/null; then
+  ROOT="$(cygpath -m "$ROOT")"
+  SITE_ROOT="$(cygpath -m "$SITE_ROOT")"
+fi
 BASE="http://127.0.0.1:${PORT}"
 LOG="$(mktemp)"
 FAILURES=0
@@ -220,30 +225,16 @@ json_says() {   # json_says <json> <key=value> ...
   ' "$@"
 }
 
-response=$(curl -s -X POST "$BASE/enviar.php" \
-  -H 'Accept: application/json' -H "Origin: $BASE" \
-  -d "name=Verify&phone=0981000999&need=${FIXTURE_NEED}&source_page=/contacto/&idempotency_key=verify-sh-fixture")
-
-if why=$(json_says "$response" ok=true degraded=true); then
-  ok 'degraded mode returns ok + degraded with no CRM key'
+response=$(curl -s -X POST "$BASE/enviar.php" -H 'Accept: application/json' -d 'name=Verify&phone=0981000999')
+if why=$(json_says "$response" ok=false error=unavailable); then
+  ok 'intake disabled without an explicitly verified operator and CRM'
 else
-  fail "degraded mode: $why — $response"
+  fail "closed intake: $why — $response"
 fi
-
-nojs=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' -X POST "$BASE/enviar.php" \
-  -H "Origin: $BASE" -d "name=Verify&phone=0981000998&service=${FIXTURE_SLUG}")
-case "$nojs" in
-  "303 ${BASE}/contacto/?enviado=1&s=${FIXTURE_SLUG}") ok "no-JS POST redirects to /contacto/?enviado=1&s=<slug>" ;;
-  *) fail "no-JS POST returned: $nojs" ;;
-esac
-
-spam=$(curl -s -X POST "$BASE/enviar.php" -H 'Accept: application/json' -H "Origin: $BASE" \
-  -d 'phone=0981000997&website=bot')
-if why=$(json_says "$spam" ok=true degraded=true); then
-  ok "honeypot accepted silently"
-else
-  fail "honeypot: $why — $spam"
-fi
+code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$BASE/enviar.php" -H 'Accept: application/json' -d 'name=Verify&phone=0981000999')
+[ "$code" = 503 ] && ok 'closed intake returns HTTP 503' || fail "closed intake HTTP $code"
+nojs=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' -X POST "$BASE/enviar.php" -d 'phone=0981000998')
+[ "$nojs" = "303 ${BASE}/contacto/?error=1" ] && ok 'no-JS closed intake redirects to an honest error' || fail "no-JS: $nojs"
 
 # ------------------------------------------------- 8. lead value routing -----
 # Every check here is about a lead arriving with the service it
@@ -304,32 +295,7 @@ else
   echo "$model_out" | sed 's/^/        /'
 fi
 
-rm -f "$SITE_ROOT/logs/leads.log"
-tiera=$(curl -s -X POST "$BASE/enviar.php" \
-  -H 'Accept: application/json' -H "Origin: $BASE" \
-  -d "name=Verify&phone=0981000996&service=${FIXTURE_SLUG}&source_page=${FIXTURE_PATH}&idempotency_key=verify-sh-service&tool_result=fixture")
-
-if why=$(json_says "$tiera" ok=true "service=${FIXTURE_SLUG}" "value_tier=${FIXTURE_TIER}" \
-                   "value=${FIXTURE_VALUE}" "currency=${FIXTURE_CURRENCY}"); then
-  ok "a POST with service=${FIXTURE_SLUG} answers with its tier and Ads value"
-else
-  fail "service=${FIXTURE_SLUG}: $why"
-fi
-
-logline=$(tail -1 "$SITE_ROOT/logs/leads.log" 2>/dev/null)
-if [ -z "$logline" ]; then
-  fail "nothing was written to logs/leads.log"
-else
-  for want in servicio valor resultado_herramienta etiqueta; do
-    php -r '
-      $line = json_decode($argv[1], true);
-      exit(isset($line["fields"][$argv[2]]) && $line["fields"][$argv[2]] !== "" ? 0 : 1);
-    ' "$logline" "$want" \
-      && ok "leads.log line carries fields.$want" \
-      || fail "leads.log line has no fields.$want: $logline"
-  done
-fi
-rm -f "$SITE_ROOT/logs/leads.log"
+[ ! -f "$SITE_ROOT/logs/leads.log" ] && ok 'closed intake writes no lead data' || fail 'unexpected lead log in closed mode'
 
 # Every service page's own form must name that service, or the lead arrives
 # untagged and nothing downstream can route it.
@@ -352,16 +318,11 @@ done < <(php -r '
 ')
 [ "$missing_service_field" -eq 0 ] && ok "every service page posts its own slug"
 
-# The per-service thank-you the no-JS redirect lands on.
 thanks=$(curl -s "${BASE}/contacto/?enviado=1&s=${FIXTURE_SLUG}")
-expected_step=$(php -r '
-  require "'"$SITE_ROOT"'/lib/bootstrap.php";
-  echo htmlspecialchars(lead_value($argv[1])["nextStep"][0], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
-' "$FIXTURE_SLUG")
-if grep -qF "$expected_step" <<<"$thanks"; then
-  ok "/contacto/?enviado=1&s=${FIXTURE_SLUG} renders that service's next step"
+if grep -q 'class="thanks"' <<<"$thanks"; then
+  fail 'query string fabricated a thank-you in closed mode'
 else
-  fail "/contacto/?enviado=1&s=${FIXTURE_SLUG} did not render that service's next step"
+  ok 'closed mode never renders a false thank-you'
 fi
 
 # No wa.me link anywhere may carry a generic message: every prefill names the

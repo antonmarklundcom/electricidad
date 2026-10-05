@@ -15,6 +15,7 @@ declare(strict_types=1);
 
 /** @var array $page */
 $page        = $page ?? [];
+$page['noindex'] = !publication_ready() || !empty($page['noindex']);
 $currentPath = $page['path'] ?? '/';
 $ga4         = cfg('GA4_ID', '');
 $ads         = cfg('ADS_ID', '');
@@ -61,7 +62,7 @@ $htmlLang    = $page['lang'] ?? market_locale();
 <meta name="twitter:image" content="<?= e(seo_og_image($page)) ?>">
 
 <!-- Keep in step with --ink in assets/css/site.css. -->
-<meta name="theme-color" content="#0F1B2D">
+<meta name="theme-color" content="#163b32">
 <link rel="icon" href="<?= e(asset('/assets/img/favicon.svg')) ?>" type="image/svg+xml">
 
 <link rel="preload" href="<?= e(asset('/assets/fonts/onest-latin.woff2')) ?>" as="font" type="font/woff2" crossorigin>

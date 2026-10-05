@@ -22,7 +22,7 @@ $page = [
 /* The no-JS thank-you. `s` names the service the lead came from; an unknown
    slug falls back to the model's neutral default rather than 404ing someone who
    has just given us their phone number. */
-$sent      = isset($_GET['enviado']);
+$sent      = contact_ready() && isset($_GET['enviado']);
 $sentSlug  = isset($_GET['s']) && is_string($_GET['s']) ? substr($_GET['s'], 0, 80) : '';
 $sentLead  = $sentSlug !== '' ? lead_value($sentSlug) : lead_value(null);
 $hasError  = isset($_GET['error']);
@@ -96,6 +96,10 @@ require ROOT_DIR . '/partials/header.php';
           </div>
         <?php endif; ?>
 
+        <div class="role-card"><p class="eyebrow">Quién responde</p>
+        <?php if (contact_ready()): ?><p>Su consulta la recibe <strong><?= e(cfg('OPERATOR_NAME')) ?></strong>. La solicitud no es una reserva ni un presupuesto aprobado.</p>
+        <?php else: ?><p>Puede escribir al WhatsApp de contacto de Electricidad PY. Antes de contratar, consulte quién realizaría el trabajo, si atiende su zona y cuáles serían las condiciones. El formulario web todavía no recibe solicitudes.</p><p>Puede usar las guías y calculadoras, y preparar un resumen sin compartir datos personales aquí.</p><?php endif; ?>
+        <p>No hay atención de urgencias ni disponibilidad 24 horas confirmada. Ante un riesgo inmediato, no espere una respuesta de este sitio.</p></div>
         <h2><?= e(ui('contact.expect')) ?></h2>
         <ul class="checklist">
           <?php foreach (content('ui')['contact']['steps'] as $contactStep): ?>

@@ -58,6 +58,7 @@ function content(string $name): array
 
 require_once ROOT_DIR . '/lib/helpers.php';
 require_once ROOT_DIR . '/lib/seo.php';
+require_once ROOT_DIR . '/lib/readiness.php';
 
 /**
  * The market module: exactly one of lib/market/*.php, named by 'market' in

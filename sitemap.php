@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/lib/bootstrap.php';
 
-$today = date('Y-m-d');
+$today = date('Y-m-d', (int) filemtime(ROOT_DIR . '/content/pages.php'));
 $urls  = [];
 
 foreach (content('pages') as $path => $meta) {
@@ -55,9 +55,14 @@ foreach (content('blog') as $article) {
 }
 
 foreach (content('segmentos') as $segmento) {
+    if (($segmento['kind'] ?? '') === 'zona'
+        && !in_array($segmento['navLabel'], (array) site('areaServed'), true)) {
+        continue;
+    }
     $urls[] = ['loc' => url($segmento['path']), 'changefreq' => 'monthly', 'priority' => '0.7'];
 }
 
+if (!publication_ready()) { $urls = []; }
 header('Content-Type: application/xml; charset=utf-8');
 echo '<?xml version="1.0" encoding="UTF-8"?>', "\n";
 ?>
